@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StandsRouteImport } from './routes/stands'
+import { Route as PubliciteRouteImport } from './routes/publicite'
+import { Route as EvenementielRouteImport } from './routes/evenementiel'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
+const StandsRoute = StandsRouteImport.update({
+  id: '/stands',
+  path: '/stands',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PubliciteRoute = PubliciteRouteImport.update({
+  id: '/publicite',
+  path: '/publicite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvenementielRoute = EvenementielRouteImport.update({
+  id: '/evenementiel',
+  path: '/evenementiel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,72 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/evenementiel': typeof EvenementielRoute
+  '/publicite': typeof PubliciteRoute
+  '/stands': typeof StandsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/evenementiel': typeof EvenementielRoute
+  '/publicite': typeof PubliciteRoute
+  '/stands': typeof StandsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/evenementiel': typeof EvenementielRoute
+  '/publicite': typeof PubliciteRoute
+  '/stands': typeof StandsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/contact' | '/evenementiel' | '/publicite' | '/stands'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/contact' | '/evenementiel' | '/publicite' | '/stands'
+  id: '__root__' | '/' | '/contact' | '/evenementiel' | '/publicite' | '/stands'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  EvenementielRoute: typeof EvenementielRoute
+  PubliciteRoute: typeof PubliciteRoute
+  StandsRoute: typeof StandsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/stands': {
+      id: '/stands'
+      path: '/stands'
+      fullPath: '/stands'
+      preLoaderRoute: typeof StandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publicite': {
+      id: '/publicite'
+      path: '/publicite'
+      fullPath: '/publicite'
+      preLoaderRoute: typeof PubliciteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evenementiel': {
+      id: '/evenementiel'
+      path: '/evenementiel'
+      fullPath: '/evenementiel'
+      preLoaderRoute: typeof EvenementielRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +121,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  EvenementielRoute: EvenementielRoute,
+  PubliciteRoute: PubliciteRoute,
+  StandsRoute: StandsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
