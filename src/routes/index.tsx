@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import stands from "@/assets/stands.webp.asset.json";
 import evenementiel from "@/assets/evenementiel.webp.asset.json";
 import publicite from "@/assets/publicite.webp.asset.json";
+import creations from "@/assets/creations.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -30,7 +31,14 @@ const slides = [
     image: publicite.url,
     to: "/publicite" as const,
   },
+  {
+    title: "NOS DERNIÈRES CRÉATIONS",
+    subtitle: "Sélection de nos réalisations récentes : photos et vidéos.",
+    image: creations.url,
+    to: "/creations" as const,
+  },
 ];
+
 
 function Index() {
   const [index, setIndex] = useState(0);
