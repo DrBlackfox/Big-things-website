@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as StandsRouteImport } from './routes/stands'
 import { Route as PubliciteRouteImport } from './routes/publicite'
 import { Route as EvenementielRouteImport } from './routes/evenementiel'
+import { Route as CreationsRouteImport } from './routes/creations'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -30,6 +31,11 @@ const EvenementielRoute = EvenementielRouteImport.update({
   path: '/evenementiel',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreationsRoute = CreationsRouteImport.update({
+  id: '/creations',
+  path: '/creations',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -44,6 +50,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
   '/publicite': typeof PubliciteRoute
   '/stands': typeof StandsRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
   '/publicite': typeof PubliciteRoute
   '/stands': typeof StandsRoute
@@ -59,21 +67,42 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
   '/publicite': typeof PubliciteRoute
   '/stands': typeof StandsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/evenementiel' | '/publicite' | '/stands'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/creations'
+    | '/evenementiel'
+    | '/publicite'
+    | '/stands'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/evenementiel' | '/publicite' | '/stands'
-  id: '__root__' | '/' | '/contact' | '/evenementiel' | '/publicite' | '/stands'
+  to:
+    | '/'
+    | '/contact'
+    | '/creations'
+    | '/evenementiel'
+    | '/publicite'
+    | '/stands'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/creations'
+    | '/evenementiel'
+    | '/publicite'
+    | '/stands'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  CreationsRoute: typeof CreationsRoute
   EvenementielRoute: typeof EvenementielRoute
   PubliciteRoute: typeof PubliciteRoute
   StandsRoute: typeof StandsRoute
@@ -102,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EvenementielRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/creations': {
+      id: '/creations'
+      path: '/creations'
+      fullPath: '/creations'
+      preLoaderRoute: typeof CreationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -122,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  CreationsRoute: CreationsRoute,
   EvenementielRoute: EvenementielRoute,
   PubliciteRoute: PubliciteRoute,
   StandsRoute: StandsRoute,
