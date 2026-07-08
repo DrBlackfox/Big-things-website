@@ -136,22 +136,7 @@ function Index() {
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[color:var(--brand-orange)] text-sm font-semibold uppercase tracking-[0.3em]">
-            Big Things Decoration
-          </span>
-          <h2 className="mt-6 text-3xl md:text-5xl font-bold text-[color:var(--brand-charcoal)] leading-tight">
-            Vos idées, <span className="text-[color:var(--brand-orange)]">grandeur nature.</span>
-          </h2>
-          <p className="mt-8 text-neutral-600 text-lg leading-relaxed max-w-3xl mx-auto">
-            Nous conjuguons design créatif, production premium et intégration digitale pour
-            livrer des stands, des événements et des espaces qui amplifient votre marque et
-            laissent une empreinte durable.
-          </p>
-        </div>
-      </section>
+      {/* INTRO removed per request */}
 
       <SiteFooter />
     </div>
