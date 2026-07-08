@@ -24,9 +24,10 @@ export function SiteFooter() {
         <div>
           <h4 className="text-white font-semibold uppercase tracking-wider text-sm mb-4">Contact</h4>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> Tunisie</li>
-            <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> +216 00 000 000</li>
-            <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> contact@bigthingsdecoration.com</li>
+            <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> 10 Rue Ammar Ben Yesser, Radès, Tunisie</li>
+            <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> +216 20 771 990</li>
+            <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> darhoumi.w@bigthings.tn</li>
+            <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> bigthingsdecoration@gmail.com</li>
           </ul>
         </div>
       </div>

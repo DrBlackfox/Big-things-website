@@ -13,29 +13,20 @@ export const Route = createFileRoute("/")({
 
 const slides = [
   {
-    kicker: "Stands d'exposition",
-    title: "SUR MESURE",
-    subtitle: "Création et réalisation de stands d'exposition",
-    description:
-      "Conception, fabrication et installation de stands qui captivent vos visiteurs et transforment votre présence en résultats.",
+    title: "STANDS D'EXPOSITION",
+    subtitle: "Création et réalisation de stand d'exposition sur mesure.",
     image: stands.url,
     to: "/stands" as const,
   },
   {
-    kicker: "Événementiel",
-    title: "HYBRIDE",
-    subtitle: "Communication événementielle hybride",
-    description:
-      "Des expériences fluides qui connectent le public sur place et en ligne, avec design créatif et production premium.",
+    title: "ÉVÉNEMENTIEL",
+    subtitle: "Communication événementielle hybride.",
     image: evenementiel.url,
     to: "/evenementiel" as const,
   },
   {
-    kicker: "Publicité & Signalétique",
-    title: "LUMINEUX",
-    subtitle: "Enseignes, caissons lumineux & affichage éclairé",
-    description:
-      "Enseignes, lettrages, affichage extérieur et signalétique haute visibilité pour marquer votre présence.",
+    title: "PUBLICITÉ & SIGNALÉTIQUE",
+    subtitle: "Enseignes, caissons lumineux & affichage éclairé.",
     image: publicite.url,
     to: "/publicite" as const,
   },
@@ -92,28 +83,20 @@ function Index() {
             >
               <img
                 src={s.image}
-                alt={s.kicker}
+                alt={s.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/55" />
+              <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/60" />
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-                <span className="text-[color:var(--brand-orange)] text-xs sm:text-sm font-semibold uppercase tracking-[0.35em]">
-                  {s.kicker}
-                </span>
-                <h1 className="mt-6 text-white font-light tracking-[0.15em] sm:tracking-[0.25em] text-4xl sm:text-6xl md:text-8xl leading-none">
+                <h1 className="text-[color:var(--brand-orange)] font-bold tracking-[0.1em] text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl">
                   {s.title}
                 </h1>
-                <div className="mt-8 w-full max-w-2xl bg-black/35 backdrop-blur-sm py-6 px-6">
-                  <h2 className="text-white uppercase tracking-widest text-sm sm:text-base font-semibold">
-                    {s.subtitle}
-                  </h2>
-                  <p className="mt-3 text-neutral-200 text-sm sm:text-base leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
+                <p className="mt-6 text-white uppercase tracking-widest text-sm sm:text-base md:text-lg font-medium max-w-2xl">
+                  {s.subtitle}
+                </p>
                 <Link
                   to={s.to}
-                  className="mt-8 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs sm:text-sm px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] transition-colors"
+                  className="mt-10 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs sm:text-sm px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] transition-colors"
                 >
                   Découvrir
                 </Link>
@@ -153,22 +136,7 @@ function Index() {
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[color:var(--brand-orange)] text-sm font-semibold uppercase tracking-[0.3em]">
-            Big Things Decoration
-          </span>
-          <h2 className="mt-6 text-3xl md:text-5xl font-bold text-[color:var(--brand-charcoal)] leading-tight">
-            Vos idées, <span className="text-[color:var(--brand-orange)]">grandeur nature.</span>
-          </h2>
-          <p className="mt-8 text-neutral-600 text-lg leading-relaxed max-w-3xl mx-auto">
-            Nous conjuguons design créatif, production premium et intégration digitale pour
-            livrer des stands, des événements et des espaces qui amplifient votre marque et
-            laissent une empreinte durable.
-          </p>
-        </div>
-      </section>
+      {/* INTRO removed per request */}
 
       <SiteFooter />
     </div>

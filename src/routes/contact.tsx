@@ -24,15 +24,19 @@ function Contact() {
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin className="text-[color:var(--brand-orange)] mt-1" />
-                <div><h3 className="font-semibold text-[color:var(--brand-charcoal)]">Adresse</h3><p className="text-neutral-600">Tunisie</p></div>
+                <div><h3 className="font-semibold text-[color:var(--brand-charcoal)]">Adresse</h3><p className="text-neutral-600">10 Rue Ammar Ben Yesser, Radès, Tunisie</p></div>
               </div>
               <div className="flex items-start gap-4">
                 <Phone className="text-[color:var(--brand-orange)] mt-1" />
-                <div><h3 className="font-semibold text-[color:var(--brand-charcoal)]">Téléphone</h3><p className="text-neutral-600">+216 00 000 000</p></div>
+                <div><h3 className="font-semibold text-[color:var(--brand-charcoal)]">Téléphone</h3><p className="text-neutral-600">+216 20 771 990</p></div>
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="text-[color:var(--brand-orange)] mt-1" />
-                <div><h3 className="font-semibold text-[color:var(--brand-charcoal)]">Email</h3><p className="text-neutral-600">contact@bigthingsdecoration.com</p></div>
+                <div><h3 className="font-semibold text-[color:var(--brand-charcoal)]">Email</h3><p className="text-neutral-600">darhoumi.w@bigthings.tn<br/>bigthingsdecoration@gmail.com</p></div>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="text-[color:var(--brand-orange)] mt-1 font-bold">@</span>
+                <div><h3 className="font-semibold text-[color:var(--brand-charcoal)]">Manager</h3><p className="text-neutral-600">Walid Darhoumi</p></div>
               </div>
             </div>
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
