@@ -83,28 +83,20 @@ function Index() {
             >
               <img
                 src={s.image}
-                alt={s.kicker}
+                alt={s.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/55" />
+              <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/60" />
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-                <span className="text-[color:var(--brand-orange)] text-xs sm:text-sm font-semibold uppercase tracking-[0.35em]">
-                  {s.kicker}
-                </span>
-                <h1 className="mt-6 text-white font-light tracking-[0.15em] sm:tracking-[0.25em] text-4xl sm:text-6xl md:text-8xl leading-none">
+                <h1 className="text-[color:var(--brand-orange)] font-bold tracking-[0.1em] text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl">
                   {s.title}
                 </h1>
-                <div className="mt-8 w-full max-w-2xl bg-black/35 backdrop-blur-sm py-6 px-6">
-                  <h2 className="text-white uppercase tracking-widest text-sm sm:text-base font-semibold">
-                    {s.subtitle}
-                  </h2>
-                  <p className="mt-3 text-neutral-200 text-sm sm:text-base leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
+                <p className="mt-6 text-white uppercase tracking-widest text-sm sm:text-base md:text-lg font-medium max-w-2xl">
+                  {s.subtitle}
+                </p>
                 <Link
                   to={s.to}
-                  className="mt-8 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs sm:text-sm px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] transition-colors"
+                  className="mt-10 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs sm:text-sm px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] transition-colors"
                 >
                   Découvrir
                 </Link>
