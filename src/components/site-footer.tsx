@@ -19,6 +19,7 @@ export function SiteFooter() {
             <li><Link to="/stands" className="hover:text-[color:var(--brand-orange)]">Stands d'exposition</Link></li>
             <li><Link to="/evenementiel" className="hover:text-[color:var(--brand-orange)]">Événementiel</Link></li>
             <li><Link to="/publicite" className="hover:text-[color:var(--brand-orange)]">Publicité & Signalétique</Link></li>
+            <li><Link to="/creations" className="hover:text-[color:var(--brand-orange)]">Nos dernières créations</Link></li>
           </ul>
         </div>
         <div>
