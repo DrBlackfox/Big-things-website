@@ -13,29 +13,20 @@ export const Route = createFileRoute("/")({
 
 const slides = [
   {
-    kicker: "Stands d'exposition",
-    title: "SUR MESURE",
-    subtitle: "Création et réalisation de stands d'exposition",
-    description:
-      "Conception, fabrication et installation de stands qui captivent vos visiteurs et transforment votre présence en résultats.",
+    title: "STANDS D'EXPOSITION",
+    subtitle: "Création et réalisation de stand d'exposition sur mesure.",
     image: stands.url,
     to: "/stands" as const,
   },
   {
-    kicker: "Événementiel",
-    title: "HYBRIDE",
-    subtitle: "Communication événementielle hybride",
-    description:
-      "Des expériences fluides qui connectent le public sur place et en ligne, avec design créatif et production premium.",
+    title: "ÉVÉNEMENTIEL",
+    subtitle: "Communication événementielle hybride.",
     image: evenementiel.url,
     to: "/evenementiel" as const,
   },
   {
-    kicker: "Publicité & Signalétique",
-    title: "LUMINEUX",
-    subtitle: "Enseignes, caissons lumineux & affichage éclairé",
-    description:
-      "Enseignes, lettrages, affichage extérieur et signalétique haute visibilité pour marquer votre présence.",
+    title: "PUBLICITÉ & SIGNALÉTIQUE",
+    subtitle: "Enseignes, caissons lumineux & affichage éclairé.",
     image: publicite.url,
     to: "/publicite" as const,
   },
