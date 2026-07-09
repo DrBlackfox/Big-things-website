@@ -41,38 +41,57 @@ const slides = [
 
 
 function Index() {
-  const [index, setIndex] = useState(0);
+  const count = slides.length;
+  const loopedSlides = [slides[count - 1], ...slides, slides[0]];
+  const [index, setIndex] = useState(1);
   const [animate, setAnimate] = useState(true);
   const pausedRef = useRef(false);
-  const count = slides.length;
+  const slidingRef = useRef(false);
+
+  const moveTo = (nextIndex: number) => {
+    if (slidingRef.current) return;
+    slidingRef.current = true;
+    setAnimate(true);
+    setIndex(nextIndex);
+  };
 
   useEffect(() => {
     const id = setInterval(() => {
-      if (!pausedRef.current) setIndex((i) => i + 1);
+      if (!pausedRef.current && !slidingRef.current) {
+        slidingRef.current = true;
+        setAnimate(true);
+        setIndex((i) => i + 1);
+      }
     }, 5500);
     return () => clearInterval(id);
   }, []);
 
-  // Seamless loop: when we land on the cloned slide (index === count), snap back to 0 without animation.
-  const onTransitionEnd = () => {
-    if (index === count) {
+  const onTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {
+    if (event.propertyName !== "transform") return;
+
+    slidingRef.current = false;
+
+    if (index === count + 1) {
       setAnimate(false);
-      setIndex(0);
-    } else if (index === -1) {
+      setIndex(1);
+    } else if (index === 0) {
       setAnimate(false);
-      setIndex(count - 1);
+      setIndex(count);
     }
   };
 
   useEffect(() => {
     if (!animate) {
-      const t = requestAnimationFrame(() => setAnimate(true));
+      const t = requestAnimationFrame(() => {
+        slidingRef.current = false;
+        setAnimate(true);
+      });
       return () => cancelAnimationFrame(t);
     }
   }, [animate]);
 
-  const go = (dir: number) => setIndex((i) => i + dir);
-  const activeDot = ((index % count) + count) % count;
+  const go = (dir: number) => moveTo(index + dir);
+  const activeDot = ((index - 1) % count + count) % count;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -89,7 +108,7 @@ function Index() {
           className={`flex h-full w-full ${animate ? "transition-transform duration-700 ease-in-out" : ""}`}
           style={{ transform: `translateX(-${index * 100}%)` }}
         >
-          {[...slides, slides[0]].map((s, i) => (
+          {loopedSlides.map((s, i) => (
             <div
               key={i}
               className="relative flex-shrink-0 w-full h-full"
@@ -141,6 +160,11 @@ function Index() {
               key={i}
               aria-label={`Slide ${i + 1}`}
               onClick={() => setIndex(i)}
+              onMouseDown={() => {
+                slidingRef.current = false;
+                setAnimate(true);
+                setIndex(i + 1);
+              }}
               className={`h-2 rounded-full transition-all ${
                 i === activeDot ? "w-8 bg-[color:var(--brand-orange)]" : "w-2 bg-white/60"
               }`}
