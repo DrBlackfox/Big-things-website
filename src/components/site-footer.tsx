@@ -8,8 +8,8 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
           <img src={logo.url} alt="Big Things Decoration" className="h-14 w-auto bg-white p-2 rounded" />
-          <p className="mt-5 text-sm leading-relaxed max-w-md">
-            Communication évenementiel hybride
+          <p className="mt-5 text-sm leading-relaxed max-w-md uppercase tracking-wide">
+            COMMUNICATION ÉVÉNEMENTIEL HYBRIDE. PUBLICITÉ & SIGNALÉTIQUE. STANDS D'EXPOSITION
           </p>
         </div>
         <div>
@@ -34,7 +34,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-neutral-500 flex flex-col sm:flex-row justify-between gap-2">
           <p>© {new Date().getFullYear()} Big Things Decoration. Tous droits réservés.</p>
-          <p>COMMUNICATION ÉVÉNEMENTIEL HYBRIDE · PUBLICITÉ & SIGNALÉTIQUE · STANDS D'EXPOSITION</p>
+          <p>COMMUNICATION ÉVÉNEMENTIEL HYBRIDE. PUBLICITÉ & SIGNALÉTIQUE. STANDS D'EXPOSITION</p>
         </div>
       </div>
     </footer>
