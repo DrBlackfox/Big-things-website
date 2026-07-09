@@ -34,7 +34,7 @@ export function SiteFooter() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-neutral-500 flex flex-col sm:flex-row justify-between gap-2">
           <p>© {new Date().getFullYear()} Big Things Decoration. Tous droits réservés.</p>
-          <p>Stands · Événementiel · Signalétique</p>
+          <p>COMMUNICATION ÉVÉNEMENTIEL HYBRIDE · PUBLICITÉ & SIGNALÉTIQUE · STANDS D'EXPOSITION</p>
         </div>
       </div>
     </footer>
