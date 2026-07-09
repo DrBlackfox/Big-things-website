@@ -42,32 +42,37 @@ const slides = [
 
 function Index() {
   const [index, setIndex] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = useState(true);
   const pausedRef = useRef(false);
+  const count = slides.length;
 
   useEffect(() => {
     const id = setInterval(() => {
-      if (!pausedRef.current) setIndex((i) => (i + 1) % slides.length);
+      if (!pausedRef.current) setIndex((i) => i + 1);
     }, 5500);
     return () => clearInterval(id);
   }, []);
 
-  // Sync scroll position to active index (for touch swipe support).
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    el.scrollTo({ left: index * el.clientWidth, behavior: "smooth" });
-  }, [index]);
-
-  const onScroll = () => {
-    const el = trackRef.current;
-    if (!el) return;
-    const i = Math.round(el.scrollLeft / el.clientWidth);
-    if (i !== index) setIndex(i);
+  // Seamless loop: when we land on the cloned slide (index === count), snap back to 0 without animation.
+  const onTransitionEnd = () => {
+    if (index === count) {
+      setAnimate(false);
+      setIndex(0);
+    } else if (index === -1) {
+      setAnimate(false);
+      setIndex(count - 1);
+    }
   };
 
-  const go = (dir: number) =>
-    setIndex((i) => (i + dir + slides.length) % slides.length);
+  useEffect(() => {
+    if (!animate) {
+      const t = requestAnimationFrame(() => setAnimate(true));
+      return () => cancelAnimationFrame(t);
+    }
+  }, [animate]);
+
+  const go = (dir: number) => setIndex((i) => i + dir);
+  const activeDot = ((index % count) + count) % count;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -80,14 +85,14 @@ function Index() {
         onMouseLeave={() => (pausedRef.current = false)}
       >
         <div
-          ref={trackRef}
-          onScroll={onScroll}
-          className="flex h-full w-full overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          onTransitionEnd={onTransitionEnd}
+          className={`flex h-full w-full ${animate ? "transition-transform duration-700 ease-in-out" : ""}`}
+          style={{ transform: `translateX(-${index * 100}%)` }}
         >
-          {slides.map((s) => (
+          {[...slides, slides[0]].map((s, i) => (
             <div
-              key={s.title}
-              className="relative flex-shrink-0 w-full h-full snap-center"
+              key={i}
+              className="relative flex-shrink-0 w-full h-full"
             >
               <img
                 src={s.image}
@@ -137,16 +142,15 @@ function Index() {
               aria-label={`Slide ${i + 1}`}
               onClick={() => setIndex(i)}
               className={`h-2 rounded-full transition-all ${
-                i === index ? "w-8 bg-[color:var(--brand-orange)]" : "w-2 bg-white/60"
+                i === activeDot ? "w-8 bg-[color:var(--brand-orange)]" : "w-2 bg-white/60"
               }`}
             />
           ))}
         </div>
       </section>
 
-      {/* INTRO removed per request */}
-
       <SiteFooter />
     </div>
   );
 }
+
