@@ -9,8 +9,7 @@ export function SiteFooter() {
         <div className="md:col-span-2">
           <img src={logo.url} alt="Big Things Decoration" className="h-14 w-auto bg-white p-2 rounded" />
           <p className="mt-5 text-sm leading-relaxed max-w-md">
-            Big Things Decoration transforme vos idées en expériences visuelles inoubliables :
-            stands d'exposition sur mesure, événementiel hybride, enseignes et affichage lumineux.
+            Communication évenementiel hybride
           </p>
         </div>
         <div>

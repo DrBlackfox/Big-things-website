@@ -14,6 +14,12 @@ export const Route = createFileRoute("/")({
 
 const slides = [
   {
+    title: "PUBLICITÉ & SIGNALÉTIQUE",
+    subtitle: "Enseignes, caissons lumineux & affichage éclairé.",
+    image: publicite.url,
+    to: "/publicite" as const,
+  },
+  {
     title: "STANDS D'EXPOSITION",
     subtitle: "Création et réalisation de stand d'exposition sur mesure.",
     image: stands.url,
@@ -24,12 +30,6 @@ const slides = [
     subtitle: "Communication événementielle hybride.",
     image: evenementiel.url,
     to: "/evenementiel" as const,
-  },
-  {
-    title: "PUBLICITÉ & SIGNALÉTIQUE",
-    subtitle: "Enseignes, caissons lumineux & affichage éclairé.",
-    image: publicite.url,
-    to: "/publicite" as const,
   },
   {
     title: "NOS DERNIÈRES CRÉATIONS",
@@ -117,14 +117,14 @@ function Index() {
         <button
           aria-label="Précédent"
           onClick={() => go(-1)}
-          className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/30 hover:bg-[color:var(--brand-orange)] text-white transition-colors"
+          className="flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] text-white transition-colors"
         >
           <ChevronLeft />
         </button>
         <button
           aria-label="Suivant"
           onClick={() => go(1)}
-          className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/30 hover:bg-[color:var(--brand-orange)] text-white transition-colors"
+          className="flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] text-white transition-colors"
         >
           <ChevronRight />
         </button>
