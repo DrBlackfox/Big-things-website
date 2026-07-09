@@ -159,8 +159,7 @@ function Index() {
             <button
               key={i}
               aria-label={`Slide ${i + 1}`}
-              onClick={() => setIndex(i)}
-              onMouseDown={() => {
+              onClick={() => {
                 slidingRef.current = false;
                 setAnimate(true);
                 setIndex(i + 1);
