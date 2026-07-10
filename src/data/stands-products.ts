@@ -1,6 +1,6 @@
 import multimedia from "@/assets/stand-multimedia.jpg.asset.json";
 import lightbox from "@/assets/stand-lightbox.webp.asset.json";
-import menuiserie from "@/assets/stand-menuiserie.jpg.asset.json";
+import menuiserie from "@/assets/stand-menuiserie.webp.asset.json";
 import toile from "@/assets/stand-toile.webp.asset.json";
 import parapluie from "@/assets/stand-parapluie.png.asset.json";
 import tubulaire from "@/assets/stand-tubulaire.jpeg.asset.json";
