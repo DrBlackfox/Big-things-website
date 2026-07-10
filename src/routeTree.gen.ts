@@ -16,7 +16,9 @@ import { Route as CreationsRouteImport } from './routes/creations'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StandsIndexRouteImport } from './routes/stands.index'
+import { Route as PubliciteIndexRouteImport } from './routes/publicite.index'
 import { Route as StandsProductRouteImport } from './routes/stands.$product'
+import { Route as PubliciteCategoryRouteImport } from './routes/publicite.$category'
 
 const StandsRoute = StandsRouteImport.update({
   id: '/stands',
@@ -53,10 +55,20 @@ const StandsIndexRoute = StandsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => StandsRoute,
 } as any)
+const PubliciteIndexRoute = PubliciteIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PubliciteRoute,
+} as any)
 const StandsProductRoute = StandsProductRouteImport.update({
   id: '/$product',
   path: '/$product',
   getParentRoute: () => StandsRoute,
+} as any)
+const PubliciteCategoryRoute = PubliciteCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => PubliciteRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -64,9 +76,11 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
-  '/publicite': typeof PubliciteRoute
+  '/publicite': typeof PubliciteRouteWithChildren
   '/stands': typeof StandsRouteWithChildren
+  '/publicite/$category': typeof PubliciteCategoryRoute
   '/stands/$product': typeof StandsProductRoute
+  '/publicite/': typeof PubliciteIndexRoute
   '/stands/': typeof StandsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -74,8 +88,9 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
-  '/publicite': typeof PubliciteRoute
+  '/publicite/$category': typeof PubliciteCategoryRoute
   '/stands/$product': typeof StandsProductRoute
+  '/publicite': typeof PubliciteIndexRoute
   '/stands': typeof StandsIndexRoute
 }
 export interface FileRoutesById {
@@ -84,9 +99,11 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
-  '/publicite': typeof PubliciteRoute
+  '/publicite': typeof PubliciteRouteWithChildren
   '/stands': typeof StandsRouteWithChildren
+  '/publicite/$category': typeof PubliciteCategoryRoute
   '/stands/$product': typeof StandsProductRoute
+  '/publicite/': typeof PubliciteIndexRoute
   '/stands/': typeof StandsIndexRoute
 }
 export interface FileRouteTypes {
@@ -98,7 +115,9 @@ export interface FileRouteTypes {
     | '/evenementiel'
     | '/publicite'
     | '/stands'
+    | '/publicite/$category'
     | '/stands/$product'
+    | '/publicite/'
     | '/stands/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -106,8 +125,9 @@ export interface FileRouteTypes {
     | '/contact'
     | '/creations'
     | '/evenementiel'
-    | '/publicite'
+    | '/publicite/$category'
     | '/stands/$product'
+    | '/publicite'
     | '/stands'
   id:
     | '__root__'
@@ -117,7 +137,9 @@ export interface FileRouteTypes {
     | '/evenementiel'
     | '/publicite'
     | '/stands'
+    | '/publicite/$category'
     | '/stands/$product'
+    | '/publicite/'
     | '/stands/'
   fileRoutesById: FileRoutesById
 }
@@ -126,7 +148,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CreationsRoute: typeof CreationsRoute
   EvenementielRoute: typeof EvenementielRoute
-  PubliciteRoute: typeof PubliciteRoute
+  PubliciteRoute: typeof PubliciteRouteWithChildren
   StandsRoute: typeof StandsRouteWithChildren
 }
 
@@ -181,6 +203,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StandsIndexRouteImport
       parentRoute: typeof StandsRoute
     }
+    '/publicite/': {
+      id: '/publicite/'
+      path: '/'
+      fullPath: '/publicite/'
+      preLoaderRoute: typeof PubliciteIndexRouteImport
+      parentRoute: typeof PubliciteRoute
+    }
     '/stands/$product': {
       id: '/stands/$product'
       path: '/$product'
@@ -188,8 +217,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StandsProductRouteImport
       parentRoute: typeof StandsRoute
     }
+    '/publicite/$category': {
+      id: '/publicite/$category'
+      path: '/$category'
+      fullPath: '/publicite/$category'
+      preLoaderRoute: typeof PubliciteCategoryRouteImport
+      parentRoute: typeof PubliciteRoute
+    }
   }
 }
+
+interface PubliciteRouteChildren {
+  PubliciteCategoryRoute: typeof PubliciteCategoryRoute
+  PubliciteIndexRoute: typeof PubliciteIndexRoute
+}
+
+const PubliciteRouteChildren: PubliciteRouteChildren = {
+  PubliciteCategoryRoute: PubliciteCategoryRoute,
+  PubliciteIndexRoute: PubliciteIndexRoute,
+}
+
+const PubliciteRouteWithChildren = PubliciteRoute._addFileChildren(
+  PubliciteRouteChildren,
+)
 
 interface StandsRouteChildren {
   StandsProductRoute: typeof StandsProductRoute
@@ -209,7 +259,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CreationsRoute: CreationsRoute,
   EvenementielRoute: EvenementielRoute,
-  PubliciteRoute: PubliciteRoute,
+  PubliciteRoute: PubliciteRouteWithChildren,
   StandsRoute: StandsRouteWithChildren,
 }
 export const routeTree = rootRouteImport

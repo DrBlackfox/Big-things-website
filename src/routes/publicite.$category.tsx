@@ -69,7 +69,7 @@ function CategoryPage() {
                 Galerie
               </h2>
               <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-3">
-                {category.gallery.map((src, i) => (
+                {category.gallery.map((src: string, i: number) => (
                   <div key={i} className="aspect-[4/3] bg-neutral-100 overflow-hidden">
                     <img
                       src={src}
@@ -89,7 +89,7 @@ function CategoryPage() {
                 Produits
               </h2>
               <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                {category.products.map((name) => (
+                {category.products.map((name: string) => (
                   <div
                     key={name}
                     className="bg-[color:var(--brand-charcoal)] text-white px-5 py-6 uppercase tracking-wide text-sm font-semibold"
