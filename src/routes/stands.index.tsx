@@ -19,14 +19,14 @@ export const Route = createFileRoute("/stands/")({
 
 function StandsIndex() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[color:var(--brand-charcoal)]">
       <SiteHeader />
       <main className="flex-1">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-6">
           <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-[color:var(--brand-orange)]">
             STANDS D'EXPOSITION
           </h1>
-          <p className="mt-3 text-neutral-600 max-w-2xl uppercase tracking-wide text-sm">
+          <p className="mt-3 text-white/70 max-w-2xl uppercase tracking-wide text-sm">
             Six gammes de stands sur mesure pour vos salons, showrooms et événements.
           </p>
         </div>
