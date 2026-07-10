@@ -64,6 +64,6 @@ export const signaletiqueProducts: SignaletiqueProduct[] = [
     image: lettresMain.url,
     description:
       "Lettres lumineuses en relief, découpées sur mesure et rétroéclairées en LED. Aluminium, PVC ou plexiglas, finitions peinture, brossé ou miroir. Un rendu haut de gamme pour enseignes de façade, réceptions d'entreprise et signalétique événementielle.",
-    gallery: [lettresMain.url, lettres6.url],
+    gallery: [lettresMain.url, lettres1.url, lettres2.url, lettres3.url, lettres4.url, lettres6.url],
   },
 ];
