@@ -87,14 +87,13 @@ function SignaletiqueProductPage() {
               </h2>
               <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-3">
                 {product.gallery.map((src: string, i: number) => (
-                  <div key={i} className="aspect-[4/3] bg-neutral-100 overflow-hidden">
-                    <img
-                      src={src}
-                      alt={`${product.title} — visuel ${i + 1}`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${product.title} — visuel ${i + 1}`}
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
                 ))}
               </div>
             </div>
