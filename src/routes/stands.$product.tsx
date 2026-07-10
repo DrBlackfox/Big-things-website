@@ -36,13 +36,13 @@ function ProductPage() {
   const { product } = Route.useLoaderData();
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[color:var(--brand-charcoal)]">
       <SiteHeader />
       <main className="flex-1">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
             to="/stands"
-            className="text-xs uppercase tracking-[0.25em] text-neutral-500 hover:text-[color:var(--brand-orange)]"
+            className="text-xs uppercase tracking-[0.25em] text-white/60 hover:text-[color:var(--brand-orange)]"
           >
             ← Stands d'exposition
           </Link>
@@ -57,16 +57,16 @@ function ProductPage() {
             </div>
 
             <div>
-              <h1 className="text-3xl md:text-5xl font-bold text-[color:var(--brand-charcoal)] uppercase tracking-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-[color:var(--brand-orange)] uppercase tracking-tight">
                 {product.title}
               </h1>
-              <p className="mt-3 text-[color:var(--brand-orange)] uppercase tracking-widest text-xs font-semibold">
+              <p className="mt-3 text-white/80 uppercase tracking-widest text-xs font-semibold">
                 {product.subtitle}
               </p>
 
               <div className="mt-6 h-px w-16 bg-[color:var(--brand-orange)]" />
 
-              <p className="mt-6 text-neutral-700 leading-relaxed">
+              <p className="mt-6 text-white/75 leading-relaxed">
                 {product.description}
               </p>
 
@@ -87,7 +87,7 @@ function ProductPage() {
 
               <Link
                 to="/contact"
-                className="mt-10 inline-flex items-center border border-[color:var(--brand-charcoal)] text-[color:var(--brand-charcoal)] uppercase tracking-[0.3em] text-xs px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] hover:text-white transition-colors"
+                className="mt-10 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] hover:text-white transition-colors"
               >
                 Obtenir un devis gratuit
               </Link>
