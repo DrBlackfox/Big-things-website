@@ -5,6 +5,15 @@ import alucobond1 from "@/assets/alucobond-1.webp.asset.json";
 import alucobond2 from "@/assets/alucobond-2.webp.asset.json";
 import alucobond3 from "@/assets/alucobond-3.webp.asset.json";
 import alucobond4 from "@/assets/alucobond-4.webp.asset.json";
+import alucobond5 from "@/assets/alucobond-5.webp.asset.json";
+import alucobond6 from "@/assets/alucobond-6.webp.asset.json";
+import alucobond7 from "@/assets/alucobond-7.webp.asset.json";
+import alucobond8 from "@/assets/alucobond-8.webp.asset.json";
+import alucobond9 from "@/assets/alucobond-9.webp.asset.json";
+import alucobond10 from "@/assets/alucobond-10.webp.asset.json";
+import alucobond11 from "@/assets/alucobond-11.webp.asset.json";
+import alucobond12 from "@/assets/alucobond-12.webp.asset.json";
+import alucobond13 from "@/assets/alucobond-13.webp.asset.json";
 
 
 export type PubliciteCategory = {
@@ -56,6 +65,6 @@ export const publiciteCategories: PubliciteCategory[] = [
     description:
       "Habillage de façades et surfaces en panneaux composites Alucobond : deux tôles d'aluminium liées à une âme en polyéthylène. Résistant aux intempéries, léger, plan et rigide. Finitions brossées, brillantes, mates ou effet miroir. Idéal pour enseignes, façades commerciales et rénovations architecturales.",
     products: [],
-    gallery: [alucobond.url, alucobond1.url, alucobond2.url, alucobond3.url, alucobond4.url],
+    gallery: [alucobond.url, alucobond1.url, alucobond2.url, alucobond3.url, alucobond4.url, alucobond5.url, alucobond6.url, alucobond7.url, alucobond8.url, alucobond9.url, alucobond10.url, alucobond11.url, alucobond12.url, alucobond13.url],
   },
 ];
