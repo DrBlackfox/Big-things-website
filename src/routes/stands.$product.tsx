@@ -36,13 +36,13 @@ function ProductPage() {
   const { product } = Route.useLoaderData();
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[color:var(--brand-charcoal)]">
       <SiteHeader />
       <main className="flex-1">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
             to="/stands"
-            className="text-xs uppercase tracking-[0.25em] text-neutral-500 hover:text-[color:var(--brand-orange)]"
+            className="text-xs uppercase tracking-[0.25em] text-white/60 hover:text-[color:var(--brand-orange)]"
           >
             ← Stands d'exposition
           </Link>
