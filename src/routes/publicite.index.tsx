@@ -33,11 +33,15 @@ function PubliciteIndex() {
 
         <div className="mx-auto max-w-[95%] px-2 sm:px-4 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {publiciteCategories.map((c) => (
+            {publiciteCategories.map((c) => {
+              const isSignaletique = c.slug === "signaletique";
+              const linkProps = isSignaletique
+                ? ({ to: "/publicite/signaletique" } as const)
+                : ({ to: "/publicite/$category", params: { category: c.slug } } as const);
+              return (
               <Link
                 key={c.slug}
-                to="/publicite/$category"
-                params={{ category: c.slug }}
+                {...linkProps}
                 className="group relative block aspect-[3/5] md:aspect-[3/4] lg:aspect-[4/5] overflow-hidden bg-[color:var(--brand-charcoal)]"
               >
                 <img
@@ -63,7 +67,8 @@ function PubliciteIndex() {
                   </h3>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </main>
