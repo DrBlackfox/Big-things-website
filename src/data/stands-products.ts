@@ -2,7 +2,7 @@ import multimedia from "@/assets/stand-multimedia.webp.asset.json";
 import lightbox from "@/assets/stand-lightbox.webp.asset.json";
 import menuiserie from "@/assets/stand-menuiserie.webp.asset.json";
 import toile from "@/assets/stand-toile.webp.asset.json";
-import parapluie from "@/assets/stand-parapluie.png.asset.json";
+import parapluie from "@/assets/stand-parapluie.webp.asset.json";
 import tubulaire from "@/assets/stand-tubulaire.jpeg.asset.json";
 import card1 from "@/assets/business-card-1.png.asset.json";
 import card2 from "@/assets/business-card-2.png.asset.json";
