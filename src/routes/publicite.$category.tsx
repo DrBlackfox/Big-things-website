@@ -93,7 +93,7 @@ function CategoryPage() {
                 {category.products.map((name: string) => (
                   <div
                     key={name}
-                    className="bg-[color:var(--brand-charcoal)] text-white px-5 py-6 uppercase tracking-wide text-sm font-semibold"
+                    className="bg-white/5 border border-white/10 text-white px-5 py-6 uppercase tracking-wide text-sm font-semibold"
                   >
                     {name}
                   </div>
