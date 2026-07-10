@@ -67,7 +67,8 @@ function PubliciteIndex() {
                   </h3>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </main>
