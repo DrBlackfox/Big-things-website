@@ -52,7 +52,7 @@ function StandsIndex() {
                     {p.title}
                   </h2>
                   <p className="mt-1 text-xs md:text-sm text-white/85 max-w-xs">{p.subtitle}</p>
-                  <span className="mt-4 inline-flex items-center border border-white text-white uppercase tracking-[0.25em] text-[11px] px-6 py-2.5 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] transition-colors">
+                  <span className="mt-4 inline-flex items-center border border-white text-white uppercase tracking-[0.25em] text-[11px] px-6 py-2.5 hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-colors duration-200">
                     Découvrir
                   </span>
                 </div>
