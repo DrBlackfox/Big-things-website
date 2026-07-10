@@ -18,7 +18,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as StandsIndexRouteImport } from './routes/stands.index'
 import { Route as PubliciteIndexRouteImport } from './routes/publicite.index'
 import { Route as StandsProductRouteImport } from './routes/stands.$product'
+import { Route as PubliciteSignaletiqueRouteImport } from './routes/publicite.signaletique'
 import { Route as PubliciteCategoryRouteImport } from './routes/publicite.$category'
+import { Route as PubliciteSignaletiqueIndexRouteImport } from './routes/publicite.signaletique.index'
+import { Route as PubliciteSignaletiqueProductRouteImport } from './routes/publicite.signaletique.$product'
 
 const StandsRoute = StandsRouteImport.update({
   id: '/stands',
@@ -65,11 +68,28 @@ const StandsProductRoute = StandsProductRouteImport.update({
   path: '/$product',
   getParentRoute: () => StandsRoute,
 } as any)
+const PubliciteSignaletiqueRoute = PubliciteSignaletiqueRouteImport.update({
+  id: '/signaletique',
+  path: '/signaletique',
+  getParentRoute: () => PubliciteRoute,
+} as any)
 const PubliciteCategoryRoute = PubliciteCategoryRouteImport.update({
   id: '/$category',
   path: '/$category',
   getParentRoute: () => PubliciteRoute,
 } as any)
+const PubliciteSignaletiqueIndexRoute =
+  PubliciteSignaletiqueIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => PubliciteSignaletiqueRoute,
+  } as any)
+const PubliciteSignaletiqueProductRoute =
+  PubliciteSignaletiqueProductRouteImport.update({
+    id: '/$product',
+    path: '/$product',
+    getParentRoute: () => PubliciteSignaletiqueRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -79,9 +99,12 @@ export interface FileRoutesByFullPath {
   '/publicite': typeof PubliciteRouteWithChildren
   '/stands': typeof StandsRouteWithChildren
   '/publicite/$category': typeof PubliciteCategoryRoute
+  '/publicite/signaletique': typeof PubliciteSignaletiqueRouteWithChildren
   '/stands/$product': typeof StandsProductRoute
   '/publicite/': typeof PubliciteIndexRoute
   '/stands/': typeof StandsIndexRoute
+  '/publicite/signaletique/$product': typeof PubliciteSignaletiqueProductRoute
+  '/publicite/signaletique/': typeof PubliciteSignaletiqueIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -92,6 +115,8 @@ export interface FileRoutesByTo {
   '/stands/$product': typeof StandsProductRoute
   '/publicite': typeof PubliciteIndexRoute
   '/stands': typeof StandsIndexRoute
+  '/publicite/signaletique/$product': typeof PubliciteSignaletiqueProductRoute
+  '/publicite/signaletique': typeof PubliciteSignaletiqueIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -102,9 +127,12 @@ export interface FileRoutesById {
   '/publicite': typeof PubliciteRouteWithChildren
   '/stands': typeof StandsRouteWithChildren
   '/publicite/$category': typeof PubliciteCategoryRoute
+  '/publicite/signaletique': typeof PubliciteSignaletiqueRouteWithChildren
   '/stands/$product': typeof StandsProductRoute
   '/publicite/': typeof PubliciteIndexRoute
   '/stands/': typeof StandsIndexRoute
+  '/publicite/signaletique/$product': typeof PubliciteSignaletiqueProductRoute
+  '/publicite/signaletique/': typeof PubliciteSignaletiqueIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -116,9 +144,12 @@ export interface FileRouteTypes {
     | '/publicite'
     | '/stands'
     | '/publicite/$category'
+    | '/publicite/signaletique'
     | '/stands/$product'
     | '/publicite/'
     | '/stands/'
+    | '/publicite/signaletique/$product'
+    | '/publicite/signaletique/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -129,6 +160,8 @@ export interface FileRouteTypes {
     | '/stands/$product'
     | '/publicite'
     | '/stands'
+    | '/publicite/signaletique/$product'
+    | '/publicite/signaletique'
   id:
     | '__root__'
     | '/'
@@ -138,9 +171,12 @@ export interface FileRouteTypes {
     | '/publicite'
     | '/stands'
     | '/publicite/$category'
+    | '/publicite/signaletique'
     | '/stands/$product'
     | '/publicite/'
     | '/stands/'
+    | '/publicite/signaletique/$product'
+    | '/publicite/signaletique/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -217,6 +253,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StandsProductRouteImport
       parentRoute: typeof StandsRoute
     }
+    '/publicite/signaletique': {
+      id: '/publicite/signaletique'
+      path: '/signaletique'
+      fullPath: '/publicite/signaletique'
+      preLoaderRoute: typeof PubliciteSignaletiqueRouteImport
+      parentRoute: typeof PubliciteRoute
+    }
     '/publicite/$category': {
       id: '/publicite/$category'
       path: '/$category'
@@ -224,16 +267,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PubliciteCategoryRouteImport
       parentRoute: typeof PubliciteRoute
     }
+    '/publicite/signaletique/': {
+      id: '/publicite/signaletique/'
+      path: '/'
+      fullPath: '/publicite/signaletique/'
+      preLoaderRoute: typeof PubliciteSignaletiqueIndexRouteImport
+      parentRoute: typeof PubliciteSignaletiqueRoute
+    }
+    '/publicite/signaletique/$product': {
+      id: '/publicite/signaletique/$product'
+      path: '/$product'
+      fullPath: '/publicite/signaletique/$product'
+      preLoaderRoute: typeof PubliciteSignaletiqueProductRouteImport
+      parentRoute: typeof PubliciteSignaletiqueRoute
+    }
   }
 }
 
+interface PubliciteSignaletiqueRouteChildren {
+  PubliciteSignaletiqueProductRoute: typeof PubliciteSignaletiqueProductRoute
+  PubliciteSignaletiqueIndexRoute: typeof PubliciteSignaletiqueIndexRoute
+}
+
+const PubliciteSignaletiqueRouteChildren: PubliciteSignaletiqueRouteChildren = {
+  PubliciteSignaletiqueProductRoute: PubliciteSignaletiqueProductRoute,
+  PubliciteSignaletiqueIndexRoute: PubliciteSignaletiqueIndexRoute,
+}
+
+const PubliciteSignaletiqueRouteWithChildren =
+  PubliciteSignaletiqueRoute._addFileChildren(
+    PubliciteSignaletiqueRouteChildren,
+  )
+
 interface PubliciteRouteChildren {
   PubliciteCategoryRoute: typeof PubliciteCategoryRoute
+  PubliciteSignaletiqueRoute: typeof PubliciteSignaletiqueRouteWithChildren
   PubliciteIndexRoute: typeof PubliciteIndexRoute
 }
 
 const PubliciteRouteChildren: PubliciteRouteChildren = {
   PubliciteCategoryRoute: PubliciteCategoryRoute,
+  PubliciteSignaletiqueRoute: PubliciteSignaletiqueRouteWithChildren,
   PubliciteIndexRoute: PubliciteIndexRoute,
 }
 
