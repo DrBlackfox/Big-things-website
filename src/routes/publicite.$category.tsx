@@ -109,12 +109,12 @@ function CategoryPage() {
             </div>
           )}
 
-          <Link
-            to="/contact"
-            className="mt-12 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] hover:text-white transition-colors"
-          >
-            Obtenir un devis gratuit
-          </Link>
+        </div>
+      </main>
+      <SiteFooter />
+    </div>
+  );
+
         </div>
       </main>
       <SiteFooter />
