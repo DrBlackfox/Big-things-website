@@ -17,6 +17,7 @@ import lettres1 from "@/assets/sig-lettres-1.webp.asset.json";
 import lettres2 from "@/assets/sig-lettres-2.webp.asset.json";
 import lettres3 from "@/assets/sig-lettres-3.webp.asset.json";
 import lettres4 from "@/assets/sig-lettres-4.webp.asset.json";
+import ampoulesMain from "@/assets/sig-ampoules-main.jpg.asset.json";
 
 export type SignaletiqueProduct = {
   slug: string;
