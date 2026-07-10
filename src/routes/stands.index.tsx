@@ -46,15 +46,21 @@ function StandsIndex() {
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wide">
+                {/* Sliding overlay panel */}
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-black/55 backdrop-blur-[2px] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col items-center justify-center text-center px-5">
+                  <h2 className="text-lg md:text-2xl font-bold uppercase tracking-wide text-white">
                     {p.title}
                   </h2>
-                  <p className="mt-1 text-sm text-white/85">{p.subtitle}</p>
-                  <span className="mt-4 inline-flex items-center border border-white text-white uppercase tracking-[0.25em] text-[11px] px-6 py-2.5 group-hover:bg-[color:var(--brand-orange)] group-hover:border-[color:var(--brand-orange)] transition-colors">
+                  <p className="mt-1 text-xs md:text-sm text-white/85 max-w-xs">{p.subtitle}</p>
+                  <span className="mt-4 inline-flex items-center border border-white text-white uppercase tracking-[0.25em] text-[11px] px-6 py-2.5 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] transition-colors">
                     Découvrir
                   </span>
+                </div>
+                {/* Persistent title strip at bottom (visible when not hovered) */}
+                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                  <h3 className="text-base md:text-lg font-bold uppercase tracking-wide">
+                    {p.title}
+                  </h3>
                 </div>
               </Link>
             ))}
