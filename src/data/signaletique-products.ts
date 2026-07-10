@@ -17,6 +17,7 @@ import lettres1 from "@/assets/sig-lettres-1.webp.asset.json";
 import lettres2 from "@/assets/sig-lettres-2.webp.asset.json";
 import lettres3 from "@/assets/sig-lettres-3.webp.asset.json";
 import lettres4 from "@/assets/sig-lettres-4.webp.asset.json";
+import ampoulesMain from "@/assets/sig-ampoules-main.jpg.asset.json";
 
 export type SignaletiqueProduct = {
   slug: string;
@@ -65,5 +66,14 @@ export const signaletiqueProducts: SignaletiqueProduct[] = [
     description:
       "Lettres lumineuses en relief, découpées sur mesure et rétroéclairées en LED. Aluminium, PVC ou plexiglas, finitions peinture, brossé ou miroir. Un rendu haut de gamme pour enseignes de façade, réceptions d'entreprise et signalétique événementielle.",
     gallery: [lettresMain.url, lettres1.url, lettres2.url, lettres3.url, lettres4.url, lettres6.url],
+  },
+  {
+    slug: "ampoules-eclairage-interieur",
+    title: "Ampoules & Éclairage d'Intérieur",
+    subtitle: "Solutions d'éclairage intérieur décoratif et fonctionnel.",
+    image: ampoulesMain.url,
+    description:
+      "Ampoules décoratives et solutions d'éclairage d'intérieur pour boutiques, restaurants, bureaux et espaces résidentiels. Ampoules Edison vintage, suspensions design, spots LED encastrés et rubans lumineux : conception, fourniture et installation par notre équipe.",
+    gallery: [ampoulesMain.url],
   },
 ];
