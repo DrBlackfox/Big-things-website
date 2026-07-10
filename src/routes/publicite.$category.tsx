@@ -60,8 +60,15 @@ function CategoryPage() {
               </p>
               <div className="mt-6 h-px w-16 bg-[color:var(--brand-orange)]" />
               <p className="mt-6 text-white/80 leading-relaxed">{category.description}</p>
+              <Link
+                to="/contact"
+                className="mt-8 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] hover:text-white transition-colors"
+              >
+                Obtenir un devis gratuit
+              </Link>
             </div>
           </div>
+
 
 
           {category.gallery && category.gallery.length > 0 && (
@@ -102,12 +109,6 @@ function CategoryPage() {
             </div>
           )}
 
-          <Link
-            to="/contact"
-            className="mt-12 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] hover:text-white transition-colors"
-          >
-            Obtenir un devis gratuit
-          </Link>
         </div>
       </main>
       <SiteFooter />
