@@ -78,6 +78,6 @@ export const signaletiqueProducts: SignaletiqueProduct[] = [
     image: ampoulesMain.url,
     description:
       "Ampoules décoratives et solutions d'éclairage d'intérieur pour boutiques, restaurants, bureaux et espaces résidentiels. Ampoules Edison vintage, suspensions design, spots LED encastrés et rubans lumineux : conception, fourniture et installation par notre équipe.",
-    gallery: [ampoulesMain.url],
+    gallery: [ampoulesMain.url, ampoules1.url, ampoules2.url, ampoules3.url, ampoules4.url],
   },
 ];
