@@ -113,11 +113,6 @@ function CategoryPage() {
       </main>
       <SiteFooter />
     </div>
-  );
+}
 
-        </div>
-      </main>
-      <SiteFooter />
-    </div>
-  );
 }
