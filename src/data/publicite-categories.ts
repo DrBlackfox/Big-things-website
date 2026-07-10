@@ -5,6 +5,15 @@ import alucobond1 from "@/assets/alucobond-1.webp.asset.json";
 import alucobond2 from "@/assets/alucobond-2.webp.asset.json";
 import alucobond3 from "@/assets/alucobond-3.webp.asset.json";
 import alucobond4 from "@/assets/alucobond-4.webp.asset.json";
+import alucobond5 from "@/assets/alucobond-5.webp.asset.json";
+import alucobond6 from "@/assets/alucobond-6.webp.asset.json";
+import alucobond7 from "@/assets/alucobond-7.webp.asset.json";
+import alucobond8 from "@/assets/alucobond-8.webp.asset.json";
+import alucobond9 from "@/assets/alucobond-9.webp.asset.json";
+import alucobond10 from "@/assets/alucobond-10.webp.asset.json";
+import alucobond11 from "@/assets/alucobond-11.webp.asset.json";
+import alucobond12 from "@/assets/alucobond-12.webp.asset.json";
+import alucobond13 from "@/assets/alucobond-13.webp.asset.json";
 
 
 export type PubliciteCategory = {
