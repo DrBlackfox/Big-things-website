@@ -32,7 +32,7 @@ function Contact() {
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="text-[color:var(--brand-orange)] mt-1 shrink-0" />
-                <div><h3 className="font-semibold text-[color:var(--brand-orange)]">Email</h3><p className="text-neutral-600 break-all">darhoumi.w@bigthings.tn<br/>bigthingsdecoration@gmail.com</p></div>
+                <div><h3 className="font-semibold text-[color:var(--brand-orange)]">Email</h3><p className="text-neutral-600 break-all">bigthingsdecoration@gmail.com</p></div>
               </div>
               <div className="flex items-start gap-4">
                 <span className="text-[color:var(--brand-orange)] mt-1 font-bold">@</span>
