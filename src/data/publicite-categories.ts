@@ -56,6 +56,6 @@ export const publiciteCategories: PubliciteCategory[] = [
     description:
       "Habillage de façades et surfaces en panneaux composites Alucobond : deux tôles d'aluminium liées à une âme en polyéthylène. Résistant aux intempéries, léger, plan et rigide. Finitions brossées, brillantes, mates ou effet miroir. Idéal pour enseignes, façades commerciales et rénovations architecturales.",
     products: ["Panneaux Alucobond sur mesure"],
-    gallery: [alucobond.url],
+    gallery: [alucobond.url, alucobond1.url, alucobond2.url, alucobond3.url, alucobond4.url],
   },
 ];
