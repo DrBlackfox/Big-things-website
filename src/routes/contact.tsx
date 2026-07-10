@@ -19,7 +19,7 @@ function Contact() {
             <h1 className="mt-4 text-4xl md:text-6xl font-bold">Parlons de votre <span className="text-[color:var(--brand-orange)]">projet</span></h1>
           </div>
         </section>
-        <section className="py-20">
+        <section className="py-10 md:py-20">
           <div className="mx-auto max-w-6xl px-6 flex flex-col-reverse gap-12 md:grid md:grid-cols-2">
             <div className="space-y-6">
               <div className="flex items-start gap-4">
