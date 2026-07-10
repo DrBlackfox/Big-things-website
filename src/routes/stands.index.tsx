@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { standProducts } from "@/data/stands-products";
 
-export const Route = createFileRoute("/stands")({
+export const Route = createFileRoute("/stands/")({
   head: () => ({
     meta: [
       { title: "Stands d'exposition — Big Things Decoration" },
