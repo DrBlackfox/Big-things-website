@@ -38,7 +38,7 @@ function PubliciteIndex() {
                 key={c.slug}
                 to="/publicite/$category"
                 params={{ category: c.slug }}
-                className="group relative block aspect-[3/5] overflow-hidden bg-[color:var(--brand-charcoal)]"
+                className="group relative block aspect-[3/5] md:aspect-[3/4] lg:aspect-[4/5] overflow-hidden bg-[color:var(--brand-charcoal)]"
               >
                 <img
                   src={c.image}
