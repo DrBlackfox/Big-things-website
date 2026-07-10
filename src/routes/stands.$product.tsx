@@ -57,16 +57,16 @@ function ProductPage() {
             </div>
 
             <div>
-              <h1 className="text-3xl md:text-5xl font-bold text-[color:var(--brand-charcoal)] uppercase tracking-tight">
+              <h1 className="text-3xl md:text-5xl font-bold text-[color:var(--brand-orange)] uppercase tracking-tight">
                 {product.title}
               </h1>
-              <p className="mt-3 text-[color:var(--brand-orange)] uppercase tracking-widest text-xs font-semibold">
+              <p className="mt-3 text-white/80 uppercase tracking-widest text-xs font-semibold">
                 {product.subtitle}
               </p>
 
               <div className="mt-6 h-px w-16 bg-[color:var(--brand-orange)]" />
 
-              <p className="mt-6 text-neutral-700 leading-relaxed">
+              <p className="mt-6 text-white/75 leading-relaxed">
                 {product.description}
               </p>
 
