@@ -1,6 +1,11 @@
 import signaletique from "@/assets/signaletique.webp.asset.json";
 import publiciteCat from "@/assets/publicite-cat.webp.asset.json";
 import alucobond from "@/assets/alucobond.webp.asset.json";
+import alucobond1 from "@/assets/alucobond-1.webp.asset.json";
+import alucobond2 from "@/assets/alucobond-2.webp.asset.json";
+import alucobond3 from "@/assets/alucobond-3.webp.asset.json";
+import alucobond4 from "@/assets/alucobond-4.webp.asset.json";
+
 
 export type PubliciteCategory = {
   slug: string;
@@ -51,6 +56,6 @@ export const publiciteCategories: PubliciteCategory[] = [
     description:
       "Habillage de façades et surfaces en panneaux composites Alucobond : deux tôles d'aluminium liées à une âme en polyéthylène. Résistant aux intempéries, léger, plan et rigide. Finitions brossées, brillantes, mates ou effet miroir. Idéal pour enseignes, façades commerciales et rénovations architecturales.",
     products: ["Panneaux Alucobond sur mesure"],
-    gallery: [alucobond.url],
+    gallery: [alucobond.url, alucobond1.url, alucobond2.url, alucobond3.url, alucobond4.url],
   },
 ];
