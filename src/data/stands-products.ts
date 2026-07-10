@@ -24,7 +24,6 @@ export const standProducts: StandProduct[] = [
     image: multimedia.url,
     description:
       "Stand intégrant des écrans haute définition et supports numériques dynamiques. Structure aluminium, habillage en tissu tendu rétroéclairé, câblage dissimulé et alimentation intégrée. Compatible avec diffusion vidéo, contenus interactifs et signalétique digitale.",
-    gallery: [card1.url, card2.url],
   },
   {
     slug: "lightbox",
