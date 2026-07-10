@@ -1,6 +1,11 @@
 import signaletique from "@/assets/signaletique.webp.asset.json";
 import publiciteCat from "@/assets/publicite-cat.webp.asset.json";
 import alucobond from "@/assets/alucobond.webp.asset.json";
+import alucobond1 from "@/assets/alucobond-1.webp.asset.json";
+import alucobond2 from "@/assets/alucobond-2.webp.asset.json";
+import alucobond3 from "@/assets/alucobond-3.webp.asset.json";
+import alucobond4 from "@/assets/alucobond-4.webp.asset.json";
+
 
 export type PubliciteCategory = {
   slug: string;
