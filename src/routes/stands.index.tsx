@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { standProducts } from "@/data/stands-products";
 
-export const Route = createFileRoute("/stands/")({
+export const Route = createFileRoute("/stands")({
   head: () => ({
     meta: [
       { title: "Stands d'exposition — Big Things Decoration" },
@@ -52,7 +52,7 @@ function StandsIndex() {
                     {p.title}
                   </h2>
                   <p className="mt-1 text-xs md:text-sm text-white/85 max-w-xs">{p.subtitle}</p>
-                  <span className="mt-4 inline-flex items-center border border-white text-white uppercase tracking-[0.25em] text-[11px] px-6 py-2.5 hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-colors duration-200">
+                  <span className="mt-4 inline-flex items-center border border-white text-white uppercase tracking-[0.25em] text-[11px] px-6 py-2.5 transition-colors duration-200 group-hover:bg-[var(--brand-orange)] group-hover:border-[var(--brand-orange)] group-hover:text-white hover:bg-[var(--brand-orange)] hover:border-[var(--brand-orange)]">
                     Découvrir
                   </span>
                 </div>
