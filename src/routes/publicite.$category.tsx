@@ -115,6 +115,3 @@ function CategoryPage() {
     </div>
   );
 }
-
-
-}
