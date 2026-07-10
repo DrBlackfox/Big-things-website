@@ -56,7 +56,7 @@ export const standProducts: StandProduct[] = [
     image: parapluie.url,
     description:
       "Structure télescopique pliable à ouverture type parapluie. Panneaux magnétiques ou tissus imprimés fixés sur l'ossature. Montage en moins de cinq minutes sans outils, transport en housse rigide avec roulettes.",
-    gallery: [card1.url, card2.url],
+    
   },
   {
     slug: "tubulaire",
