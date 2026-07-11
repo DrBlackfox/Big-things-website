@@ -121,4 +121,13 @@ export const publiciteProducts: PubliciteProduct[] = [
       "Totems publicitaires en aluminium, acier ou composite, éclairés ou non, pour l'affichage extérieur et intérieur. Solutions robustes et personnalisables pour orienter, informer et valoriser votre marque : stations-service, parkings, centres commerciaux, showrooms et parcs d'activités. Étude, fabrication et pose assurées par notre équipe.",
     gallery: [totemMain.url, t1.url, t2.url, t3.url, t4.url, t5.url, t6.url, t7.url],
   },
+  {
+    slug: "habillage-vehicule",
+    title: "Habillage de Véhicule",
+    subtitle: "Covering et marquage publicitaire pour véhicules professionnels.",
+    image: vehMain.url,
+    description:
+      "Habillage complet ou partiel de véhicules (utilitaires, voitures, camions, food-trucks) en vinyle adhésif haute performance. Conception graphique sur mesure, découpe de précision et pose professionnelle pour transformer votre flotte en support publicitaire mobile durable, résistant aux intempéries et aux lavages.",
+    gallery: [vehMain.url, v1.url, v2.url, v3.url, v4.url, v5.url, v6.url, v7.url, v8.url, v9.url, v10.url],
+  },
 ];
