@@ -53,6 +53,17 @@ import t4 from "@/assets/totem-4.webp.asset.json";
 import t5 from "@/assets/totem-5.webp.asset.json";
 import t6 from "@/assets/totem-6.webp.asset.json";
 import t7 from "@/assets/totem-7.webp.asset.json";
+import vehMain from "@/assets/vehicule-main.jpg.asset.json";
+import v1 from "@/assets/vehicule-1.webp.asset.json";
+import v2 from "@/assets/vehicule-2.webp.asset.json";
+import v3 from "@/assets/vehicule-3.webp.asset.json";
+import v4 from "@/assets/vehicule-4.webp.asset.json";
+import v5 from "@/assets/vehicule-5.webp.asset.json";
+import v6 from "@/assets/vehicule-6.webp.asset.json";
+import v7 from "@/assets/vehicule-7.webp.asset.json";
+import v8 from "@/assets/vehicule-8.webp.asset.json";
+import v9 from "@/assets/vehicule-9.webp.asset.json";
+import v10 from "@/assets/vehicule-10.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
