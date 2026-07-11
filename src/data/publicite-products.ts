@@ -64,6 +64,12 @@ import v7 from "@/assets/vehicule-7.webp.asset.json";
 import v8 from "@/assets/vehicule-8.webp.asset.json";
 import v9 from "@/assets/vehicule-9.webp.asset.json";
 import v10 from "@/assets/vehicule-10.webp.asset.json";
+import v11 from "@/assets/vehicule-11.webp.asset.json";
+import v12 from "@/assets/vehicule-12.webp.asset.json";
+import v13 from "@/assets/vehicule-13.webp.asset.json";
+import v14 from "@/assets/vehicule-14.webp.asset.json";
+import v15 from "@/assets/vehicule-15.webp.asset.json";
+import v16 from "@/assets/vehicule-16.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
