@@ -70,6 +70,21 @@ import v13 from "@/assets/vehicule-13.webp.asset.json";
 import v14 from "@/assets/vehicule-14.webp.asset.json";
 import v15 from "@/assets/vehicule-15.webp.asset.json";
 import v16 from "@/assets/vehicule-16.webp.asset.json";
+import divMain from "@/assets/divers-main.jpeg.asset.json";
+import d1 from "@/assets/divers-1.webp.asset.json";
+import d2 from "@/assets/divers-2.webp.asset.json";
+import d3 from "@/assets/divers-3.webp.asset.json";
+import d4 from "@/assets/divers-4.webp.asset.json";
+import d5 from "@/assets/divers-5.webp.asset.json";
+import d6 from "@/assets/divers-6.webp.asset.json";
+import d7 from "@/assets/divers-7.webp.asset.json";
+import d8 from "@/assets/divers-8.webp.asset.json";
+import d9 from "@/assets/divers-9.webp.asset.json";
+import d10 from "@/assets/divers-10.webp.asset.json";
+import d11 from "@/assets/divers-11.webp.asset.json";
+import d12 from "@/assets/divers-12.webp.asset.json";
+import d13 from "@/assets/divers-13.webp.asset.json";
+import d14 from "@/assets/divers-14.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
