@@ -151,4 +151,13 @@ export const publiciteProducts: PubliciteProduct[] = [
       "Habillage complet ou partiel de véhicules (utilitaires, voitures, camions, food-trucks) en vinyle adhésif haute performance. Conception graphique sur mesure, découpe de précision et pose professionnelle pour transformer votre flotte en support publicitaire mobile durable, résistant aux intempéries et aux lavages.",
     gallery: [vehMain.url, v1.url, v2.url, v3.url, v4.url, v5.url, v6.url, v7.url, v8.url, v9.url, v10.url, v11.url, v12.url, v13.url, v14.url, v15.url, v16.url],
   },
+  {
+    slug: "divers-produits-sur-mesure",
+    title: "Divers Produits Sur Mesure",
+    subtitle: "Réalisations spécifiques et projets sur mesure pour toutes vos idées.",
+    image: divMain.url,
+    description:
+      "Conception et fabrication de produits publicitaires et décoratifs sur mesure : présentoirs, PLV, découpes spéciales, objets promotionnels, décors sur mesure et solutions hybrides pour vos besoins uniques. Notre atelier associe savoir-faire artisanal et technologies modernes pour donner vie à vos projets les plus originaux.",
+    gallery: [divMain.url, d1.url, d2.url, d3.url, d4.url, d5.url, d6.url, d7.url, d8.url, d9.url, d10.url, d11.url, d12.url, d13.url, d14.url],
+  },
 ];
