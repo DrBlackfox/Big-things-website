@@ -84,4 +84,13 @@ export const publiciteProducts: PubliciteProduct[] = [
       i18.url, i19.url, i20.url, i21.url, i22.url, i23.url, i24.url,
     ],
   },
+  {
+    slug: "oriflammes-drapeaux",
+    title: "Oriflammes & Drapeaux",
+    subtitle: "Oriflammes, beach flags et drapeaux publicitaires personnalisés.",
+    image: oriMain.url,
+    description:
+      "Oriflammes, beach flags et drapeaux publicitaires imprimés sur tissu haute qualité pour une visibilité maximale en intérieur comme en extérieur. Formes variées (goutte, plume, rectangulaire), mâts robustes et socles adaptés à chaque environnement (sable, béton, gazon). Idéal pour événements, salons, points de vente et campagnes de communication.",
+    gallery: [oriMain.url, o1.url, o2.url, o3.url, o4.url, o5.url, o6.url],
+  },
 ];
