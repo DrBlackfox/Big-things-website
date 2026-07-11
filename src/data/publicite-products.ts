@@ -13,6 +13,17 @@ import f11 from "@/assets/facade-11.webp.asset.json";
 import f12 from "@/assets/facade-12.webp.asset.json";
 import f13 from "@/assets/facade-13.webp.asset.json";
 import f14 from "@/assets/facade-14.webp.asset.json";
+import impMain from "@/assets/impression-main.webp.asset.json";
+import i1 from "@/assets/impression-1.webp.asset.json";
+import i2 from "@/assets/impression-2.webp.asset.json";
+import i3 from "@/assets/impression-3.webp.asset.json";
+import i4 from "@/assets/impression-4.webp.asset.json";
+import i5 from "@/assets/impression-5.webp.asset.json";
+import i6 from "@/assets/impression-6.webp.asset.json";
+import i7 from "@/assets/impression-7.webp.asset.json";
+import i8 from "@/assets/impression-8.webp.asset.json";
+import i9 from "@/assets/impression-9.webp.asset.json";
+import i10 from "@/assets/impression-10.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
@@ -35,6 +46,19 @@ export const publiciteProducts: PubliciteProduct[] = [
       facadeMain.url,
       f1.url, f2.url, f3.url, f4.url, f5.url, f6.url, f7.url,
       f8.url, f9.url, f10.url, f11.url, f12.url, f13.url, f14.url,
+    ],
+  },
+  {
+    slug: "impression-grand-format",
+    title: "Impression Grand Format",
+    subtitle: "Impressions haute résolution sur tous supports grand format.",
+    image: impMain.url,
+    description:
+      "Impression numérique grand format sur bâche, vinyle, papier affiche, toile et supports rigides. Idéal pour bannières, panneaux publicitaires, décors événementiels, vitrines et signalétique extérieure. Encres résistantes aux UV, couleurs fidèles et finitions professionnelles (œillets, ourlets, laminage) adaptées à chaque projet.",
+    gallery: [
+      impMain.url,
+      i1.url, i2.url, i3.url, i4.url, i5.url,
+      i6.url, i7.url, i8.url, i9.url, i10.url,
     ],
   },
 ];
