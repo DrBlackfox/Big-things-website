@@ -73,6 +73,8 @@ export const publiciteProducts: PubliciteProduct[] = [
       impMain.url,
       i1.url, i2.url, i3.url, i4.url, i5.url,
       i6.url, i7.url, i8.url, i9.url, i10.url,
+      i11.url, i12.url, i13.url, i14.url, i15.url, i16.url, i17.url,
+      i18.url, i19.url, i20.url, i21.url, i22.url, i23.url, i24.url,
     ],
   },
 ];
