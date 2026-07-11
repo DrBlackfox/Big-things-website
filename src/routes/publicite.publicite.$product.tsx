@@ -78,13 +78,13 @@ function PubliciteProductPage() {
               <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-[color:var(--brand-orange)]">
                 Galerie
               </h2>
-              <div className="mt-4 columns-2 md:columns-3 gap-3 [column-fill:_balance]">
+              <div className="mt-4 columns-2 md:columns-3 gap-5 [column-fill:_balance]">
                 {product.gallery.map((src: string, i: number) => (
                   <img
                     key={i}
                     src={src}
                     alt={`${product.title} — visuel ${i + 1}`}
-                    className="mb-3 w-full h-auto block break-inside-avoid"
+                    className="mb-5 w-full h-auto block break-inside-avoid"
                     loading="lazy"
                   />
                 ))}
