@@ -48,4 +48,17 @@ export const publiciteProducts: PubliciteProduct[] = [
       f8.url, f9.url, f10.url, f11.url, f12.url, f13.url, f14.url,
     ],
   },
+  {
+    slug: "impression-grand-format",
+    title: "Impression Grand Format",
+    subtitle: "Impressions haute résolution sur tous supports grand format.",
+    image: impMain.url,
+    description:
+      "Impression numérique grand format sur bâche, vinyle, papier affiche, toile et supports rigides. Idéal pour bannières, panneaux publicitaires, décors événementiels, vitrines et signalétique extérieure. Encres résistantes aux UV, couleurs fidèles et finitions professionnelles (œillets, ourlets, laminage) adaptées à chaque projet.",
+    gallery: [
+      impMain.url,
+      i1.url, i2.url, i3.url, i4.url, i5.url,
+      i6.url, i7.url, i8.url, i9.url, i10.url,
+    ],
+  },
 ];
