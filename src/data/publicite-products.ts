@@ -13,6 +13,17 @@ import f11 from "@/assets/facade-11.webp.asset.json";
 import f12 from "@/assets/facade-12.webp.asset.json";
 import f13 from "@/assets/facade-13.webp.asset.json";
 import f14 from "@/assets/facade-14.webp.asset.json";
+import impMain from "@/assets/impression-main.webp.asset.json";
+import i1 from "@/assets/impression-1.webp.asset.json";
+import i2 from "@/assets/impression-2.webp.asset.json";
+import i3 from "@/assets/impression-3.webp.asset.json";
+import i4 from "@/assets/impression-4.webp.asset.json";
+import i5 from "@/assets/impression-5.webp.asset.json";
+import i6 from "@/assets/impression-6.webp.asset.json";
+import i7 from "@/assets/impression-7.webp.asset.json";
+import i8 from "@/assets/impression-8.webp.asset.json";
+import i9 from "@/assets/impression-9.webp.asset.json";
+import i10 from "@/assets/impression-10.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
