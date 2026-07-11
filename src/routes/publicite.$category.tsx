@@ -76,16 +76,15 @@ function CategoryPage() {
               <h2 className="text-xl md:text-2xl font-bold uppercase tracking-wide text-[color:var(--brand-orange)]">
                 Galerie
               </h2>
-              <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="mt-4 columns-2 md:columns-3 gap-5 [column-fill:_balance]">
                 {category.gallery.map((src: string, i: number) => (
-                  <div key={i} className="aspect-[4/3] bg-neutral-100 overflow-hidden">
-                    <img
-                      src={src}
-                      alt={`${category.title} — visuel ${i + 1}`}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${category.title} — visuel ${i + 1}`}
+                    className="mb-5 w-full h-auto block break-inside-avoid"
+                    loading="lazy"
+                  />
                 ))}
               </div>
             </div>
