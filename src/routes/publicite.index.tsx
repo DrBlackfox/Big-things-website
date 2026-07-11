@@ -34,9 +34,10 @@ function PubliciteIndex() {
         <div className="mx-auto max-w-[95%] px-2 sm:px-4 pb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {publiciteCategories.map((c) => {
-              const isSignaletique = c.slug === "signaletique";
-              const linkProps = isSignaletique
+              const linkProps = c.slug === "signaletique"
                 ? ({ to: "/publicite/signaletique" } as const)
+                : c.slug === "publicite"
+                ? ({ to: "/publicite/publicite" } as const)
                 : ({ to: "/publicite/$category", params: { category: c.slug } } as const);
               return (
               <Link

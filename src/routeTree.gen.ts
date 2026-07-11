@@ -19,9 +19,12 @@ import { Route as StandsIndexRouteImport } from './routes/stands.index'
 import { Route as PubliciteIndexRouteImport } from './routes/publicite.index'
 import { Route as StandsProductRouteImport } from './routes/stands.$product'
 import { Route as PubliciteSignaletiqueRouteImport } from './routes/publicite.signaletique'
+import { Route as PublicitePubliciteRouteImport } from './routes/publicite.publicite'
 import { Route as PubliciteCategoryRouteImport } from './routes/publicite.$category'
 import { Route as PubliciteSignaletiqueIndexRouteImport } from './routes/publicite.signaletique.index'
+import { Route as PublicitePubliciteIndexRouteImport } from './routes/publicite.publicite.index'
 import { Route as PubliciteSignaletiqueProductRouteImport } from './routes/publicite.signaletique.$product'
+import { Route as PublicitePubliciteProductRouteImport } from './routes/publicite.publicite.$product'
 
 const StandsRoute = StandsRouteImport.update({
   id: '/stands',
@@ -73,6 +76,11 @@ const PubliciteSignaletiqueRoute = PubliciteSignaletiqueRouteImport.update({
   path: '/signaletique',
   getParentRoute: () => PubliciteRoute,
 } as any)
+const PublicitePubliciteRoute = PublicitePubliciteRouteImport.update({
+  id: '/publicite',
+  path: '/publicite',
+  getParentRoute: () => PubliciteRoute,
+} as any)
 const PubliciteCategoryRoute = PubliciteCategoryRouteImport.update({
   id: '/$category',
   path: '/$category',
@@ -84,11 +92,22 @@ const PubliciteSignaletiqueIndexRoute =
     path: '/',
     getParentRoute: () => PubliciteSignaletiqueRoute,
   } as any)
+const PublicitePubliciteIndexRoute = PublicitePubliciteIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PublicitePubliciteRoute,
+} as any)
 const PubliciteSignaletiqueProductRoute =
   PubliciteSignaletiqueProductRouteImport.update({
     id: '/$product',
     path: '/$product',
     getParentRoute: () => PubliciteSignaletiqueRoute,
+  } as any)
+const PublicitePubliciteProductRoute =
+  PublicitePubliciteProductRouteImport.update({
+    id: '/$product',
+    path: '/$product',
+    getParentRoute: () => PublicitePubliciteRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -99,11 +118,14 @@ export interface FileRoutesByFullPath {
   '/publicite': typeof PubliciteRouteWithChildren
   '/stands': typeof StandsRouteWithChildren
   '/publicite/$category': typeof PubliciteCategoryRoute
+  '/publicite/publicite': typeof PublicitePubliciteRouteWithChildren
   '/publicite/signaletique': typeof PubliciteSignaletiqueRouteWithChildren
   '/stands/$product': typeof StandsProductRoute
   '/publicite/': typeof PubliciteIndexRoute
   '/stands/': typeof StandsIndexRoute
+  '/publicite/publicite/$product': typeof PublicitePubliciteProductRoute
   '/publicite/signaletique/$product': typeof PubliciteSignaletiqueProductRoute
+  '/publicite/publicite/': typeof PublicitePubliciteIndexRoute
   '/publicite/signaletique/': typeof PubliciteSignaletiqueIndexRoute
 }
 export interface FileRoutesByTo {
@@ -115,7 +137,9 @@ export interface FileRoutesByTo {
   '/stands/$product': typeof StandsProductRoute
   '/publicite': typeof PubliciteIndexRoute
   '/stands': typeof StandsIndexRoute
+  '/publicite/publicite/$product': typeof PublicitePubliciteProductRoute
   '/publicite/signaletique/$product': typeof PubliciteSignaletiqueProductRoute
+  '/publicite/publicite': typeof PublicitePubliciteIndexRoute
   '/publicite/signaletique': typeof PubliciteSignaletiqueIndexRoute
 }
 export interface FileRoutesById {
@@ -127,11 +151,14 @@ export interface FileRoutesById {
   '/publicite': typeof PubliciteRouteWithChildren
   '/stands': typeof StandsRouteWithChildren
   '/publicite/$category': typeof PubliciteCategoryRoute
+  '/publicite/publicite': typeof PublicitePubliciteRouteWithChildren
   '/publicite/signaletique': typeof PubliciteSignaletiqueRouteWithChildren
   '/stands/$product': typeof StandsProductRoute
   '/publicite/': typeof PubliciteIndexRoute
   '/stands/': typeof StandsIndexRoute
+  '/publicite/publicite/$product': typeof PublicitePubliciteProductRoute
   '/publicite/signaletique/$product': typeof PubliciteSignaletiqueProductRoute
+  '/publicite/publicite/': typeof PublicitePubliciteIndexRoute
   '/publicite/signaletique/': typeof PubliciteSignaletiqueIndexRoute
 }
 export interface FileRouteTypes {
@@ -144,11 +171,14 @@ export interface FileRouteTypes {
     | '/publicite'
     | '/stands'
     | '/publicite/$category'
+    | '/publicite/publicite'
     | '/publicite/signaletique'
     | '/stands/$product'
     | '/publicite/'
     | '/stands/'
+    | '/publicite/publicite/$product'
     | '/publicite/signaletique/$product'
+    | '/publicite/publicite/'
     | '/publicite/signaletique/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -160,7 +190,9 @@ export interface FileRouteTypes {
     | '/stands/$product'
     | '/publicite'
     | '/stands'
+    | '/publicite/publicite/$product'
     | '/publicite/signaletique/$product'
+    | '/publicite/publicite'
     | '/publicite/signaletique'
   id:
     | '__root__'
@@ -171,11 +203,14 @@ export interface FileRouteTypes {
     | '/publicite'
     | '/stands'
     | '/publicite/$category'
+    | '/publicite/publicite'
     | '/publicite/signaletique'
     | '/stands/$product'
     | '/publicite/'
     | '/stands/'
+    | '/publicite/publicite/$product'
     | '/publicite/signaletique/$product'
+    | '/publicite/publicite/'
     | '/publicite/signaletique/'
   fileRoutesById: FileRoutesById
 }
@@ -260,6 +295,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PubliciteSignaletiqueRouteImport
       parentRoute: typeof PubliciteRoute
     }
+    '/publicite/publicite': {
+      id: '/publicite/publicite'
+      path: '/publicite'
+      fullPath: '/publicite/publicite'
+      preLoaderRoute: typeof PublicitePubliciteRouteImport
+      parentRoute: typeof PubliciteRoute
+    }
     '/publicite/$category': {
       id: '/publicite/$category'
       path: '/$category'
@@ -274,6 +316,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PubliciteSignaletiqueIndexRouteImport
       parentRoute: typeof PubliciteSignaletiqueRoute
     }
+    '/publicite/publicite/': {
+      id: '/publicite/publicite/'
+      path: '/'
+      fullPath: '/publicite/publicite/'
+      preLoaderRoute: typeof PublicitePubliciteIndexRouteImport
+      parentRoute: typeof PublicitePubliciteRoute
+    }
     '/publicite/signaletique/$product': {
       id: '/publicite/signaletique/$product'
       path: '/$product'
@@ -281,8 +330,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PubliciteSignaletiqueProductRouteImport
       parentRoute: typeof PubliciteSignaletiqueRoute
     }
+    '/publicite/publicite/$product': {
+      id: '/publicite/publicite/$product'
+      path: '/$product'
+      fullPath: '/publicite/publicite/$product'
+      preLoaderRoute: typeof PublicitePubliciteProductRouteImport
+      parentRoute: typeof PublicitePubliciteRoute
+    }
   }
 }
+
+interface PublicitePubliciteRouteChildren {
+  PublicitePubliciteProductRoute: typeof PublicitePubliciteProductRoute
+  PublicitePubliciteIndexRoute: typeof PublicitePubliciteIndexRoute
+}
+
+const PublicitePubliciteRouteChildren: PublicitePubliciteRouteChildren = {
+  PublicitePubliciteProductRoute: PublicitePubliciteProductRoute,
+  PublicitePubliciteIndexRoute: PublicitePubliciteIndexRoute,
+}
+
+const PublicitePubliciteRouteWithChildren =
+  PublicitePubliciteRoute._addFileChildren(PublicitePubliciteRouteChildren)
 
 interface PubliciteSignaletiqueRouteChildren {
   PubliciteSignaletiqueProductRoute: typeof PubliciteSignaletiqueProductRoute
@@ -301,12 +370,14 @@ const PubliciteSignaletiqueRouteWithChildren =
 
 interface PubliciteRouteChildren {
   PubliciteCategoryRoute: typeof PubliciteCategoryRoute
+  PublicitePubliciteRoute: typeof PublicitePubliciteRouteWithChildren
   PubliciteSignaletiqueRoute: typeof PubliciteSignaletiqueRouteWithChildren
   PubliciteIndexRoute: typeof PubliciteIndexRoute
 }
 
 const PubliciteRouteChildren: PubliciteRouteChildren = {
   PubliciteCategoryRoute: PubliciteCategoryRoute,
+  PublicitePubliciteRoute: PublicitePubliciteRouteWithChildren,
   PubliciteSignaletiqueRoute: PubliciteSignaletiqueRouteWithChildren,
   PubliciteIndexRoute: PubliciteIndexRoute,
 }
