@@ -85,6 +85,7 @@ import d11 from "@/assets/divers-11.webp.asset.json";
 import d12 from "@/assets/divers-12.webp.asset.json";
 import d13 from "@/assets/divers-13.webp.asset.json";
 import d14 from "@/assets/divers-14.webp.asset.json";
+import d15 from "@/assets/divers-15.jpeg.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
@@ -158,6 +159,6 @@ export const publiciteProducts: PubliciteProduct[] = [
     image: divMain.url,
     description:
       "Conception et fabrication de produits publicitaires et décoratifs sur mesure : présentoirs, PLV, découpes spéciales, objets promotionnels, décors sur mesure et solutions hybrides pour vos besoins uniques. Notre atelier associe savoir-faire artisanal et technologies modernes pour donner vie à vos projets les plus originaux.",
-    gallery: [divMain.url, d1.url, d2.url, d3.url, d4.url, d5.url, d6.url, d7.url, d8.url, d9.url, d10.url, d11.url, d12.url, d13.url, d14.url],
+    gallery: [divMain.url, d1.url, d2.url, d3.url, d4.url, d5.url, d6.url, d7.url, d8.url, d9.url, d10.url, d11.url, d12.url, d13.url, d14.url, d15.url],
   },
 ];
