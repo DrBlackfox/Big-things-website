@@ -45,6 +45,14 @@ import o3 from "@/assets/oriflamme-3.webp.asset.json";
 import o4 from "@/assets/oriflamme-4.webp.asset.json";
 import o5 from "@/assets/oriflamme-5.webp.asset.json";
 import o6 from "@/assets/oriflamme-6.webp.asset.json";
+import totemMain from "@/assets/totem-main.webp.asset.json";
+import t1 from "@/assets/totem-1.webp.asset.json";
+import t2 from "@/assets/totem-2.webp.asset.json";
+import t3 from "@/assets/totem-3.webp.asset.json";
+import t4 from "@/assets/totem-4.webp.asset.json";
+import t5 from "@/assets/totem-5.webp.asset.json";
+import t6 from "@/assets/totem-6.webp.asset.json";
+import t7 from "@/assets/totem-7.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
@@ -92,5 +100,14 @@ export const publiciteProducts: PubliciteProduct[] = [
     description:
       "Oriflammes, beach flags et drapeaux publicitaires imprimés sur tissu haute qualité pour une visibilité maximale en intérieur comme en extérieur. Formes variées (goutte, plume, rectangulaire), mâts robustes et socles adaptés à chaque environnement (sable, béton, gazon). Idéal pour événements, salons, points de vente et campagnes de communication.",
     gallery: [oriMain.url, o1.url, o2.url, o3.url, o4.url, o5.url, o6.url],
+  },
+  {
+    slug: "totem-publicitaire",
+    title: "Totem Publicitaire",
+    subtitle: "Totems d'affichage et de signalétique sur mesure.",
+    image: totemMain.url,
+    description:
+      "Totems publicitaires en aluminium, acier ou composite, éclairés ou non, pour l'affichage extérieur et intérieur. Solutions robustes et personnalisables pour orienter, informer et valoriser votre marque : stations-service, parkings, centres commerciaux, showrooms et parcs d'activités. Étude, fabrication et pose assurées par notre équipe.",
+    gallery: [totemMain.url, t1.url, t2.url, t3.url, t4.url, t5.url, t6.url, t7.url],
   },
 ];
