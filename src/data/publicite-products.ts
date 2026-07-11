@@ -38,6 +38,13 @@ import i21 from "@/assets/impression-21.webp.asset.json";
 import i22 from "@/assets/impression-22.webp.asset.json";
 import i23 from "@/assets/impression-23.webp.asset.json";
 import i24 from "@/assets/impression-24.webp.asset.json";
+import oriMain from "@/assets/oriflamme-main.webp.asset.json";
+import o1 from "@/assets/oriflamme-1.webp.asset.json";
+import o2 from "@/assets/oriflamme-2.webp.asset.json";
+import o3 from "@/assets/oriflamme-3.webp.asset.json";
+import o4 from "@/assets/oriflamme-4.webp.asset.json";
+import o5 from "@/assets/oriflamme-5.webp.asset.json";
+import o6 from "@/assets/oriflamme-6.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
@@ -76,5 +83,14 @@ export const publiciteProducts: PubliciteProduct[] = [
       i11.url, i12.url, i13.url, i14.url, i15.url, i16.url, i17.url,
       i18.url, i19.url, i20.url, i21.url, i22.url, i23.url, i24.url,
     ],
+  },
+  {
+    slug: "oriflammes-drapeaux",
+    title: "Oriflammes & Drapeaux",
+    subtitle: "Oriflammes, beach flags et drapeaux publicitaires personnalisés.",
+    image: oriMain.url,
+    description:
+      "Oriflammes, beach flags et drapeaux publicitaires imprimés sur tissu haute qualité pour une visibilité maximale en intérieur comme en extérieur. Formes variées (goutte, plume, rectangulaire), mâts robustes et socles adaptés à chaque environnement (sable, béton, gazon). Idéal pour événements, salons, points de vente et campagnes de communication.",
+    gallery: [oriMain.url, o1.url, o2.url, o3.url, o4.url, o5.url, o6.url],
   },
 ];
