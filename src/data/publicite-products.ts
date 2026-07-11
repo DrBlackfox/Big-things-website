@@ -101,4 +101,13 @@ export const publiciteProducts: PubliciteProduct[] = [
       "Oriflammes, beach flags et drapeaux publicitaires imprimés sur tissu haute qualité pour une visibilité maximale en intérieur comme en extérieur. Formes variées (goutte, plume, rectangulaire), mâts robustes et socles adaptés à chaque environnement (sable, béton, gazon). Idéal pour événements, salons, points de vente et campagnes de communication.",
     gallery: [oriMain.url, o1.url, o2.url, o3.url, o4.url, o5.url, o6.url],
   },
+  {
+    slug: "totem-publicitaire",
+    title: "Totem Publicitaire",
+    subtitle: "Totems d'affichage et de signalétique sur mesure.",
+    image: totemMain.url,
+    description:
+      "Totems publicitaires en aluminium, acier ou composite, éclairés ou non, pour l'affichage extérieur et intérieur. Solutions robustes et personnalisables pour orienter, informer et valoriser votre marque : stations-service, parkings, centres commerciaux, showrooms et parcs d'activités. Étude, fabrication et pose assurées par notre équipe.",
+    gallery: [totemMain.url, t1.url, t2.url, t3.url, t4.url, t5.url, t6.url, t7.url],
+  },
 ];
