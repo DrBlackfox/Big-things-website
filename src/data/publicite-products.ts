@@ -85,6 +85,7 @@ import d11 from "@/assets/divers-11.webp.asset.json";
 import d12 from "@/assets/divers-12.webp.asset.json";
 import d13 from "@/assets/divers-13.webp.asset.json";
 import d14 from "@/assets/divers-14.webp.asset.json";
+import d15 from "@/assets/divers-15.jpeg.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
