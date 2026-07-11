@@ -24,6 +24,20 @@ import i7 from "@/assets/impression-7.webp.asset.json";
 import i8 from "@/assets/impression-8.webp.asset.json";
 import i9 from "@/assets/impression-9.webp.asset.json";
 import i10 from "@/assets/impression-10.webp.asset.json";
+import i11 from "@/assets/impression-11.webp.asset.json";
+import i12 from "@/assets/impression-12.webp.asset.json";
+import i13 from "@/assets/impression-13.webp.asset.json";
+import i14 from "@/assets/impression-14.webp.asset.json";
+import i15 from "@/assets/impression-15.webp.asset.json";
+import i16 from "@/assets/impression-16.webp.asset.json";
+import i17 from "@/assets/impression-17.webp.asset.json";
+import i18 from "@/assets/impression-18.webp.asset.json";
+import i19 from "@/assets/impression-19.webp.asset.json";
+import i20 from "@/assets/impression-20.webp.asset.json";
+import i21 from "@/assets/impression-21.webp.asset.json";
+import i22 from "@/assets/impression-22.webp.asset.json";
+import i23 from "@/assets/impression-23.webp.asset.json";
+import i24 from "@/assets/impression-24.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
