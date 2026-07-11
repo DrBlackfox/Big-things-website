@@ -38,6 +38,13 @@ import i21 from "@/assets/impression-21.webp.asset.json";
 import i22 from "@/assets/impression-22.webp.asset.json";
 import i23 from "@/assets/impression-23.webp.asset.json";
 import i24 from "@/assets/impression-24.webp.asset.json";
+import oriMain from "@/assets/oriflamme-main.webp.asset.json";
+import o1 from "@/assets/oriflamme-1.webp.asset.json";
+import o2 from "@/assets/oriflamme-2.webp.asset.json";
+import o3 from "@/assets/oriflamme-3.webp.asset.json";
+import o4 from "@/assets/oriflamme-4.webp.asset.json";
+import o5 from "@/assets/oriflamme-5.webp.asset.json";
+import o6 from "@/assets/oriflamme-6.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
