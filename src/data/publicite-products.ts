@@ -45,6 +45,14 @@ import o3 from "@/assets/oriflamme-3.webp.asset.json";
 import o4 from "@/assets/oriflamme-4.webp.asset.json";
 import o5 from "@/assets/oriflamme-5.webp.asset.json";
 import o6 from "@/assets/oriflamme-6.webp.asset.json";
+import totemMain from "@/assets/totem-main.webp.asset.json";
+import t1 from "@/assets/totem-1.webp.asset.json";
+import t2 from "@/assets/totem-2.webp.asset.json";
+import t3 from "@/assets/totem-3.webp.asset.json";
+import t4 from "@/assets/totem-4.webp.asset.json";
+import t5 from "@/assets/totem-5.webp.asset.json";
+import t6 from "@/assets/totem-6.webp.asset.json";
+import t7 from "@/assets/totem-7.webp.asset.json";
 
 export type PubliciteProduct = {
   slug: string;
