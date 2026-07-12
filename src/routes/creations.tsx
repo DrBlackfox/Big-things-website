@@ -37,7 +37,7 @@ function CreationsPage() {
 
       {hasVideos && (
         <section className="mx-auto max-w-6xl px-6 pb-16">
-          <h2 className="mb-6 text-2xl font-semibold text-[color:var(--brand-charcoal)]">Vidéos</h2>
+          <h2 className="mb-6 text-2xl font-semibold uppercase tracking-wider text-white">Vidéos</h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {creationVideos.map((v) => (
               <MuxVideoCard key={v.playbackId} video={v} />
@@ -48,7 +48,7 @@ function CreationsPage() {
 
       {hasPhotos && (
         <section className="mx-auto max-w-6xl px-6 pb-24">
-          <h2 className="mb-6 text-2xl font-semibold text-[color:var(--brand-charcoal)]">Photos</h2>
+          <h2 className="mb-6 text-2xl font-semibold uppercase tracking-wider text-white">Photos</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {creationPhotos.map((p) => (
               <div key={p.src} className="aspect-square overflow-hidden rounded-lg bg-neutral-100">
@@ -66,7 +66,7 @@ function CreationsPage() {
       )}
 
       {empty && (
-        <section className="mx-auto max-w-2xl px-6 pb-24 text-center text-neutral-600">
+        <section className="mx-auto max-w-2xl px-6 pb-24 text-center text-neutral-400">
           <p>Le contenu arrive bientôt — ajoutez vos Playback IDs Mux et vos photos dans <code>src/data/creations.ts</code>.</p>
         </section>
       )}
