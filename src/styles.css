@@ -219,6 +219,53 @@ html {
   }
 }
 
+/* Chrome/mobile forced dark-mode guard: keep every site color fixed. */
+.text-\[color\:var\(--brand-orange\)\] { color: #f05527 !important; }
+.text-\[color\:var\(--brand-charcoal\)\] { color: #231f20 !important; }
+.hover\:text-\[color\:var\(--brand-orange\)\]:hover { color: #f05527 !important; }
+.text-white { color: #ffffff !important; }
+.text-white\/60 { color: rgb(255 255 255 / 0.6) !important; }
+.text-white\/70 { color: rgb(255 255 255 / 0.7) !important; }
+.text-white\/75 { color: rgb(255 255 255 / 0.75) !important; }
+.text-white\/80 { color: rgb(255 255 255 / 0.8) !important; }
+.text-white\/85 { color: rgb(255 255 255 / 0.85) !important; }
+.text-white\/90 { color: rgb(255 255 255 / 0.9) !important; }
+.text-neutral-300 { color: #d4d4d4 !important; }
+.text-neutral-500 { color: #737373 !important; }
+.text-neutral-600 { color: #525252 !important; }
+
+.bg-\[color\:var\(--brand-charcoal\)\] { background-color: #231f20 !important; }
+.bg-\[color\:var\(--brand-charcoal\)\]\/60 { background-color: rgb(35 31 32 / 0.6) !important; }
+.bg-\[color\:var\(--brand-charcoal\)\]\/90 { background-color: rgb(35 31 32 / 0.9) !important; }
+.bg-\[color\:var\(--brand-orange\)\] { background-color: #f05527 !important; }
+.bg-white { background-color: #ffffff !important; }
+.bg-white\/95 { background-color: rgb(255 255 255 / 0.95) !important; }
+.bg-black\/40 { background-color: rgb(0 0 0 / 0.4) !important; }
+.bg-black\/55 { background-color: rgb(0 0 0 / 0.55) !important; }
+.bg-white\/5 { background-color: rgb(255 255 255 / 0.05) !important; }
+.bg-neutral-100 { background-color: #f5f5f5 !important; }
+.bg-neutral-900 { background-color: #171717 !important; }
+
+.border-white { border-color: #ffffff !important; }
+.border-white\/10 { border-color: rgb(255 255 255 / 0.1) !important; }
+.border-neutral-200 { border-color: #e5e5e5 !important; }
+.hover\:border-\[color\:var\(--brand-orange\)\]:hover,
+.hover\:border-\[var\(--brand-orange\)\]:hover,
+.group-hover\:border-\[var\(--brand-orange\)\]:is(:where(.group):hover *) { border-color: #f05527 !important; }
+.hover\:bg-\[color\:var\(--brand-orange\)\]:hover,
+.hover\:bg-\[var\(--brand-orange\)\]:hover,
+.group-hover\:bg-\[var\(--brand-orange\)\]:is(:where(.group):hover *) { background-color: #f05527 !important; }
+.hover\:bg-\[color\:var\(--brand-charcoal\)\]:hover { background-color: #231f20 !important; }
+.group-hover\:text-white:is(:where(.group):hover *) { color: #ffffff !important; }
+
+.bg-gradient-to-t.from-black\/80.to-transparent {
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0.8), transparent) !important;
+}
+
+.bg-gradient-to-t.from-black\/85.to-transparent {
+  background-image: linear-gradient(to top, rgb(0 0 0 / 0.85), transparent) !important;
+}
+
 /* Hide Lovable badge */
 #lovable-badge,
 a[href*="lovable.dev"][target="_blank"],
