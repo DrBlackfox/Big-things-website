@@ -126,8 +126,12 @@ function Index() {
               <img
                 src={s.image}
                 alt={s.title}
+                loading={i <= 1 ? "eager" : "lazy"}
+                fetchPriority={i === 1 ? "high" : "auto"}
+                decoding={i === 1 ? "sync" : "async"}
                 className="absolute inset-0 w-full h-full object-cover"
               />
+
               <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/60" />
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
                 <h1 className="text-[color:var(--brand-orange)] font-bold tracking-[0.1em] text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl">
