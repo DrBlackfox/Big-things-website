@@ -49,9 +49,7 @@ function PubliciteProductPage() {
   const { product } = Route.useLoaderData();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[color:var(--brand-charcoal)]">
-      <SiteHeader />
-      <main className="flex-1">
+    <PageShell background="dark">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
             to="/publicite/publicite"
@@ -103,8 +101,6 @@ function PubliciteProductPage() {
             </div>
           )}
         </div>
-      </main>
-      <SiteFooter />
-    </div>
+    </PageShell>
   );
 }
