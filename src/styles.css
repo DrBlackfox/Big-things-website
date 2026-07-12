@@ -5,12 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  color-scheme: light only;
+  color-scheme: only light;
   forced-color-adjust: none;
 }
 
 html {
-  color-scheme: light only;
+  color-scheme: only light;
   forced-color-adjust: none;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
