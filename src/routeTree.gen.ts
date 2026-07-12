@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StandsRouteImport } from './routes/stands'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PubliciteRouteImport } from './routes/publicite'
 import { Route as EvenementielRouteImport } from './routes/evenementiel'
 import { Route as CreationsRouteImport } from './routes/creations'
@@ -29,6 +30,11 @@ import { Route as PublicitePubliciteProductRouteImport } from './routes/publicit
 const StandsRoute = StandsRouteImport.update({
   id: '/stands',
   path: '/stands',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PubliciteRoute = PubliciteRouteImport.update({
@@ -116,6 +122,7 @@ export interface FileRoutesByFullPath {
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
   '/publicite': typeof PubliciteRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stands': typeof StandsRouteWithChildren
   '/publicite/$category': typeof PubliciteCategoryRoute
   '/publicite/publicite': typeof PublicitePubliciteRouteWithChildren
@@ -133,6 +140,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/publicite/$category': typeof PubliciteCategoryRoute
   '/stands/$product': typeof StandsProductRoute
   '/publicite': typeof PubliciteIndexRoute
@@ -149,6 +157,7 @@ export interface FileRoutesById {
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
   '/publicite': typeof PubliciteRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stands': typeof StandsRouteWithChildren
   '/publicite/$category': typeof PubliciteCategoryRoute
   '/publicite/publicite': typeof PublicitePubliciteRouteWithChildren
@@ -169,6 +178,7 @@ export interface FileRouteTypes {
     | '/creations'
     | '/evenementiel'
     | '/publicite'
+    | '/sitemap.xml'
     | '/stands'
     | '/publicite/$category'
     | '/publicite/publicite'
@@ -186,6 +196,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/creations'
     | '/evenementiel'
+    | '/sitemap.xml'
     | '/publicite/$category'
     | '/stands/$product'
     | '/publicite'
@@ -201,6 +212,7 @@ export interface FileRouteTypes {
     | '/creations'
     | '/evenementiel'
     | '/publicite'
+    | '/sitemap.xml'
     | '/stands'
     | '/publicite/$category'
     | '/publicite/publicite'
@@ -220,6 +232,7 @@ export interface RootRouteChildren {
   CreationsRoute: typeof CreationsRoute
   EvenementielRoute: typeof EvenementielRoute
   PubliciteRoute: typeof PubliciteRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StandsRoute: typeof StandsRouteWithChildren
 }
 
@@ -230,6 +243,13 @@ declare module '@tanstack/react-router' {
       path: '/stands'
       fullPath: '/stands'
       preLoaderRoute: typeof StandsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/publicite': {
@@ -405,6 +425,7 @@ const rootRouteChildren: RootRouteChildren = {
   CreationsRoute: CreationsRoute,
   EvenementielRoute: EvenementielRoute,
   PubliciteRoute: PubliciteRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StandsRoute: StandsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
