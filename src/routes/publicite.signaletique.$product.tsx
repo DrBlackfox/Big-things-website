@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { PageShell } from "@/components/page-shell";
+import { abs } from "@/data/site";
 import { signaletiqueProducts } from "@/data/signaletique-products";
 
 export const Route = createFileRoute("/publicite/signaletique/$product")({
@@ -9,18 +9,29 @@ export const Route = createFileRoute("/publicite/signaletique/$product")({
     if (!product) throw notFound();
     return { product };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.product.title} — Big Things Decoration` },
-          { name: "description", content: loaderData.product.subtitle },
-        ]
-      : [{ title: "Produit introuvable" }, { name: "robots", content: "noindex" }],
-  }),
+  head: ({ params, loaderData }) => {
+    if (!loaderData) {
+      return { meta: [{ title: "Produit introuvable" }, { name: "robots", content: "noindex" }] };
+    }
+    const title = `${loaderData.product.title} — Big Things Decoration`;
+    const url = abs(`/publicite/signaletique/${params.product}`);
+    return {
+      meta: [
+        { title },
+        { name: "description", content: loaderData.product.subtitle },
+        { property: "og:title", content: title },
+        { property: "og:description", content: loaderData.product.subtitle },
+        { property: "og:url", content: url },
+        { property: "og:type", content: "product" },
+        { property: "og:image", content: loaderData.product.image },
+        { name: "twitter:image", content: loaderData.product.image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   notFoundComponent: () => (
-    <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-      <main className="flex-1 mx-auto max-w-4xl px-6 py-24 text-center">
+    <PageShell>
+      <div className="mx-auto max-w-4xl px-6 py-24 text-center">
         <h1 className="text-4xl font-bold text-[color:var(--brand-charcoal)]">Produit introuvable</h1>
         <Link
           to="/publicite/signaletique"
@@ -28,9 +39,8 @@ export const Route = createFileRoute("/publicite/signaletique/$product")({
         >
           ← Retour à la signalétique
         </Link>
-      </main>
-      <SiteFooter />
-    </div>
+      </div>
+    </PageShell>
   ),
   component: SignaletiqueProductPage,
 });
@@ -39,9 +49,7 @@ function SignaletiqueProductPage() {
   const { product } = Route.useLoaderData();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[color:var(--brand-charcoal)]">
-      <SiteHeader />
-      <main className="flex-1">
+    <PageShell background="dark">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
             to="/publicite/signaletique"
@@ -100,8 +108,6 @@ function SignaletiqueProductPage() {
             </div>
           )}
         </div>
-      </main>
-      <SiteFooter />
-    </div>
+    </PageShell>
   );
 }
