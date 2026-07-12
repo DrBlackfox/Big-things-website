@@ -117,8 +117,6 @@ function CategoryPage() {
           )}
 
         </div>
-      </main>
-      <SiteFooter />
-    </div>
+    </PageShell>
   );
 }
