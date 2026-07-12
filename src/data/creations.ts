@@ -20,7 +20,7 @@ export type CreationPhoto = {
 };
 
 export const creationVideos: CreationVideo[] = [
-  { playbackId: "bSzIMkrK2HeNBebSpn9hJjmFNkv79UiweDY7EHkHyrE", title: "Big Things Decoration — projet récent", aspectRatio: "16/9" },
+  { playbackId: "bSzIMkrK2HeNBebSpn9hJjmFNkv79UiweDY7EHkHyrE", title: "XPENG", aspectRatio: "16/9" },
   // Add more videos here as you upload them to Mux.
 ];
 
