@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { PageShell } from "@/components/page-shell";
+import { abs } from "@/data/site";
 import { publiciteCategories } from "@/data/publicite-categories";
 
 export const Route = createFileRoute("/publicite/$category")({
@@ -9,25 +9,34 @@ export const Route = createFileRoute("/publicite/$category")({
     if (!category) throw notFound();
     return { category };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.category.title} — Big Things Decoration` },
-          { name: "description", content: loaderData.category.subtitle },
-        ]
-      : [{ title: "Catégorie introuvable" }, { name: "robots", content: "noindex" }],
-  }),
+  head: ({ params, loaderData }) => {
+    if (!loaderData) {
+      return { meta: [{ title: "Catégorie introuvable" }, { name: "robots", content: "noindex" }] };
+    }
+    const title = `${loaderData.category.title} — Big Things Decoration`;
+    const url = abs(`/publicite/${params.category}`);
+    return {
+      meta: [
+        { title },
+        { name: "description", content: loaderData.category.subtitle },
+        { property: "og:title", content: title },
+        { property: "og:description", content: loaderData.category.subtitle },
+        { property: "og:url", content: url },
+        { property: "og:image", content: loaderData.category.image },
+        { name: "twitter:image", content: loaderData.category.image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   notFoundComponent: () => (
-    <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-      <main className="flex-1 mx-auto max-w-4xl px-6 py-24 text-center">
+    <PageShell>
+      <div className="mx-auto max-w-4xl px-6 py-24 text-center">
         <h1 className="text-4xl font-bold text-[color:var(--brand-charcoal)]">Catégorie introuvable</h1>
         <Link to="/publicite" className="mt-8 inline-block text-[color:var(--brand-orange)] font-semibold uppercase text-sm tracking-wide">
           ← Retour
         </Link>
-      </main>
-      <SiteFooter />
-    </div>
+      </div>
+    </PageShell>
   ),
   component: CategoryPage,
 });
