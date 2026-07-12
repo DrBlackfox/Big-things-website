@@ -101,6 +101,7 @@ function ProductPage() {
               </Link>
             </div>
           </div>
+      </div>
     </PageShell>
   );
 }
