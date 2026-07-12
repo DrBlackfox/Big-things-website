@@ -7,7 +7,7 @@ export function SiteFooter() {
     <footer className="bg-[color:var(--brand-charcoal)] text-neutral-300">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src={logo.url} alt="Big Things Decoration" className="h-14 w-auto bg-white p-2 rounded" />
+          <img src={logo.url} alt="Big Things Decoration" width={140} height={56} loading="lazy" decoding="async" className="h-14 w-auto bg-white p-2 rounded" />
           <p className="mt-5 text-sm leading-relaxed max-w-md uppercase tracking-wide space-y-1">
             <span className="block">COMMUNICATION ÉVÉNEMENTIEL HYBRIDE</span>
             <span className="block">PUBLICITÉ & SIGNALÉTIQUE</span>

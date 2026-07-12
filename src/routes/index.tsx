@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -9,8 +9,14 @@ import publicite from "@/assets/publicite.webp.asset.json";
 import creations from "@/assets/creations.webp.asset.json";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [
+      { rel: "preload", as: "image", href: publicite.url, fetchpriority: "high" },
+    ],
+  }),
   component: Index,
 });
+
 
 const slides = [
   {
@@ -42,18 +48,22 @@ const slides = [
 
 function Index() {
   const count = slides.length;
-  const loopedSlides = [slides[count - 1], ...slides, slides[0]];
+  const loopedSlides = useMemo(
+    () => [slides[count - 1], ...slides, slides[0]],
+    [count],
+  );
   const [index, setIndex] = useState(1);
   const [animate, setAnimate] = useState(true);
   const pausedRef = useRef(false);
   const slidingRef = useRef(false);
 
-  const moveTo = (nextIndex: number) => {
+  const moveTo = useCallback((nextIndex: number) => {
     if (slidingRef.current) return;
     slidingRef.current = true;
     setAnimate(true);
     setIndex(nextIndex);
-  };
+  }, []);
+
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -116,8 +126,12 @@ function Index() {
               <img
                 src={s.image}
                 alt={s.title}
+                loading={i <= 1 ? "eager" : "lazy"}
+                fetchPriority={i === 1 ? "high" : "auto"}
+                decoding={i === 1 ? "sync" : "async"}
                 className="absolute inset-0 w-full h-full object-cover"
               />
+
               <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/60" />
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
                 <h1 className="text-[color:var(--brand-orange)] font-bold tracking-[0.1em] text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl">

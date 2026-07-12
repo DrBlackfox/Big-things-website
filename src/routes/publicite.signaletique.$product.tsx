@@ -92,6 +92,7 @@ function SignaletiqueProductPage() {
                     src={src}
                     alt={`${product.title} — visuel ${i + 1}`}
                     className="mb-5 w-full h-auto block break-inside-avoid"
+                    decoding="async"
                     loading="lazy"
                   />
                 ))}

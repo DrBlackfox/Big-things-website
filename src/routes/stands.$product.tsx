@@ -78,6 +78,7 @@ function ProductPage() {
                       src={src}
                       alt={`${product.title} — visuel ${i + 1}`}
                       className="w-full h-auto"
+                      decoding="async"
                       loading="lazy"
                     />
                   ))}

@@ -49,6 +49,7 @@ function SignaletiqueIndex() {
                 <img
                   src={p.image}
                   alt={p.title}
+                  decoding="async"
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

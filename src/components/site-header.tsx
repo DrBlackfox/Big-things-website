@@ -18,7 +18,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur border-b border-neutral-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo.url} alt="Big Things Decoration" className="h-12 w-auto" />
+          <img src={logo.url} alt="Big Things Decoration" width={120} height={48} fetchPriority="high" decoding="async" className="h-12 w-auto" />
         </Link>
         <nav className="hidden lg:flex items-center gap-8">
           {nav.map((n) => (
