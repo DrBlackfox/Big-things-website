@@ -48,18 +48,22 @@ const slides = [
 
 function Index() {
   const count = slides.length;
-  const loopedSlides = [slides[count - 1], ...slides, slides[0]];
+  const loopedSlides = useMemo(
+    () => [slides[count - 1], ...slides, slides[0]],
+    [count],
+  );
   const [index, setIndex] = useState(1);
   const [animate, setAnimate] = useState(true);
   const pausedRef = useRef(false);
   const slidingRef = useRef(false);
 
-  const moveTo = (nextIndex: number) => {
+  const moveTo = useCallback((nextIndex: number) => {
     if (slidingRef.current) return;
     slidingRef.current = true;
     setAnimate(true);
     setIndex(nextIndex);
-  };
+  }, []);
+
 
   useEffect(() => {
     const id = setInterval(() => {
