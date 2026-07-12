@@ -41,13 +41,15 @@ export function SiteHeader() {
         <button
           className="lg:hidden p-2 text-[color:var(--brand-charcoal)]"
           onClick={() => setOpen(!open)}
-          aria-label="Menu"
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-neutral-200 bg-white">
+        <div id="mobile-nav" className="lg:hidden border-t border-neutral-200 bg-white">
           <div className="px-4 py-4 flex flex-col gap-1">
             {nav.map((n) => (
               <Link
