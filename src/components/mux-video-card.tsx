@@ -133,7 +133,7 @@ export function MuxVideoCard({ video }: { video: CreationVideo }) {
 
       {!playing && (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-          <p className="text-sm font-semibold text-white">{video.title}</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[color:var(--brand-orange)]">{video.title}</p>
         </div>
       )}
     </div>
