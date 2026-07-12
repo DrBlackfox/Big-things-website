@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -9,8 +9,14 @@ import publicite from "@/assets/publicite.webp.asset.json";
 import creations from "@/assets/creations.webp.asset.json";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [
+      { rel: "preload", as: "image", href: publicite.url, fetchpriority: "high" },
+    ],
+  }),
   component: Index,
 });
+
 
 const slides = [
   {
