@@ -83,26 +83,86 @@ export function HeroSlider({
 
   const dragStartX = useRef<number | null>(null);
   const dragDelta = useRef(0);
+  const dragPointerId = useRef<number | null>(null);
+  const wheelLockedRef = useRef(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const indexRef = useRef(index);
 
-  const onPointerDown = (e: React.PointerEvent) => {
-    if (e.pointerType === "mouse" && e.button !== 0) return;
-    dragStartX.current = e.clientX;
-    dragDelta.current = 0;
-    pausedRef.current = true;
-  };
-  const onPointerMove = (e: React.PointerEvent) => {
-    if (dragStartX.current === null) return;
-    dragDelta.current = e.clientX - dragStartX.current;
-  };
-  const onPointerEnd = () => {
+  useEffect(() => {
+    indexRef.current = index;
+  }, [index]);
+
+  const finishDrag = () => {
     if (dragStartX.current === null) return;
     const delta = dragDelta.current;
     dragStartX.current = null;
     dragDelta.current = 0;
+    dragPointerId.current = null;
     pausedRef.current = false;
-    const threshold = 50;
+
+    const threshold = 40;
     if (delta > threshold) go(-1);
     else if (delta < -threshold) go(1);
+  };
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    if ((e.target as HTMLElement).closest("[data-carousel-control='true']")) return;
+    dragStartX.current = e.clientX;
+    dragDelta.current = 0;
+    dragPointerId.current = e.pointerId;
+    pausedRef.current = true;
+    e.currentTarget.setPointerCapture?.(e.pointerId);
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (dragStartX.current === null) return;
+    if (dragPointerId.current !== null && e.pointerId !== dragPointerId.current) return;
+    dragDelta.current = e.clientX - dragStartX.current;
+  };
+  const onPointerEnd = (e: React.PointerEvent) => {
+    if (dragPointerId.current !== null && e.pointerId !== dragPointerId.current) return;
+    e.currentTarget.releasePointerCapture?.(e.pointerId);
+    finishDrag();
+  };
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const onWheel = (e: WheelEvent) => {
+      const scrollDelta = Math.abs(e.deltaX) >= Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (Math.abs(scrollDelta) < 20 || wheelLockedRef.current) return;
+
+      e.preventDefault();
+      pausedRef.current = true;
+      wheelLockedRef.current = true;
+      moveTo(indexRef.current + (scrollDelta > 0 ? 1 : -1));
+
+      window.setTimeout(() => {
+        wheelLockedRef.current = false;
+        pausedRef.current = false;
+      }, 800);
+    };
+
+    section.addEventListener("wheel", onWheel, { passive: false });
+    return () => section.removeEventListener("wheel", onWheel);
+  }, [moveTo]);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length !== 1) return;
+    if ((e.target as HTMLElement).closest("[data-carousel-control='true']")) return;
+    dragStartX.current = e.touches[0].clientX;
+    dragDelta.current = 0;
+    pausedRef.current = true;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (dragStartX.current === null || e.touches.length !== 1) return;
+    dragDelta.current = e.touches[0].clientX - dragStartX.current;
+  };
+
+  const onTouchEnd = () => {
+    finishDrag();
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -112,15 +172,20 @@ export function HeroSlider({
 
   return (
     <section
+      ref={sectionRef}
       dir="ltr"
       tabIndex={0}
-      className="relative w-full h-[calc(100dvh-5rem)] min-h-[560px] bg-[color:var(--brand-charcoal)] overflow-hidden touch-pan-y select-none focus:outline-none"
+      className="relative w-full h-[calc(100dvh-5rem)] min-h-[560px] bg-[color:var(--brand-charcoal)] overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing focus:outline-none"
       onMouseEnter={() => (pausedRef.current = true)}
       onMouseLeave={() => (pausedRef.current = false)}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerEnd}
       onPointerCancel={onPointerEnd}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+      onTouchCancel={onTouchEnd}
       onKeyDown={onKeyDown}
       aria-roledescription="carousel"
       aria-label="Nos univers"
@@ -170,6 +235,7 @@ export function HeroSlider({
         {slides.map((_, i) => (
           <button
             type="button"
+              data-carousel-control="true"
             key={i}
             aria-label={`Slide ${i + 1}`}
             aria-current={i === activeDot ? "true" : undefined}
@@ -215,6 +281,7 @@ function ArrowButton({
   return (
     <button
       type="button"
+      data-carousel-control="true"
       aria-label={label}
       onClick={onClick}
       onMouseEnter={() => setActive(true)}
