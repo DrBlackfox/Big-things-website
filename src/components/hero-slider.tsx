@@ -25,6 +25,7 @@ export function HeroSlider({
 }) {
   const count = slides.length;
   const t = useT();
+  const { dir } = useLang();
   const loopedSlides = useMemo(
     () => [slides[count - 1], ...slides, slides[0]],
     [slides, count],
