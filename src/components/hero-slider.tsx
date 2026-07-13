@@ -1,7 +1,7 @@
 import { Link, type LinkProps } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useT } from "@/lib/i18n";
+import { useT, useLang } from "@/lib/i18n";
 
 export type HeroSlide = {
   title: string;
