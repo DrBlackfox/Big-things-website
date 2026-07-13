@@ -82,6 +82,7 @@ export function HeroSlider({
 
   return (
     <section
+      dir="ltr"
       className="relative w-full h-[calc(100dvh-5rem)] min-h-[560px] bg-[color:var(--brand-charcoal)] overflow-hidden"
       onMouseEnter={() => (pausedRef.current = true)}
       onMouseLeave={() => (pausedRef.current = false)}
