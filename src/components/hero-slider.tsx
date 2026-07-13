@@ -1,7 +1,7 @@
 import { Link, type LinkProps } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useT } from "@/lib/i18n";
+import { useT, useLang } from "@/lib/i18n";
 
 export type HeroSlide = {
   title: string;
@@ -25,6 +25,7 @@ export function HeroSlider({
 }) {
   const count = slides.length;
   const t = useT();
+  const { dir } = useLang();
   const loopedSlides = useMemo(
     () => [slides[count - 1], ...slides, slides[0]],
     [slides, count],
@@ -105,11 +106,11 @@ export function HeroSlider({
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/60" />
-            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-              <h1 className="text-[color:var(--brand-orange)] font-bold tracking-[0.1em] text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl">
+            <div dir={dir} className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+              <h1 className={`text-[color:var(--brand-orange)] font-bold ${dir === "rtl" ? "" : "tracking-[0.1em]"} text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl`}>
                 {t(s.title)}
               </h1>
-              <p className="mt-6 text-white uppercase tracking-widest text-sm sm:text-base md:text-lg font-medium max-w-2xl">
+              <p className={`mt-6 text-white ${dir === "rtl" ? "" : "uppercase tracking-widest"} text-sm sm:text-base md:text-lg font-medium max-w-2xl`}>
                 {t(s.subtitle)}
               </p>
               <Link
