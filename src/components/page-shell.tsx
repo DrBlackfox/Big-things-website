@@ -1,15 +1,10 @@
 import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { LanguageToggle } from "@/components/language-toggle";
 
 type Background = "light" | "dark";
 
-/**
- * Shared page shell: sticky header, main content region, footer.
- * Use `background="dark"` for pages built on the charcoal palette
- * (product listings, category pages), `"light"` (default) for
- * regular content pages.
- */
 export function PageShell({
   children,
   background = "light",
@@ -25,6 +20,7 @@ export function PageShell({
       <SiteHeader />
       <main className={`flex-1 ${mainClassName}`}>{children}</main>
       <SiteFooter />
+      <LanguageToggle />
     </div>
   );
 }
