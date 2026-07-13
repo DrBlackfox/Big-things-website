@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
 import type { CreationVideo } from "@/data/creations";
+import { useT } from "@/lib/i18n";
 
 const MuxPlayer = lazy(() => import("@mux/mux-player-react/lazy"));
 
@@ -16,6 +17,7 @@ export function MuxVideoCard({ video }: { video: CreationVideo }) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const [mounted, setMounted] = useState(false);
   const [playing, setPlaying] = useState(false); // full playback (with sound)
+  const t = useT();
   const poster = `https://image.mux.com/${video.playbackId}/thumbnail.webp?time=1`;
   const aspect = video.aspectRatio ?? "16/9";
 
@@ -133,7 +135,7 @@ export function MuxVideoCard({ video }: { video: CreationVideo }) {
 
       {!playing && (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[color:var(--brand-orange)]">{video.title}</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[color:var(--brand-orange)]">{t(video.title)}</p>
         </div>
       )}
     </div>
