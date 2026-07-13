@@ -35,6 +35,7 @@ export function HeroSlider({
   const [animate, setAnimate] = useState(true);
   const pausedRef = useRef(false);
   const slidingRef = useRef(false);
+  const slideUnlockTimeoutRef = useRef<number | null>(null);
   const reducedMotion = useReducedMotion();
 
   const moveTo = useCallback((nextIndex: number) => {
@@ -42,6 +43,21 @@ export function HeroSlider({
     slidingRef.current = true;
     setAnimate(true);
     setIndex(nextIndex);
+    if (slideUnlockTimeoutRef.current !== null) {
+      window.clearTimeout(slideUnlockTimeoutRef.current);
+    }
+    slideUnlockTimeoutRef.current = window.setTimeout(() => {
+      slidingRef.current = false;
+      slideUnlockTimeoutRef.current = null;
+    }, 850);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (slideUnlockTimeoutRef.current !== null) {
+        window.clearTimeout(slideUnlockTimeoutRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -57,7 +73,11 @@ export function HeroSlider({
   }, [intervalMs, reducedMotion]);
 
   const onTransitionEnd = (event: React.TransitionEvent<HTMLDivElement>) => {
-    if (event.propertyName !== "transform") return;
+    if (event.propertyName !== "transform" && event.propertyName !== "-webkit-transform") return;
+    if (slideUnlockTimeoutRef.current !== null) {
+      window.clearTimeout(slideUnlockTimeoutRef.current);
+      slideUnlockTimeoutRef.current = null;
+    }
     slidingRef.current = false;
     if (index === count + 1) {
       setAnimate(false);
@@ -78,9 +98,6 @@ export function HeroSlider({
     }
   }, [animate]);
 
-  const go = (dir: number) => moveTo(index + dir);
-  const activeDot = ((index - 1) % count + count) % count;
-
   const dragStartX = useRef<number | null>(null);
   const dragDelta = useRef(0);
   const dragPointerId = useRef<number | null>(null);
@@ -91,6 +108,12 @@ export function HeroSlider({
   useEffect(() => {
     indexRef.current = index;
   }, [index]);
+
+  const go = useCallback((direction: number) => {
+    moveTo(indexRef.current + direction);
+  }, [moveTo]);
+
+  const activeDot = ((index - 1) % count + count) % count;
 
   const finishDrag = () => {
     if (dragStartX.current === null) return;
@@ -149,6 +172,7 @@ export function HeroSlider({
   }, [moveTo]);
 
   const onTouchStart = (e: React.TouchEvent) => {
+    if ("PointerEvent" in window) return;
     if (e.touches.length !== 1) return;
     if ((e.target as HTMLElement).closest("[data-carousel-control='true']")) return;
     dragStartX.current = e.touches[0].clientX;
@@ -157,18 +181,33 @@ export function HeroSlider({
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
+    if ("PointerEvent" in window) return;
     if (dragStartX.current === null || e.touches.length !== 1) return;
     dragDelta.current = e.touches[0].clientX - dragStartX.current;
   };
 
   const onTouchEnd = () => {
+    if ("PointerEvent" in window) return;
     finishDrag();
   };
 
-  const onKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "ArrowLeft") go(-1);
-    else if (e.key === "ArrowRight") go(1);
-  };
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target;
+      if (target instanceof HTMLElement && target.closest("input, textarea, select, [contenteditable='true']")) return;
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+
+      e.preventDefault();
+      pausedRef.current = true;
+      go(e.key === "ArrowLeft" ? -1 : 1);
+      window.setTimeout(() => {
+        pausedRef.current = false;
+      }, 850);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [go]);
 
   return (
     <section
@@ -186,7 +225,6 @@ export function HeroSlider({
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       onTouchCancel={onTouchEnd}
-      onKeyDown={onKeyDown}
       aria-roledescription="carousel"
       aria-label="Nos univers"
     >
