@@ -164,3 +164,33 @@ function useReducedMotion() {
   }, []);
   return reduced;
 }
+
+function ArrowButton({
+  side,
+  label,
+  onClick,
+  children,
+}: {
+  side: "left" | "right";
+  label: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  const [active, setActive] = useState(false);
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      onFocus={() => setActive(true)}
+      onBlur={() => setActive(false)}
+      onPointerDown={() => setActive(true)}
+      style={{ backgroundColor: active ? "#f05527" : "rgba(0,0,0,0.4)" }}
+      className={`flex absolute ${side === "left" ? "left-4" : "right-4"} top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white`}
+    >
+      {children}
+    </button>
+  );
+}
