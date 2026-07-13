@@ -124,22 +124,12 @@ export function HeroSlider({
         ))}
       </div>
 
-      <button
-        type="button"
-        aria-label={t("Précédent")}
-        onClick={() => go(-1)}
-        className="flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] active:bg-[color:var(--brand-orange)] focus:bg-[color:var(--brand-orange)] text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-      >
+      <ArrowButton side="left" label={t("Précédent")} onClick={() => go(-1)}>
         <ChevronLeft />
-      </button>
-      <button
-        type="button"
-        aria-label={t("Suivant")}
-        onClick={() => go(1)}
-        className="flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] active:bg-[color:var(--brand-orange)] focus:bg-[color:var(--brand-orange)] text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-      >
+      </ArrowButton>
+      <ArrowButton side="right" label={t("Suivant")} onClick={() => go(1)}>
         <ChevronRight />
-      </button>
+      </ArrowButton>
 
       <div className="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-3">
         {slides.map((_, i) => (
@@ -173,4 +163,34 @@ function useReducedMotion() {
     return () => mql.removeEventListener("change", handler);
   }, []);
   return reduced;
+}
+
+function ArrowButton({
+  side,
+  label,
+  onClick,
+  children,
+}: {
+  side: "left" | "right";
+  label: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  const [active, setActive] = useState(false);
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+      onMouseEnter={() => setActive(true)}
+      onMouseLeave={() => setActive(false)}
+      onFocus={() => setActive(true)}
+      onBlur={() => setActive(false)}
+      onPointerDown={() => setActive(true)}
+      style={{ backgroundColor: active ? "#f05527" : "rgba(0,0,0,0.4)" }}
+      className={`flex absolute ${side === "left" ? "left-4" : "right-4"} top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white`}
+    >
+      {children}
+    </button>
+  );
 }
