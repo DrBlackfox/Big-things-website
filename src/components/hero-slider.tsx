@@ -106,11 +106,11 @@ export function HeroSlider({
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/60" />
-            <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-              <h1 className="text-[color:var(--brand-orange)] font-bold tracking-[0.1em] text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl">
+            <div dir={dir} className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+              <h1 className={`text-[color:var(--brand-orange)] font-bold ${dir === "rtl" ? "" : "tracking-[0.1em]"} text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl`}>
                 {t(s.title)}
               </h1>
-              <p className="mt-6 text-white uppercase tracking-widest text-sm sm:text-base md:text-lg font-medium max-w-2xl">
+              <p className={`mt-6 text-white ${dir === "rtl" ? "" : "uppercase tracking-widest"} text-sm sm:text-base md:text-lg font-medium max-w-2xl`}>
                 {t(s.subtitle)}
               </p>
               <Link
