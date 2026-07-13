@@ -120,13 +120,13 @@ export function HeroSlider({
   };
 
   const onWheel = (e: React.WheelEvent) => {
-    const horizontalDelta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.shiftKey ? e.deltaY : 0;
-    if (Math.abs(horizontalDelta) < 24 || wheelLockedRef.current) return;
+    const scrollDelta = Math.abs(e.deltaX) >= Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (Math.abs(scrollDelta) < 20 || wheelLockedRef.current) return;
 
     e.preventDefault();
     pausedRef.current = true;
     wheelLockedRef.current = true;
-    go(horizontalDelta > 0 ? 1 : -1);
+    go(scrollDelta > 0 ? 1 : -1);
 
     window.setTimeout(() => {
       wheelLockedRef.current = false;
