@@ -217,6 +217,14 @@ html {
   .bg-gradient-to-t.from-black\/85.to-transparent {
     background-image: linear-gradient(to top, rgb(0 0 0 / 0.85), transparent) !important;
   }
+
+  html[lang="ar"] .uppercase {
+    text-transform: none !important;
+  }
+
+  html[lang="ar"] [class*="tracking-"] {
+    letter-spacing: 0 !important;
+  }
 }
 
 /* Chrome/mobile forced dark-mode guard: keep every site color fixed. */
