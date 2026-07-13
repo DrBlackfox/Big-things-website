@@ -1,6 +1,7 @@
 import { Link, type LinkProps } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useT } from "@/lib/i18n";
 
 export type HeroSlide = {
   title: string;
@@ -23,6 +24,7 @@ export function HeroSlider({
   intervalMs?: number;
 }) {
   const count = slides.length;
+  const t = useT();
   const loopedSlides = useMemo(
     () => [slides[count - 1], ...slides, slides[0]],
     [slides, count],
@@ -104,16 +106,16 @@ export function HeroSlider({
             <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/60" />
             <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
               <h1 className="text-[color:var(--brand-orange)] font-bold tracking-[0.1em] text-3xl sm:text-5xl md:text-7xl leading-tight max-w-5xl">
-                {s.title}
+                {t(s.title)}
               </h1>
               <p className="mt-6 text-white uppercase tracking-widest text-sm sm:text-base md:text-lg font-medium max-w-2xl">
-                {s.subtitle}
+                {t(s.subtitle)}
               </p>
               <Link
                 to={s.to}
                 className="mt-10 inline-flex items-center border border-white text-white uppercase tracking-[0.3em] text-xs sm:text-sm px-10 py-4 hover:bg-[color:var(--brand-orange)] hover:border-[color:var(--brand-orange)] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-orange)] focus-visible:ring-offset-2"
               >
-                Découvrir
+                {t("Découvrir")}
               </Link>
             </div>
           </div>
@@ -122,7 +124,7 @@ export function HeroSlider({
 
       <button
         type="button"
-        aria-label="Précédent"
+        aria-label={t("Précédent")}
         onClick={() => go(-1)}
         className="flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
       >
@@ -130,7 +132,7 @@ export function HeroSlider({
       </button>
       <button
         type="button"
-        aria-label="Suivant"
+        aria-label={t("Suivant")}
         onClick={() => go(1)}
         className="flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
       >
