@@ -85,6 +85,12 @@ export function HeroSlider({
   const dragDelta = useRef(0);
   const dragPointerId = useRef<number | null>(null);
   const wheelLockedRef = useRef(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const indexRef = useRef(index);
+
+  useEffect(() => {
+    indexRef.current = index;
+  }, [index]);
 
   const finishDrag = () => {
     if (dragStartX.current === null) return;
@@ -119,20 +125,28 @@ export function HeroSlider({
     finishDrag();
   };
 
-  const onWheel = (e: React.WheelEvent) => {
-    const scrollDelta = Math.abs(e.deltaX) >= Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-    if (Math.abs(scrollDelta) < 20 || wheelLockedRef.current) return;
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
 
-    e.preventDefault();
-    pausedRef.current = true;
-    wheelLockedRef.current = true;
-    go(scrollDelta > 0 ? 1 : -1);
+    const onWheel = (e: WheelEvent) => {
+      const scrollDelta = Math.abs(e.deltaX) >= Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (Math.abs(scrollDelta) < 20 || wheelLockedRef.current) return;
 
-    window.setTimeout(() => {
-      wheelLockedRef.current = false;
-      pausedRef.current = false;
-    }, 800);
-  };
+      e.preventDefault();
+      pausedRef.current = true;
+      wheelLockedRef.current = true;
+      moveTo(indexRef.current + (scrollDelta > 0 ? 1 : -1));
+
+      window.setTimeout(() => {
+        wheelLockedRef.current = false;
+        pausedRef.current = false;
+      }, 800);
+    };
+
+    section.addEventListener("wheel", onWheel, { passive: false });
+    return () => section.removeEventListener("wheel", onWheel);
+  }, [moveTo]);
 
   const onTouchStart = (e: React.TouchEvent) => {
     if (e.touches.length !== 1) return;
@@ -158,6 +172,7 @@ export function HeroSlider({
 
   return (
     <section
+      ref={sectionRef}
       dir="ltr"
       tabIndex={0}
       className="relative w-full h-[calc(100dvh-5rem)] min-h-[560px] bg-[color:var(--brand-charcoal)] overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing focus:outline-none"
@@ -167,7 +182,6 @@ export function HeroSlider({
       onPointerMove={onPointerMove}
       onPointerUp={onPointerEnd}
       onPointerCancel={onPointerEnd}
-      onWheel={onWheel}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
