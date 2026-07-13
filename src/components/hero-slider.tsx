@@ -81,12 +81,47 @@ export function HeroSlider({
   const go = (dir: number) => moveTo(index + dir);
   const activeDot = ((index - 1) % count + count) % count;
 
+  const dragStartX = useRef<number | null>(null);
+  const dragDelta = useRef(0);
+
+  const onPointerDown = (e: React.PointerEvent) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    dragStartX.current = e.clientX;
+    dragDelta.current = 0;
+    pausedRef.current = true;
+  };
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (dragStartX.current === null) return;
+    dragDelta.current = e.clientX - dragStartX.current;
+  };
+  const onPointerEnd = () => {
+    if (dragStartX.current === null) return;
+    const delta = dragDelta.current;
+    dragStartX.current = null;
+    dragDelta.current = 0;
+    pausedRef.current = false;
+    const threshold = 50;
+    if (delta > threshold) go(-1);
+    else if (delta < -threshold) go(1);
+  };
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") go(-1);
+    else if (e.key === "ArrowRight") go(1);
+  };
+
   return (
     <section
       dir="ltr"
-      className="relative w-full h-[calc(100dvh-5rem)] min-h-[560px] bg-[color:var(--brand-charcoal)] overflow-hidden"
+      tabIndex={0}
+      className="relative w-full h-[calc(100dvh-5rem)] min-h-[560px] bg-[color:var(--brand-charcoal)] overflow-hidden touch-pan-y select-none focus:outline-none"
       onMouseEnter={() => (pausedRef.current = true)}
       onMouseLeave={() => (pausedRef.current = false)}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerEnd}
+      onPointerCancel={onPointerEnd}
+      onKeyDown={onKeyDown}
       aria-roledescription="carousel"
       aria-label="Nos univers"
     >
