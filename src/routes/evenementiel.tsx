@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
 import { abs } from "@/data/site";
+import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/evenementiel")({
   head: () => ({
@@ -13,15 +14,20 @@ export const Route = createFileRoute("/evenementiel")({
     ],
     links: [{ rel: "canonical", href: abs("/evenementiel") }],
   }),
-  component: () => (
+  component: EvenementielPage,
+});
+
+function EvenementielPage() {
+  const t = useT();
+  return (
     <PageShell>
       <div className="mx-auto max-w-4xl px-6 py-24 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-[color:var(--brand-charcoal)]">
-          Événe<span className="text-[color:var(--brand-orange)]">mentiel</span>
+          {t("Événe")}<span className="text-[color:var(--brand-orange)]">{t("mentiel")}</span>
         </h1>
-        <p className="mt-6 text-neutral-600">Page en cours de préparation — les produits arrivent bientôt.</p>
-        <Link to="/" className="mt-8 inline-block text-[color:var(--brand-orange)] font-semibold uppercase text-sm tracking-wide">← Retour</Link>
+        <p className="mt-6 text-neutral-600">{t("Page en cours de préparation — les produits arrivent bientôt.")}</p>
+        <Link to="/" className="mt-8 inline-block text-[color:var(--brand-orange)] font-semibold uppercase text-sm tracking-wide">{t("← Retour")}</Link>
       </div>
     </PageShell>
-  ),
-});
+  );
+}
