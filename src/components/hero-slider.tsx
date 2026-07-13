@@ -128,7 +128,7 @@ export function HeroSlider({
         type="button"
         aria-label={t("Précédent")}
         onClick={() => go(-1)}
-        className="flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        className="flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] active:bg-[color:var(--brand-orange)] focus:bg-[color:var(--brand-orange)] text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
       >
         <ChevronLeft />
       </button>
@@ -136,7 +136,7 @@ export function HeroSlider({
         type="button"
         aria-label={t("Suivant")}
         onClick={() => go(1)}
-        className="flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        className="flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 items-center justify-center bg-black/40 hover:bg-[color:var(--brand-orange)] active:bg-[color:var(--brand-orange)] focus:bg-[color:var(--brand-orange)] text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
       >
         <ChevronRight />
       </button>
