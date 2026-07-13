@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { MuxVideoCard } from "@/components/mux-video-card";
 import { creationPhotos, creationVideos } from "@/data/creations";
 import { abs } from "@/data/site";
+import { useT } from "@/lib/i18n";
 
 export const Route = createFileRoute("/creations")({
   head: () => ({
@@ -19,6 +20,7 @@ export const Route = createFileRoute("/creations")({
 });
 
 function CreationsPage() {
+  const t = useT();
   const hasVideos = creationVideos.length > 0;
   const hasPhotos = creationPhotos.length > 0;
   const empty = !hasVideos && !hasPhotos;
@@ -27,17 +29,16 @@ function CreationsPage() {
     <PageShell background="dark">
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-10 text-center">
         <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wider text-[color:var(--brand-orange)]">
-          Nos dernières créations
+          {t("Nos dernières créations")}
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-neutral-300">
-          Un aperçu de nos projets récents : stands, enseignes lumineuses, habillages et
-          productions événementielles.
+          {t("Un aperçu de nos projets récents : stands, enseignes lumineuses, habillages et productions événementielles.")}
         </p>
       </section>
 
       {hasVideos && (
         <section className="mx-auto max-w-6xl px-6 pb-16">
-          <h2 className="mb-6 text-2xl font-semibold uppercase tracking-wider text-white">Vidéos</h2>
+          <h2 className="mb-6 text-2xl font-semibold uppercase tracking-wider text-white">{t("Vidéos")}</h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {creationVideos.map((v) => (
               <MuxVideoCard key={v.playbackId} video={v} />
@@ -48,7 +49,7 @@ function CreationsPage() {
 
       {hasPhotos && (
         <section className="mx-auto max-w-6xl px-6 pb-24">
-          <h2 className="mb-6 text-2xl font-semibold uppercase tracking-wider text-white">Photos</h2>
+          <h2 className="mb-6 text-2xl font-semibold uppercase tracking-wider text-white">{t("Photos")}</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {creationPhotos.map((p) => (
               <div key={p.src} className="aspect-square overflow-hidden rounded-lg bg-neutral-100">
@@ -67,7 +68,7 @@ function CreationsPage() {
 
       {empty && (
         <section className="mx-auto max-w-2xl px-6 pb-24 text-center text-neutral-400">
-          <p>Le contenu arrive bientôt — ajoutez vos Playback IDs Mux et vos photos dans <code>src/data/creations.ts</code>.</p>
+          <p>{t("Le contenu arrive bientôt — ajoutez vos Playback IDs Mux et vos photos dans")} <code>src/data/creations.ts</code>.</p>
         </section>
       )}
     </PageShell>

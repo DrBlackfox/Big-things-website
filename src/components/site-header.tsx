@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.avif.asset.json";
+import { useT } from "@/lib/i18n";
 
 const nav = [
   { to: "/", label: "Accueil" },
@@ -10,10 +11,11 @@ const nav = [
   { to: "/publicite", label: "Publicité & Signalétique" },
   { to: "/creations", label: "Nos dernières créations" },
   { to: "/contact", label: "Contact" },
-];
+] as const;
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const t = useT();
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur border-b border-neutral-200">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
@@ -28,7 +30,7 @@ export function SiteHeader() {
               className="text-sm font-medium tracking-wide uppercase text-[color:var(--brand-charcoal)] hover:text-[color:var(--brand-orange)] transition-colors"
               activeProps={{ className: "text-[color:var(--brand-orange)]" }}
             >
-              {n.label}
+              {t(n.label)}
             </Link>
           ))}
         </nav>
@@ -36,12 +38,12 @@ export function SiteHeader() {
           to="/contact"
           className="hidden lg:inline-flex items-center px-5 py-2.5 bg-[color:var(--brand-orange)] text-white text-sm font-semibold uppercase tracking-wide hover:bg-[color:var(--brand-charcoal)] transition-colors"
         >
-          Devis gratuit
+          {t("Devis gratuit")}
         </Link>
         <button
           className="lg:hidden p-2 text-[color:var(--brand-charcoal)]"
           onClick={() => setOpen(!open)}
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={open ? t("Fermer le menu") : t("Ouvrir le menu")}
           aria-expanded={open}
           aria-controls="mobile-nav"
         >
@@ -58,7 +60,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="py-3 px-2 text-sm font-medium uppercase tracking-wide text-[color:var(--brand-charcoal)] hover:text-[color:var(--brand-orange)]"
               >
-                {n.label}
+                {t(n.label)}
               </Link>
             ))}
             <Link
@@ -66,7 +68,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center px-5 py-3 bg-[color:var(--brand-orange)] text-white text-sm font-semibold uppercase tracking-wide"
             >
-              Devis gratuit
+              {t("Devis gratuit")}
             </Link>
           </div>
         </div>
