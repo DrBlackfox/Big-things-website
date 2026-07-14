@@ -4,6 +4,9 @@ import { MuxVideoCard } from "@/components/mux-video-card";
 import { abs } from "@/data/site";
 import { useT } from "@/lib/i18n";
 import evenementielImg from "@/assets/evenementiel.webp.asset.json";
+import evt1 from "@/assets/evenementiel-1.jpg.asset.json";
+import evt2 from "@/assets/evenementiel-2.jpg.asset.json";
+import evt3 from "@/assets/evenementiel-3.jpg.asset.json";
 
 type GalleryVideo = { playbackId: string; title: string; aspectRatio?: string };
 type GalleryPhoto = { src: string; alt: string };
@@ -18,7 +21,11 @@ const galleryVideos: GalleryVideo[] = [
   { playbackId: "W3UVw6yc01fBcH4m01mD7XDF76dgG7Na2BXK4kxvzf00Jw", title: "Événementiel — 7", aspectRatio: "16/9" },
 ];
 
-const galleryPhotos: GalleryPhoto[] = [];
+const galleryPhotos: GalleryPhoto[] = [
+  { src: evt1.url, alt: "Événementiel — 1" },
+  { src: evt2.url, alt: "Événementiel — 2" },
+  { src: evt3.url, alt: "Événementiel — 3" },
+];
 
 export const Route = createFileRoute("/evenementiel")({
   head: () => ({
