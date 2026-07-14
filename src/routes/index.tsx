@@ -4,7 +4,7 @@ import { HeroSlider, type HeroSlide } from "@/components/hero-slider";
 import { SITE, abs } from "@/data/site";
 import stands from "@/assets/stands.webp.asset.json";
 import evenementiel from "@/assets/evenementiel.webp.asset.json";
-import publicite from "@/assets/publicite.webp.asset.json";
+import publicite from "@/assets/publicite-home.webp.asset.json";
 import creations from "@/assets/creations.webp.asset.json";
 
 const slides: HeroSlide[] = [
