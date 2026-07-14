@@ -29,7 +29,7 @@ export const standProducts: StandProduct[] = [
     slug: "lightbox",
     title: "Stand en Lightbox",
     subtitle: "Aluminium, tissu tendu et éclairage LED.",
-    image: lightbox.url,
+    image: toile.url,
     description:
       "Structure modulaire en profilés aluminium, habillage en tissu polyester à impression sublimation, éclairage LED, néon ou ampoules intégré au cadre. Assemblage sans outils, transport à plat, remplacement des visuels sans démontage de la structure.",
   },
@@ -45,7 +45,7 @@ export const standProducts: StandProduct[] = [
     slug: "toile-tendue",
     title: "Stand à Toile Tendue",
     subtitle: "Structure aluminium et impression textile grand format.",
-    image: toile.url,
+    image: lightbox.url,
     description:
       "Cadre aluminium autoportant recevant une toile tendue en polyester imprimée par sublimation. Finition mate ou satinée, tension uniforme sans plis. Montage rapide, faible poids, idéal pour les grandes surfaces graphiques.",
   },
