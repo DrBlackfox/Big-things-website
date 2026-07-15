@@ -80,6 +80,9 @@ const AR: Record<string, string> = {
   // Événementiel
   "Événe": "الفعا",
   "mentiel": "ليات",
+  "Conception, production et logistique événementielle.": "تصميم وإنتاج ولوجستيك حدثي.",
+  "Obtenir un devis gratuit pour votre événement": "احصل على عرض سعر مجاني لحدثك",
+
 
   // Stands index
   "Six gammes de stands sur mesure pour vos salons, showrooms et événements.":
