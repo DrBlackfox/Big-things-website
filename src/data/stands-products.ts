@@ -1,4 +1,4 @@
-import multimedia from "@/assets/stand-multimedia.webp.asset.json";
+import multimedia from "@/assets/stand-multimedia-new.webp.asset.json";
 import lightbox from "@/assets/stand-lightbox.webp.asset.json";
 import menuiserie from "@/assets/stand-menuiserie.webp.asset.json";
 import toile from "@/assets/stand-toile.webp.asset.json";
