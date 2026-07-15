@@ -21,6 +21,7 @@ export type CreationPhoto = {
 
 export const creationVideos: CreationVideo[] = [
   { playbackId: "bSzIMkrK2HeNBebSpn9hJjmFNkv79UiweDY7EHkHyrE", title: "XPENG", aspectRatio: "16/9" },
+  { playbackId: "vPpuOOoZ8igvYWw01EofqdneiavrhDBZEpXF3dXqTXgA", title: "Création", aspectRatio: "16/9" },
   // Add more videos here as you upload them to Mux.
 ];
 
