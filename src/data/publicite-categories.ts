@@ -28,6 +28,16 @@ export type PubliciteCategory = {
 
 export const publiciteCategories: PubliciteCategory[] = [
   {
+    slug: "alucobond",
+    title: "Revêtement en Alucobond",
+    subtitle: "Panneaux composites aluminium pour façades et habillages.",
+    image: alucobond.url,
+    description:
+      "Habillage de façades et surfaces en panneaux composites Alucobond : deux tôles d'aluminium liées à une âme en polyéthylène. Résistant aux intempéries, léger, plan et rigide. Finitions brossées, brillantes, mates ou effet miroir. Idéal pour enseignes, façades commerciales et rénovations architecturales.",
+    products: [],
+    gallery: [alucobond.url, alucobond1.url, alucobond2.url, alucobond3.url, alucobond4.url, alucobond5.url, alucobond6.url, alucobond7.url, alucobond8.url, alucobond9.url, alucobond10.url, alucobond11.url, alucobond12.url, alucobond13.url],
+  },
+  {
     slug: "signaletique",
     title: "Signalétique",
     subtitle: "Enseignes lumineuses, néons et affichage digital.",
@@ -56,15 +66,5 @@ export const publiciteCategories: PubliciteCategory[] = [
       "Impressions grand format",
       "Covering véhicules",
     ],
-  },
-  {
-    slug: "alucobond",
-    title: "Revêtement en Alucobond",
-    subtitle: "Panneaux composites aluminium pour façades et habillages.",
-    image: alucobond.url,
-    description:
-      "Habillage de façades et surfaces en panneaux composites Alucobond : deux tôles d'aluminium liées à une âme en polyéthylène. Résistant aux intempéries, léger, plan et rigide. Finitions brossées, brillantes, mates ou effet miroir. Idéal pour enseignes, façades commerciales et rénovations architecturales.",
-    products: [],
-    gallery: [alucobond.url, alucobond1.url, alucobond2.url, alucobond3.url, alucobond4.url, alucobond5.url, alucobond6.url, alucobond7.url, alucobond8.url, alucobond9.url, alucobond10.url, alucobond11.url, alucobond12.url, alucobond13.url],
   },
 ];
