@@ -130,12 +130,11 @@ export function HeroSlider({
 
   const onPointerDown = (e: React.PointerEvent) => {
     if (e.pointerType === "mouse" && e.button !== 0) return;
-    if ((e.target as HTMLElement).closest("[data-carousel-control='true']")) return;
+    if ((e.target as HTMLElement).closest("[data-carousel-control='true'], a, button")) return;
     dragStartX.current = e.clientX;
     dragDelta.current = 0;
     dragPointerId.current = e.pointerId;
     pausedRef.current = true;
-    e.currentTarget.setPointerCapture?.(e.pointerId);
   };
   const onPointerMove = (e: React.PointerEvent) => {
     if (dragStartX.current === null) return;
@@ -144,7 +143,6 @@ export function HeroSlider({
   };
   const onPointerEnd = (e: React.PointerEvent) => {
     if (dragPointerId.current !== null && e.pointerId !== dragPointerId.current) return;
-    e.currentTarget.releasePointerCapture?.(e.pointerId);
     finishDrag();
   };
 
