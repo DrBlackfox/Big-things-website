@@ -53,7 +53,7 @@ export const publiciteCategories: PubliciteCategory[] = [
     ],
   },
   {
-    slug: "publicite",
+    slug: "impression",
     title: "Publicité",
     subtitle: "Bannières, drapeaux, affiches et impressions grand format.",
     image: publiciteCat.url,

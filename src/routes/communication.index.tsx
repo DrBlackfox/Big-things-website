@@ -36,7 +36,7 @@ function PubliciteIndex() {
           {publiciteCategories.map((c) => {
             const linkProps = c.slug === "signaletique"
               ? ({ to: "/communication/signaletique" } as const)
-              : c.slug === "publicite"
+              : c.slug === "impression"
               ? ({ to: "/communication/impression" } as const)
               : ({ to: "/communication/$category", params: { category: c.slug } } as const);
             return (
