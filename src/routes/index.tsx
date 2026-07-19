@@ -2,34 +2,34 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
 import { HeroSlider, type HeroSlide } from "@/components/hero-slider";
 import { SITE, abs } from "@/data/site";
-import stands from "@/assets/stands.webp.asset.json";
-import evenementiel from "@/assets/evenementiel.webp.asset.json";
-import publicite from "@/assets/publicite-home.webp.asset.json";
-import creations from "@/assets/creations.webp.asset.json";
+import stands from "@/assets/stands.webp";
+import evenementiel from "@/assets/evenementiel.webp";
+import publicite from "@/assets/publicite-home.webp";
+import creations from "@/assets/creations.webp";
 
 const slides: HeroSlide[] = [
   {
     title: "PUBLICITÉ & SIGNALÉTIQUE",
     subtitle: "Enseignes, caissons lumineux & affichage éclairé.",
-    image: publicite.url,
+    image: publicite,
     to: "/publicite",
   },
   {
     title: "STANDS D'EXPOSITION",
     subtitle: "Création et réalisation de stand d'exposition sur mesure.",
-    image: stands.url,
+    image: stands,
     to: "/stands",
   },
   {
     title: "ÉVÉNEMENTIEL",
     subtitle: "Communication événementielle hybride.",
-    image: evenementiel.url,
+    image: evenementiel,
     to: "/evenementiel",
   },
   {
     title: "NOS DERNIÈRES CRÉATIONS",
     subtitle: "Sélection de nos réalisations récentes : photos et vidéos.",
-    image: creations.url,
+    image: creations,
     to: "/creations",
   },
 ];
