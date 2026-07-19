@@ -13,3 +13,7 @@ export default defineConfig({
     server: { entry: "server" },
   },
 });
+export default defineConfig({
+  base: 'Big-things-website',   // ← must match your GitHub repo name exactly
+  plugins: [react()],
+})
