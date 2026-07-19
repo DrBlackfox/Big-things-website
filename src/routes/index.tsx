@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: abs("/") },
     ],
     links: [
-      { rel: "preload", as: "image", href: publicite.url, fetchPriority: "high" },
+      { rel: "preload", as: "image", href: publicite, fetchPriority: "high" },
       { rel: "canonical", href: abs("/") },
     ],
     scripts: [
