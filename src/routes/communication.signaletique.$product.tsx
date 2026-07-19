@@ -15,7 +15,7 @@ export const Route = createFileRoute("/communication/signaletique/$product")({
       return { meta: [{ title: "Produit introuvable" }, { name: "robots", content: "noindex" }] };
     }
     const title = `${loaderData.product.title} — Big Things Decoration`;
-    const url = abs(`/publicite/signaletique/${params.product}`);
+    const url = abs(`/communication/signaletique/${params.product}`);
     return {
       meta: [
         { title },
@@ -41,7 +41,7 @@ function SignaletiqueProductNotFound() {
       <div className="mx-auto max-w-4xl px-6 py-24 text-center">
         <h1 className="text-4xl font-bold text-[color:var(--brand-charcoal)]">{t("Produit introuvable")}</h1>
         <Link
-          to="/publicite/signaletique"
+          to="/communication/signaletique"
           className="mt-8 inline-block text-[color:var(--brand-orange)] font-semibold uppercase text-sm tracking-wide"
         >
           {t("← Retour à la signalétique")}
@@ -59,7 +59,7 @@ function SignaletiqueProductPage() {
     <PageShell background="dark">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
-            to="/publicite/signaletique"
+            to="/communication/signaletique"
             className="text-xs uppercase tracking-[0.25em] text-white/60 hover:text-[color:var(--brand-orange)]"
           >
             {t("← Signalétique")}

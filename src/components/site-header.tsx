@@ -8,7 +8,7 @@ const nav = [
   { to: "/", label: "Accueil" },
   { to: "/stands", label: "Stands d'exposition" },
   { to: "/evenementiel", label: "Événementiel" },
-  { to: "/publicite", label: "Publicité & Signalétique" },
+  { to: "/communication", label: "Publicité & Signalétique" },
   { to: "/creations", label: "Nos dernières créations" },
   { to: "/contact", label: "Contact" },
 ] as const;

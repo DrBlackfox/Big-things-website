@@ -11,9 +11,9 @@ export const Route = createFileRoute("/communication/signaletique/")({
       { name: "description", content: "Enseignes lumineuses, néons LED et lettres lumineuses sur mesure pour vitrines, façades et espaces commerciaux." },
       { property: "og:title", content: "Signalétique — Big Things Decoration" },
       { property: "og:description", content: "Enseignes lumineuses, néons LED et lettres lumineuses sur mesure pour vitrines, façades et espaces commerciaux." },
-      { property: "og:url", content: abs("/publicite/signaletique") },
+      { property: "og:url", content: abs("/communication/signaletique") },
     ],
-    links: [{ rel: "canonical", href: abs("/publicite/signaletique") }],
+    links: [{ rel: "canonical", href: abs("/communication/signaletique") }],
   }),
   component: SignaletiqueIndex,
 });
@@ -24,7 +24,7 @@ function SignaletiqueIndex() {
     <PageShell background="dark">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-6">
         <Link
-          to="/publicite"
+          to="/communication"
           className="text-xs uppercase tracking-[0.25em] text-white/60 hover:text-[color:var(--brand-orange)]"
         >
           {t("← Publicité & Signalétique")}
@@ -42,7 +42,7 @@ function SignaletiqueIndex() {
           {signaletiqueProducts.map((p) => (
             <Link
               key={p.slug}
-              to="/publicite/signaletique/$product"
+              to="/communication/signaletique/$product"
               params={{ product: p.slug }}
               className="group relative block aspect-[4/3] overflow-hidden bg-[color:var(--brand-charcoal)]"
             >

@@ -11,9 +11,9 @@ export const Route = createFileRoute("/communication/impression/")({
       { name: "description", content: "Habillage de façades, bannières et supports publicitaires grand format pour rendre votre marque visible." },
       { property: "og:title", content: "Publicité — Big Things Decoration" },
       { property: "og:description", content: "Habillage de façades, bannières et supports publicitaires grand format pour rendre votre marque visible." },
-      { property: "og:url", content: abs("/publicite/publicite") },
+      { property: "og:url", content: abs("/communication/impression") },
     ],
-    links: [{ rel: "canonical", href: abs("/publicite/publicite") }],
+    links: [{ rel: "canonical", href: abs("/communication/impression") }],
   }),
   component: PubliciteProductsIndex,
 });
@@ -24,7 +24,7 @@ function PubliciteProductsIndex() {
     <PageShell background="dark">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-6">
         <Link
-          to="/publicite"
+          to="/communication"
           className="text-xs uppercase tracking-[0.25em] text-white/60 hover:text-[color:var(--brand-orange)]"
         >
           {t("← Publicité & Signalétique")}
@@ -42,7 +42,7 @@ function PubliciteProductsIndex() {
           {publiciteProducts.map((p) => (
             <Link
               key={p.slug}
-              to="/publicite/publicite/$product"
+              to="/communication/impression/$product"
               params={{ product: p.slug }}
               className="group relative block aspect-[4/3] overflow-hidden bg-[color:var(--brand-charcoal)]"
             >
