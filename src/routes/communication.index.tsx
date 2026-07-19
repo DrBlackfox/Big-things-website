@@ -4,16 +4,16 @@ import { abs } from "@/data/site";
 import { publiciteCategories } from "@/data/publicite-categories";
 import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/publicite/")({
+export const Route = createFileRoute("/communication/")({
   head: () => ({
     meta: [
       { title: "Publicité & Signalétique — Big Things Decoration" },
       { name: "description", content: "Signalétique lumineuse, publicité grand format et revêtement Alucobond : trois pôles d'expertise pour votre visibilité." },
       { property: "og:title", content: "Publicité & Signalétique — Big Things Decoration" },
       { property: "og:description", content: "Signalétique lumineuse, publicité grand format et revêtement Alucobond : trois pôles d'expertise pour votre visibilité." },
-      { property: "og:url", content: abs("/publicite") },
+      { property: "og:url", content: abs("/communication") },
     ],
-    links: [{ rel: "canonical", href: abs("/publicite") }],
+    links: [{ rel: "canonical", href: abs("/communication") }],
   }),
   component: PubliciteIndex,
 });
@@ -35,10 +35,10 @@ function PubliciteIndex() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {publiciteCategories.map((c) => {
             const linkProps = c.slug === "signaletique"
-              ? ({ to: "/publicite/signaletique" } as const)
-              : c.slug === "publicite"
-              ? ({ to: "/publicite/publicite" } as const)
-              : ({ to: "/publicite/$category", params: { category: c.slug } } as const);
+              ? ({ to: "/communication/signaletique" } as const)
+              : c.slug === "impression"
+              ? ({ to: "/communication/impression" } as const)
+              : ({ to: "/communication/$category", params: { category: c.slug } } as const);
             return (
               <Link
                 key={c.slug}

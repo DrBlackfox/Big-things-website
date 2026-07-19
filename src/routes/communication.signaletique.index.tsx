@@ -1,48 +1,48 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
 import { abs } from "@/data/site";
-import { publiciteProducts } from "@/data/publicite-products";
+import { signaletiqueProducts } from "@/data/signaletique-products";
 import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/publicite/publicite/")({
+export const Route = createFileRoute("/communication/signaletique/")({
   head: () => ({
     meta: [
-      { title: "Publicité — Big Things Decoration" },
-      { name: "description", content: "Habillage de façades, bannières et supports publicitaires grand format pour rendre votre marque visible." },
-      { property: "og:title", content: "Publicité — Big Things Decoration" },
-      { property: "og:description", content: "Habillage de façades, bannières et supports publicitaires grand format pour rendre votre marque visible." },
-      { property: "og:url", content: abs("/publicite/publicite") },
+      { title: "Signalétique — Big Things Decoration" },
+      { name: "description", content: "Enseignes lumineuses, néons LED et lettres lumineuses sur mesure pour vitrines, façades et espaces commerciaux." },
+      { property: "og:title", content: "Signalétique — Big Things Decoration" },
+      { property: "og:description", content: "Enseignes lumineuses, néons LED et lettres lumineuses sur mesure pour vitrines, façades et espaces commerciaux." },
+      { property: "og:url", content: abs("/communication/signaletique") },
     ],
-    links: [{ rel: "canonical", href: abs("/publicite/publicite") }],
+    links: [{ rel: "canonical", href: abs("/communication/signaletique") }],
   }),
-  component: PubliciteProductsIndex,
+  component: SignaletiqueIndex,
 });
 
-function PubliciteProductsIndex() {
+function SignaletiqueIndex() {
   const t = useT();
   return (
     <PageShell background="dark">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-6">
         <Link
-          to="/publicite"
+          to="/communication"
           className="text-xs uppercase tracking-[0.25em] text-white/60 hover:text-[color:var(--brand-orange)]"
         >
           {t("← Publicité & Signalétique")}
         </Link>
         <h1 className="mt-4 text-3xl md:text-5xl font-bold uppercase tracking-wide text-[color:var(--brand-orange)]">
-          {t("PUBLICITÉ")}
+          {t("SIGNALÉTIQUE")}
         </h1>
         <p className="mt-3 text-white/70 max-w-2xl uppercase tracking-wide text-sm">
-          {t("Supports publicitaires et habillages sur mesure pour votre marque.")}
+          {t("Enseignes, néons et lettres lumineuses conçus et fabriqués sur mesure.")}
         </p>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-          {publiciteProducts.map((p) => (
+          {signaletiqueProducts.map((p) => (
             <Link
               key={p.slug}
-              to="/publicite/publicite/$product"
+              to="/communication/signaletique/$product"
               params={{ product: p.slug }}
               className="group relative block aspect-[4/3] overflow-hidden bg-[color:var(--brand-charcoal)]"
             >

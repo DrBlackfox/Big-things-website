@@ -22,7 +22,7 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm">
             <li><Link to="/stands" className="hover:text-[color:var(--brand-orange)]">{t("Stands d'exposition")}</Link></li>
             <li><Link to="/evenementiel" className="hover:text-[color:var(--brand-orange)]">{t("Événementiel")}</Link></li>
-            <li><Link to="/publicite" className="hover:text-[color:var(--brand-orange)]">{t("Publicité & Signalétique")}</Link></li>
+            <li><Link to="/communication" className="hover:text-[color:var(--brand-orange)]">{t("Publicité & Signalétique")}</Link></li>
             <li><Link to="/creations" className="hover:text-[color:var(--brand-orange)]">{t("Nos dernières créations")}</Link></li>
           </ul>
         </div>

@@ -4,7 +4,7 @@ import { abs } from "@/data/site";
 import { publiciteCategories } from "@/data/publicite-categories";
 import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/publicite/$category")({
+export const Route = createFileRoute("/communication/$category")({
   loader: ({ params }) => {
     const category = publiciteCategories.find((c) => c.slug === params.category);
     if (!category) throw notFound();
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/publicite/$category")({
       return { meta: [{ title: "Catégorie introuvable" }, { name: "robots", content: "noindex" }] };
     }
     const title = `${loaderData.category.title} — Big Things Decoration`;
-    const url = abs(`/publicite/${params.category}`);
+    const url = abs(`/communication/${params.category}`);
     return {
       meta: [
         { title },
@@ -39,7 +39,7 @@ function CategoryNotFound() {
     <PageShell>
       <div className="mx-auto max-w-4xl px-6 py-24 text-center">
         <h1 className="text-4xl font-bold text-[color:var(--brand-charcoal)]">{t("Catégorie introuvable")}</h1>
-        <Link to="/publicite" className="mt-8 inline-block text-[color:var(--brand-orange)] font-semibold uppercase text-sm tracking-wide">
+        <Link to="/communication" className="mt-8 inline-block text-[color:var(--brand-orange)] font-semibold uppercase text-sm tracking-wide">
           {t("← Retour")}
         </Link>
       </div>
@@ -55,7 +55,7 @@ function CategoryPage() {
     <PageShell background="dark">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
-            to="/publicite"
+            to="/communication"
             className="text-xs uppercase tracking-[0.25em] text-white/60 hover:text-[color:var(--brand-orange)]"
           >
             {t("← Publicité & Signalétique")}
