@@ -4,7 +4,7 @@ import { abs } from "@/data/site";
 import { signaletiqueProducts } from "@/data/signaletique-products";
 import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/publicite/signaletique/$product")({
+export const Route = createFileRoute("/communication/signaletique/$product")({
   loader: ({ params }) => {
     const product = signaletiqueProducts.find((p) => p.slug === params.product);
     if (!product) throw notFound();

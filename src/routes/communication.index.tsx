@@ -4,7 +4,7 @@ import { abs } from "@/data/site";
 import { publiciteCategories } from "@/data/publicite-categories";
 import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/publicite/")({
+export const Route = createFileRoute("/communication/")({
   head: () => ({
     meta: [
       { title: "Publicité & Signalétique — Big Things Decoration" },

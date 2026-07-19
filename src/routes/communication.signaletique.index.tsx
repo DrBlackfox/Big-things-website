@@ -4,7 +4,7 @@ import { abs } from "@/data/site";
 import { signaletiqueProducts } from "@/data/signaletique-products";
 import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/publicite/signaletique/")({
+export const Route = createFileRoute("/communication/signaletique/")({
   head: () => ({
     meta: [
       { title: "Signalétique — Big Things Decoration" },

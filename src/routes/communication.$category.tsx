@@ -4,7 +4,7 @@ import { abs } from "@/data/site";
 import { publiciteCategories } from "@/data/publicite-categories";
 import { useT } from "@/lib/i18n";
 
-export const Route = createFileRoute("/publicite/$category")({
+export const Route = createFileRoute("/communication/$category")({
   loader: ({ params }) => {
     const category = publiciteCategories.find((c) => c.slug === params.category);
     if (!category) throw notFound();
