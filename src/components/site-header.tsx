@@ -74,6 +74,7 @@ export function SiteHeader() {
           </div>
         </div>
       )}
+      <ClientsMarquee />
     </header>
   );
 }
