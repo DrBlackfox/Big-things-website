@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.avif.asset.json";
 import { useT } from "@/lib/i18n";
+import { ClientsMarquee } from "@/components/clients-marquee";
 
 const nav = [
   { to: "/", label: "Accueil" },
