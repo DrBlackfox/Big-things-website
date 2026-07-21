@@ -8,6 +8,16 @@ import genesis from "@/assets/client-genesis.png.asset.json";
 import ghs from "@/assets/client-ghs.png.asset.json";
 import hyundai from "@/assets/client-hyundai.png.asset.json";
 import iseki from "@/assets/client-iseki.png.asset.json";
+import caverne from "@/assets/client-caverne.png.asset.json";
+import bosphore from "@/assets/client-bosphore.png.asset.json";
+import carrefour from "@/assets/client-carrefour.png.asset.json";
+import ladybug from "@/assets/client-ladybug.png.asset.json";
+import meublealoui from "@/assets/client-meublealoui.png.asset.json";
+import perla from "@/assets/client-perla.png.asset.json";
+import tulip from "@/assets/client-tulip.png.asset.json";
+import mabrouka from "@/assets/client-mabrouka.png.asset.json";
+import voltenergy from "@/assets/client-voltenergy.png.asset.json";
+import mediterranee from "@/assets/client-mediterranee.png.asset.json";
 import { useT } from "@/lib/i18n";
 
 const logos = [
@@ -21,7 +31,18 @@ const logos = [
   { src: ghs.url, alt: "GHS" },
   { src: hyundai.url, alt: "Hyundai" },
   { src: iseki.url, alt: "Iseki" },
+  { src: caverne.url, alt: "Espace La Caverne" },
+  { src: bosphore.url, alt: "Le Bosphore" },
+  { src: carrefour.url, alt: "Le Carrefour Agricole" },
+  { src: ladybug.url, alt: "Ladybug" },
+  { src: meublealoui.url, alt: "Meuble Aloui" },
+  { src: perla.url, alt: "Perla Group" },
+  { src: tulip.url, alt: "Tulip Rent A Car" },
+  { src: mabrouka.url, alt: "Mabrouka" },
+  { src: voltenergy.url, alt: "Voltenergy Solar Systems" },
+  { src: mediterranee.url, alt: "La Méditerranée Immobilière" },
 ];
+
 
 export function ClientsMarquee() {
   const t = useT();
