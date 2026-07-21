@@ -22,6 +22,7 @@ const AR: Record<string, string> = {
   "Nos dernières créations": "أحدث إبداعاتنا",
   "Contact": "اتصل بنا",
   "Devis gratuit": "طلب عرض سعر",
+  "Ils nous font confiance": "يثقون بنا",
   "Ouvrir le menu": "فتح القائمة",
   "Fermer le menu": "إغلاق القائمة",
 
