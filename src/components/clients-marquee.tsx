@@ -18,6 +18,8 @@ import tulip from "@/assets/client-tulip.png.asset.json";
 import mabrouka from "@/assets/client-mabrouka.png.asset.json";
 import voltenergy from "@/assets/client-voltenergy.png.asset.json";
 import mediterranee from "@/assets/client-mediterranee.png.asset.json";
+import xiaomi from "@/assets/client-xiaomi.png.asset.json";
+
 import { useT } from "@/lib/i18n";
 
 const logos = [
@@ -41,6 +43,7 @@ const logos = [
   { src: mabrouka.url, alt: "Mabrouka" },
   { src: voltenergy.url, alt: "Voltenergy Solar Systems" },
   { src: mediterranee.url, alt: "La Méditerranée Immobilière" },
+  { src: xiaomi.url, alt: "Xiaomi" },
 ];
 
 
@@ -63,13 +66,17 @@ export function ClientsMarquee() {
             <img
               src={l.src}
               alt={l.alt}
-              loading="lazy"
-              decoding="async"
+              loading="eager"
+              decoding="sync"
+              fetchPriority="high"
+              width={130}
+              height={44}
               className="max-h-11 max-w-[130px] w-auto h-auto object-contain"
             />
           </div>
         ))}
       </div>
     </div>
+
   );
 }
