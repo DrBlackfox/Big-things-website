@@ -43,6 +43,7 @@ const logos = [
   { src: mabrouka.url, alt: "Mabrouka" },
   { src: voltenergy.url, alt: "Voltenergy Solar Systems" },
   { src: mediterranee.url, alt: "La Méditerranée Immobilière" },
+  { src: xiaomi.url, alt: "Xiaomi" },
 ];
 
 
@@ -65,13 +66,17 @@ export function ClientsMarquee() {
             <img
               src={l.src}
               alt={l.alt}
-              loading="lazy"
-              decoding="async"
+              loading="eager"
+              decoding="sync"
+              fetchPriority="high"
+              width={130}
+              height={44}
               className="max-h-11 max-w-[130px] w-auto h-auto object-contain"
             />
           </div>
         ))}
       </div>
     </div>
+
   );
 }
