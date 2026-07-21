@@ -212,7 +212,7 @@ export function HeroSlider({
       ref={sectionRef}
       dir="ltr"
       tabIndex={0}
-      className="relative w-full h-[calc(100dvh-5rem)] min-h-[560px] bg-[color:var(--brand-charcoal)] overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing focus:outline-none"
+      className="relative w-full h-[calc(100dvh-145px)] min-h-[560px] bg-[color:var(--brand-charcoal)] overflow-hidden touch-pan-y select-none cursor-grab active:cursor-grabbing focus:outline-none"
       onMouseEnter={() => (pausedRef.current = true)}
       onMouseLeave={() => (pausedRef.current = false)}
       onPointerDown={onPointerDown}
