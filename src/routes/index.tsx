@@ -74,13 +74,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <PageShell mainClassName="flex flex-col h-[calc(100dvh-80px)]">
-      <div className="flex-1 min-h-0">
-        <HeroSlider slides={slides} />
-      </div>
-      <div className="h-[26dvh] min-h-[140px] max-h-[240px] flex flex-col">
-        <ClientsRows />
-      </div>
+    <PageShell>
+      <HeroSlider slides={slides} />
+      <ClientsRows />
     </PageShell>
   );
 }
