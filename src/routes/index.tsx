@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
 import { HeroSlider, type HeroSlide } from "@/components/hero-slider";
+import { ClientsRows } from "@/components/clients-rows";
 import { SITE, abs } from "@/data/site";
 import stands from "@/assets/stands.webp.asset.json";
 import evenementiel from "@/assets/evenementiel.webp.asset.json";
@@ -75,6 +76,7 @@ function Index() {
   return (
     <PageShell>
       <HeroSlider slides={slides} />
+      <ClientsRows />
     </PageShell>
   );
 }
