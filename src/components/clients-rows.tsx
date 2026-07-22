@@ -53,16 +53,16 @@ const row2 = [
 
 function Row({ logos, cols }: { logos: { src: string; alt: string }[]; cols: string }) {
   return (
-    <div className={`grid ${cols} gap-2 sm:gap-3 items-center flex-1 min-h-0`}>
+    <div className={`grid ${cols} gap-2 sm:gap-4 items-center`}>
       {logos.map((l, i) => (
-        <div key={i} className="flex items-center justify-center h-full min-h-0">
+        <div key={i} className="flex items-center justify-center h-14 sm:h-16">
           <img
             src={l.src}
             alt={l.alt}
             loading="eager"
             decoding="sync"
             fetchPriority="high"
-            className="max-h-full max-w-full w-auto h-auto object-contain"
+            className="max-h-10 sm:max-h-12 max-w-full w-auto h-auto object-contain"
           />
         </div>
       ))}
@@ -75,11 +75,11 @@ export function ClientsRows() {
   return (
     <section
       dir="ltr"
-      className="w-full bg-white border-t border-neutral-200 py-2 sm:py-3 flex flex-col min-h-0"
+      className="w-full bg-white border-t border-neutral-200 py-3 sm:py-4"
       aria-label={t("Ils nous font confiance")}
     >
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-1.5 sm:gap-2 flex-1 min-h-0">
-        <p className="text-left text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[color:var(--brand-orange)] shrink-0">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-2 sm:gap-3">
+        <p className="text-left text-xs sm:text-sm font-semibold uppercase tracking-widest text-[color:var(--brand-orange)]">
           {t("Ils nous font confiance")}:
         </p>
         <Row logos={row1} cols="grid-cols-11" />
