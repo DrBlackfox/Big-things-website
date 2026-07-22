@@ -19,6 +19,7 @@ import mabrouka from "@/assets/client-mabrouka.png.asset.json";
 import voltenergy from "@/assets/client-voltenergy.png.asset.json";
 import mediterranee from "@/assets/client-mediterranee.png.asset.json";
 import xiaomi from "@/assets/client-xiaomi.png.asset.json";
+import xpeng from "@/assets/client-xpeng.png.asset.json";
 
 import { useT } from "@/lib/i18n";
 
