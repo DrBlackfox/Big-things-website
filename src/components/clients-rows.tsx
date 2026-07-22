@@ -83,7 +83,7 @@ export function ClientsRows() {
           {t("Ils nous font confiance")}:
         </p>
         <Row logos={row1} cols="grid-cols-11" />
-        <Row logos={row2} cols="grid-cols-10" />
+        <Row logos={row2} cols="grid-cols-11" />
       </div>
     </section>
   );
