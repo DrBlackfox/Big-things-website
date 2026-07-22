@@ -78,7 +78,7 @@ function Index() {
       <div className="flex-1 min-h-0">
         <HeroSlider slides={slides} />
       </div>
-      <div className="shrink-0">
+      <div className="h-[26dvh] min-h-[140px] max-h-[240px] flex flex-col">
         <ClientsRows />
       </div>
     </PageShell>
