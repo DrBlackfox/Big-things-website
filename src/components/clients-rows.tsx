@@ -19,6 +19,7 @@ import mabrouka from "@/assets/client-mabrouka.png.asset.json";
 import voltenergy from "@/assets/client-voltenergy.png.asset.json";
 import mediterranee from "@/assets/client-mediterranee.png.asset.json";
 import xiaomi from "@/assets/client-xiaomi.png.asset.json";
+import xpeng from "@/assets/client-xpeng.png.asset.json";
 
 import { useT } from "@/lib/i18n";
 
@@ -47,6 +48,7 @@ const row2 = [
   { src: voltenergy.url, alt: "Voltenergy Solar Systems" },
   { src: mediterranee.url, alt: "La Méditerranée Immobilière" },
   { src: xiaomi.url, alt: "Xiaomi" },
+  { src: xpeng.url, alt: "XPENG" },
 ];
 
 function Row({ logos, cols }: { logos: { src: string; alt: string }[]; cols: string }) {
@@ -81,7 +83,7 @@ export function ClientsRows() {
           {t("Ils nous font confiance")}:
         </p>
         <Row logos={row1} cols="grid-cols-11" />
-        <Row logos={row2} cols="grid-cols-10" />
+        <Row logos={row2} cols="grid-cols-11" />
       </div>
     </section>
   );
