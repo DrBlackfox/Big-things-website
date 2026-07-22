@@ -48,6 +48,7 @@ const row2 = [
   { src: voltenergy.url, alt: "Voltenergy Solar Systems" },
   { src: mediterranee.url, alt: "La Méditerranée Immobilière" },
   { src: xiaomi.url, alt: "Xiaomi" },
+  { src: xpeng.url, alt: "XPENG" },
 ];
 
 function Row({ logos, cols }: { logos: { src: string; alt: string }[]; cols: string }) {
