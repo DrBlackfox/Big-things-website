@@ -47,12 +47,11 @@ const row2 = [
   { src: voltenergy.url, alt: "Voltenergy Solar Systems" },
   { src: mediterranee.url, alt: "La Méditerranée Immobilière" },
   { src: xiaomi.url, alt: "Xiaomi" },
-  { src: perla.url, alt: "Perla Group" },
 ];
 
-function Row({ logos }: { logos: { src: string; alt: string }[] }) {
+function Row({ logos, cols }: { logos: { src: string; alt: string }[]; cols: string }) {
   return (
-    <div className="grid grid-cols-11 gap-2 sm:gap-4 items-center">
+    <div className={`grid ${cols} gap-2 sm:gap-4 items-center`}>
       {logos.map((l, i) => (
         <div key={i} className="flex items-center justify-center h-14 sm:h-16">
           <img
@@ -78,8 +77,8 @@ export function ClientsRows() {
       aria-label={t("Ils nous font confiance")}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-2 sm:gap-3">
-        <Row logos={row1} />
-        <Row logos={row2} />
+        <Row logos={row1} cols="grid-cols-11" />
+        <Row logos={row2} cols="grid-cols-10" />
       </div>
     </section>
   );
