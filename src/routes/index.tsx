@@ -76,6 +76,7 @@ function Index() {
   return (
     <PageShell>
       <HeroSlider slides={slides} />
+      <ClientsRows />
     </PageShell>
   );
 }
