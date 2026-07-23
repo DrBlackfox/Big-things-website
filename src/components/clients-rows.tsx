@@ -30,16 +30,19 @@ const row1 = [
   { src: bomi.url, alt: "Bomi" },
   { src: armee.url, alt: "Armée Tunisienne" },
   { src: genesis.url, alt: "Genesis" },
+];
+
+const row2 = [
   { src: ghs.url, alt: "GHS" },
   { src: hyundai.url, alt: "Hyundai" },
   { src: iseki.url, alt: "Iseki" },
   { src: caverne.url, alt: "Espace La Caverne" },
-];
-
-const row2 = [
   { src: bosphore.url, alt: "Le Bosphore" },
   { src: carrefour.url, alt: "Le Carrefour Agricole" },
   { src: ladybug.url, alt: "Ladybug" },
+];
+
+const row3 = [
   { src: meublealoui.url, alt: "Meuble Aloui" },
   { src: perla.url, alt: "Perla Group" },
   { src: tulip.url, alt: "Tulip Rent A Car" },
@@ -51,16 +54,16 @@ const row2 = [
 
 function Row({ logos, cols }: { logos: { src: string; alt: string }[]; cols: string }) {
   return (
-    <div className={`grid ${cols} gap-2 sm:gap-4 items-center`}>
+    <div className={`grid ${cols} gap-3 sm:gap-5 items-center`}>
       {logos.map((l, i) => (
-        <div key={i} className="flex items-center justify-center h-14 sm:h-16">
+        <div key={i} className="flex items-center justify-center h-16 sm:h-20">
           <img
             src={l.src}
             alt={l.alt}
             loading="eager"
             decoding="sync"
             fetchPriority="high"
-            className="max-h-10 sm:max-h-12 max-w-full w-auto h-auto object-contain"
+            className="max-h-14 sm:max-h-16 max-w-full w-auto h-auto object-contain"
           />
         </div>
       ))}
@@ -80,8 +83,9 @@ export function ClientsRows() {
         <p className="text-left text-xs sm:text-sm font-semibold uppercase tracking-widest text-[color:var(--brand-orange)]">
           {t("Ils nous font confiance")}:
         </p>
-        <Row logos={row1} cols="grid-cols-11" />
-        <Row logos={row2} cols="grid-cols-10" />
+        <Row logos={row1} cols="grid-cols-7" />
+        <Row logos={row2} cols="grid-cols-7" />
+        <Row logos={row3} cols="grid-cols-7" />
       </div>
     </section>
   );
