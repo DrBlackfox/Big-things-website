@@ -80,8 +80,8 @@ export function ClientsRows() {
       aria-label={t("Ils nous font confiance")}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-2 sm:gap-3">
-        <p className="text-left text-xs sm:text-sm font-semibold uppercase tracking-widest text-[color:var(--brand-orange)]">
-          {t("Ils nous font confiance")}:
+        <p className="text-center text-sm sm:text-base md:text-lg font-bold uppercase tracking-widest text-[color:var(--brand-orange)]">
+          {t("Ils nous font confiance")}
         </p>
         <Row logos={row1} cols="grid-cols-7" />
         <Row logos={row2} cols="grid-cols-7" />
