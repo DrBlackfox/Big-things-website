@@ -83,6 +83,8 @@ const AR: Record<string, string> = {
   "mentiel": "ليات",
   "Conception, production et logistique événementielle.": "تصميم وإنتاج ولوجستيك حدثي.",
   "Obtenir un devis gratuit pour votre événement": "احصل على عرض سعر مجاني لحدثك",
+  "Nous accompagnons vos salons, conférences, lancements de produits et activations de marque de la conception à la production sur site. Stands, scénographies, habillages, signalétique, éclairage et supports audiovisuels : chaque événement est pensé sur mesure pour offrir une expérience mémorable à vos visiteurs.":
+    "نرافقكم في معارضكم ومؤتمراتكم وإطلاق منتجاتكم وتفعيل علامتكم التجارية من التصميم إلى الإنتاج في الموقع. أجنحة، سينوغرافيا، تغليفات، لافتات، إضاءة ودعائم سمعية بصرية: كل حدث مصمم خصيصًا لتقديم تجربة لا تُنسى لزوّاركم.",
 
 
   // Stands index
