@@ -38,6 +38,7 @@ import i21 from "@/assets/impression-21.webp.asset.json";
 import i22 from "@/assets/impression-22.webp.asset.json";
 import i23 from "@/assets/impression-23.webp.asset.json";
 import i24 from "@/assets/impression-24.webp.asset.json";
+import i25 from "@/assets/impression-25.jpeg.asset.json";
 import oriMain from "@/assets/oriflamme-main.webp.asset.json";
 import o1 from "@/assets/oriflamme-1.webp.asset.json";
 import o2 from "@/assets/oriflamme-2.webp.asset.json";
