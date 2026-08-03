@@ -38,6 +38,7 @@ import i21 from "@/assets/impression-21.webp.asset.json";
 import i22 from "@/assets/impression-22.webp.asset.json";
 import i23 from "@/assets/impression-23.webp.asset.json";
 import i24 from "@/assets/impression-24.webp.asset.json";
+import i25 from "@/assets/impression-25.jpeg.asset.json";
 import oriMain from "@/assets/oriflamme-main.webp.asset.json";
 import o1 from "@/assets/oriflamme-1.webp.asset.json";
 import o2 from "@/assets/oriflamme-2.webp.asset.json";
@@ -122,7 +123,7 @@ export const publiciteProducts: PubliciteProduct[] = [
       i1.url, i2.url, i3.url, i4.url, i5.url,
       i6.url, i7.url, i8.url, i9.url, i10.url,
       i11.url, i12.url, i13.url, i14.url, i15.url, i16.url, i17.url,
-      i18.url, i19.url, i20.url, i21.url, i22.url, i23.url, i24.url,
+      i18.url, i19.url, i20.url, i21.url, i22.url, i23.url, i24.url, i25.url,
     ],
   },
   {
