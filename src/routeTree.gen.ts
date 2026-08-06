@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StandsRouteImport } from './routes/stands'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as EvenementielRouteImport } from './routes/evenementiel'
 import { Route as CreationsRouteImport } from './routes/creations'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -35,6 +36,11 @@ const StandsRoute = StandsRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EvenementielRoute = EvenementielRouteImport.update({
@@ -124,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stands': typeof StandsRouteWithChildren
   '/communication/$category': typeof CommunicationCategoryRoute
@@ -142,6 +149,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/communication/$category': typeof CommunicationCategoryRoute
   '/stands/$product': typeof StandsProductRoute
@@ -159,6 +167,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/creations': typeof CreationsRoute
   '/evenementiel': typeof EvenementielRoute
+  '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/stands': typeof StandsRouteWithChildren
   '/communication/$category': typeof CommunicationCategoryRoute
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/creations'
     | '/evenementiel'
+    | '/privacy'
     | '/sitemap.xml'
     | '/stands'
     | '/communication/$category'
@@ -198,6 +208,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/creations'
     | '/evenementiel'
+    | '/privacy'
     | '/sitemap.xml'
     | '/communication/$category'
     | '/stands/$product'
@@ -214,6 +225,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/creations'
     | '/evenementiel'
+    | '/privacy'
     | '/sitemap.xml'
     | '/stands'
     | '/communication/$category'
@@ -234,6 +246,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CreationsRoute: typeof CreationsRoute
   EvenementielRoute: typeof EvenementielRoute
+  PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StandsRoute: typeof StandsRouteWithChildren
 }
@@ -252,6 +265,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/evenementiel': {
@@ -432,19 +452,10 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CreationsRoute: CreationsRoute,
   EvenementielRoute: EvenementielRoute,
+  PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StandsRoute: StandsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

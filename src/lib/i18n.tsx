@@ -34,6 +34,24 @@ const AR: Record<string, string> = {
   "PUBLICITÉ & SIGNALÉTIQUE": "الإعلان واللافتات",
   "STANDS D'EXPOSITION": "أجنحة العرض",
   "Tous droits réservés.": "جميع الحقوق محفوظة.",
+  "Politique de confidentialité": "سياسة الخصوصية",
+  "Introduction": "مقدمة",
+  "Collecte des données": "جمع البيانات",
+  "Utilisation des données": "استخدام البيانات",
+  "Protection des données": "حماية البيانات",
+  "Vos droits": "حقوقكم",
+  "Contactez-nous": "اتصل بنا",
+  "Chez Big Things Decoration, nous accordons une grande importance à la protection de vos données personnelles. Cette politique de confidentialité détaille comment nous collectons, utilisons et protégeons vos informations dans le cadre de nos activités de conception de stands, signalétique et événementiel.":
+    "في Big Things Decoration، نولي أهمية كبيرة لحماية بياناتكم الشخصية. تفصل سياسة الخصوصية هذه كيفية جمع واستخدام وحماية معلوماتكم في إطار أنشطتنا في تصميم الأجنحة واللافتات والفعاليات.",
+  "Nous collectons les informations que vous nous fournissez directement via nos formulaires de contact ou lors de nos échanges commerciaux (nom, email, téléphone, détails du projet).":
+    "نجمع المعلومات التي تقدمونها لنا مباشرة عبر نماذج الاتصال الخاصة بنا أو أثناء تبادلاتنا التجارية (الاسم، البريد الإلكتروني، الهاتف، تفاصيل المشروع).",
+  "Vos données sont utilisées exclusivement pour répondre à vos demandes de devis, gérer vos projets et assurer le suivi de nos prestations techniques et logistiques.":
+    "تُستخدم بياناتكم حصريًا للرد على طلبات عروض الأسعار الخاصة بكم، وإدارة مشاريعكم وضمان متابعة خدماتنا التقنية واللوجستية.",
+  "Nous mettons en œuvre des mesures de sécurité rigoureuses pour protéger vos informations contre tout accès non autorisé. Vos données ne sont jamais vendues à des tiers.":
+    "نحن نطبق تدابير أمنية صارمة لحماية معلوماتكم من أي وصول غير مصرح به. لا يتم بيع بياناتكم أبدًا لأطراف ثالثة.",
+  "Conformément à la réglementation, vous disposez d'un droit d'accès, de rectification et de suppression de vos données personnelles.":
+    "وفقًا للوائح، لديكم الحق في الوصول إلى بياناتكم الشخصية وتصحيحها وحذفها.",
+  "Pour toute question concernant vos données, vous pouvez nous contacter à": "لأي سؤال بخصوص بياناتكم، يمكنك الاتصال بنا على",
 
   // Common
   "Découvrir": "اكتشف",

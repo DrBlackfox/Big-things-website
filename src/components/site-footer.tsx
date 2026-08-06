@@ -36,8 +36,11 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-neutral-500 flex flex-col sm:flex-row justify-between gap-2">
-          <p>© {new Date().getFullYear()} Big Things Decoration. {t("Tous droits réservés.")}</p>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 text-xs text-neutral-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <p>© {new Date().getFullYear()} Big Things Decoration. {t("Tous droits réservés.")}</p>
+            <Link to="/privacy" className="hover:text-[color:var(--brand-orange)] transition-colors">{t("Politique de confidentialité")}</Link>
+          </div>
           <p className="text-right uppercase tracking-wide space-y-1">
             <span className="block">{t("COMMUNICATION ÉVÉNEMENTIEL HYBRIDE")}</span>
             <span className="block">{t("PUBLICITÉ & SIGNALÉTIQUE")}</span>
