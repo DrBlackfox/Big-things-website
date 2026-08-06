@@ -42,7 +42,7 @@ function Contact() {
               <Phone className="text-[color:var(--brand-orange)] mt-1 shrink-0" />
               <div>
                 <h2 className="font-semibold text-[color:var(--brand-orange)]">{t("Téléphone")}</h2>
-                <a href={CONTACT.phoneHref} className="text-neutral-600 hover:text-[color:var(--brand-orange)]">{CONTACT.phone}</a>
+                <a href={CONTACT.phoneHref} className="text-neutral-600 hover:text-[color:var(--brand-orange)]" dir="ltr">{CONTACT.phone}</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
