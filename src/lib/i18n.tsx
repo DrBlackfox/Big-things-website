@@ -25,6 +25,7 @@ const AR: Record<string, string> = {
   "Ils nous font confiance": "يثقون بنا",
   "Ouvrir le menu": "فتح القائمة",
   "i want to change all the email addresses on this website to this email : contact@bigthings.tn": "أريد تغيير جميع عناوين البريد الإلكتروني على هذا الموقع إلى هذا البريد: contact@bigthings.tn",
+  "what's wrong with this button": "ما الخطأ في هذا الزر",
   "Fermer le menu": "إغلاق القائمة",
 
   // Footer
