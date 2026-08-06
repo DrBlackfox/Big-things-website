@@ -14,7 +14,7 @@ export function LanguageToggle() {
       dir={nextIsArabic ? "rtl" : "ltr"}
     >
       <Languages size={16} />
-      <span>{t("what's wrong with this button")}</span>
+      <span>{nextLabel}</span>
     </button>
   );
 }
