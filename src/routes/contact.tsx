@@ -128,7 +128,18 @@ function Contact() {
               </button>
             </div>
           ) : (
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form 
+              className="space-y-4" 
+              action="https://api.web3forms.com/submit" 
+              method="POST"
+              onSubmit={handleSubmit}
+            >
+              <input type="hidden" name="access_key" value="e43377d9-fadd-412b-b588-952a0dab171e" />
+              <input type="hidden" name="subject" value="Nouveau message de contact - Big Things" />
+              <input type="hidden" name="from_name" value="Big Things Website" />
+              {/* Optional: Redirect after submission if JS fails, but we handle it in handleSubmit */}
+              {/* <input type="hidden" name="redirect" value="https://web3forms.com/success"> */}
+
               <label className="block">
                 <span className="sr-only">{t("Nom")}</span>
                 <input name="name" required placeholder={t("Nom")} aria-label={t("Nom")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
