@@ -7,35 +7,6 @@ export function LanguageToggle() {
   const nextLabel = lang === "fr" ? "العربية" : "Français";
   return (
     <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-2">
-      <div className="bg-white border border-neutral-200 rounded-lg p-3 shadow-xl max-w-[400px] text-[10px] font-mono text-red-600 whitespace-pre-wrap overflow-auto max-h-[300px]">
-        For the code present, I get the error below.
-
-Please think step-by-step in order to resolve it.
-{`
-ZodError: [
-  {
-    "code": "too_small",
-    "minimum": 10,
-    "type": "string",
-    "inclusive": true,
-    "exact": false,
-    "message": "String must contain at least 10 character(s)",
-    "path": [
-      "message"
-    ]
-  }
-]
-
-{
-  "timestamp": 1785979755700,
-  "error_type": "RUNTIME_ERROR",
-  "filename": "...",
-  "lineno": 0,
-  "colno": 0,
-  "stack": "ZodError: [...]"
-}
-`}
-      </div>
       <button
         type="button"
         onClick={toggle}
