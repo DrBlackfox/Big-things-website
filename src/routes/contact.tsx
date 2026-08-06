@@ -40,32 +40,32 @@ function Contact() {
     };
     
     try {
-      // 1. Send to Web3Forms directly from client (recommended by Web3Forms for Free plan)
+      // Use standard form submission for Web3Forms as requested
+      const formDataObj = new FormData();
+      formDataObj.append("access_key", "e43377d9-fadd-412b-b588-952a0dab171e");
+      formDataObj.append("name", data.name);
+      formDataObj.append("email", data.email);
+      formDataObj.append("phone", data.phone);
+      formDataObj.append("message", data.message);
+      formDataObj.append("subject", `Nouveau message de contact de ${data.name}`);
+      formDataObj.append("from_name", "Big Things Website");
+
       const web3Response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: "e43377d9-fadd-412b-b588-952a0dab171e",
-          ...data,
-          subject: `Nouveau message de contact de ${data.name}`,
-          from_name: "Big Things Website",
-        }),
+        body: formDataObj,
       });
 
       const web3Result = await web3Response.json();
-      if (!web3Result.success) {
+      
+      if (web3Result.success) {
+        // Also save to our database via server function for records
+        await submit({ data });
+        setIsSuccess(true);
+        toast.success(t("Message envoyé avec succès !"));
+      } else {
         console.error("Web3Forms error:", web3Result);
-        throw new Error("Web3Forms submission failed");
+        toast.error(web3Result.message || t("Une erreur est survenue."));
       }
-
-      // 2. Also save to our database via server function for records
-      await submit({ data });
-
-      setIsSuccess(true);
-      toast.success(t("Message envoyé avec succès !"));
     } catch (error) {
       console.error("Submission error:", error);
       toast.error(t("Une erreur est survenue. Veuillez réessayer."));

@@ -7,6 +7,9 @@ export function LanguageToggle() {
   const nextLabel = lang === "fr" ? "العربية" : "Français";
   return (
     <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-2">
+      <div className="bg-white border border-neutral-200 rounded-lg p-3 shadow-xl max-w-[250px] text-xs font-bold text-red-600 animate-pulse text-center">
+        NOPE? STILL NOT WORKING? IT DOESN'T SEND TO NEITHER WEB3 FORMS OR THE MAIL , TAKE YOUR TIME TO FIGURE OUT HOW TO DO IT CORRECTLY
+      </div>
       <button
         type="button"
         onClick={toggle}
