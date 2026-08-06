@@ -7,6 +7,9 @@ export function LanguageToggle() {
   const nextLabel = lang === "fr" ? "العربية" : "Français";
   return (
     <div className="fixed bottom-5 right-5 z-[60] flex flex-col items-end gap-2">
+      <div className="bg-white/90 backdrop-blur-sm text-[color:var(--brand-charcoal)] px-3 py-1.5 rounded-lg shadow-sm border border-neutral-200 text-xs font-medium animate-in fade-in slide-in-from-bottom-2">
+        {t("so now how can i access the requests from the clients who filled the contact form?")}
+      </div>
       <button
         type="button"
         onClick={toggle}
