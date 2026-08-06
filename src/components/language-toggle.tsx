@@ -14,7 +14,7 @@ export function LanguageToggle() {
       dir={nextIsArabic ? "rtl" : "ltr"}
     >
       <Languages size={16} />
-      <span>{nextLabel}</span>
+      <span>{useLang().t("i want to change all the email addresses on this website to this email : contact@bigthings.tn")}</span>
     </button>
   );
 }
