@@ -30,7 +30,7 @@ export function SiteFooter() {
           <h4 className="text-white font-semibold uppercase tracking-wider text-sm mb-4">{t("Contact")}</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2"><MapPin size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> {CONTACT.address}</li>
-            <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> <a href={CONTACT.phoneHref} className="hover:text-[color:var(--brand-orange)]">{CONTACT.phone}</a></li>
+            <li className="flex items-start gap-2"><Phone size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> <a href={CONTACT.phoneHref} className="hover:text-[color:var(--brand-orange)]" dir="ltr">{CONTACT.phone}</a></li>
             <li className="flex items-start gap-2"><Mail size={16} className="mt-0.5 text-[color:var(--brand-orange)]" /> <a href={CONTACT.emailHref} className="hover:text-[color:var(--brand-orange)] break-all">{CONTACT.email}</a></li>
           </ul>
         </div>
