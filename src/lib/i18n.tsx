@@ -24,6 +24,7 @@ const AR: Record<string, string> = {
   "Devis gratuit": "طلب عرض سعر",
   "Ils nous font confiance": "يثقون بنا",
   "Ouvrir le menu": "فتح القائمة",
+  "i want to change all the email addresses on this website to this email : contact@bigthings.tn": "أريد تغيير جميع عناوين البريد الإلكتروني على هذا الموقع إلى هذا البريد: contact@bigthings.tn",
   "Fermer le menu": "إغلاق القائمة",
 
   // Footer
