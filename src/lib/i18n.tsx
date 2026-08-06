@@ -27,6 +27,7 @@ const AR: Record<string, string> = {
   "i want to change all the email addresses on this website to this email : contact@bigthings.tn": "أريد تغيير جميع عناوين البريد الإلكتروني على هذا الموقع إلى هذا البريد: contact@bigthings.tn",
   "what's wrong with this button": "ما الخطأ في هذا الزر",
   "now, how can i set up the contact form in a way i receive the requests sent by it": "الآن ، كيف يمكنني إعداد نموذج الاتصال بطريقة أتلقى بها الطلبات المرسلة من خلاله",
+  "so now how can i access the requests from the clients who filled the contact form?": "إذًا كيف يمكنني الوصول إلى الطلبات من العملاء الذين ملأوا نموذج الاتصال؟",
   "Fermer le menu": "إغلاق القائمة",
 
   // Footer
