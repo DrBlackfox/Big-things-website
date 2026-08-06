@@ -2,7 +2,7 @@ import { useLang } from "@/lib/i18n";
 import { Languages } from "lucide-react";
 
 export function LanguageToggle() {
-  const { lang, toggle } = useLang();
+  const { lang, toggle, t } = useLang();
   const nextIsArabic = lang === "fr";
   const nextLabel = lang === "fr" ? "العربية" : "Français";
   return (
@@ -14,7 +14,7 @@ export function LanguageToggle() {
       dir={nextIsArabic ? "rtl" : "ltr"}
     >
       <Languages size={16} />
-      <span>{useLang().t("i want to change all the email addresses on this website to this email : contact@bigthings.tn")}</span>
+      <span>{t("i want to change all the email addresses on this website to this email : contact@bigthings.tn")}</span>
     </button>
   );
 }
