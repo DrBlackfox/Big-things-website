@@ -26,6 +26,7 @@ const AR: Record<string, string> = {
   "Ouvrir le menu": "فتح القائمة",
   "i want to change all the email addresses on this website to this email : contact@bigthings.tn": "أريد تغيير جميع عناوين البريد الإلكتروني على هذا الموقع إلى هذا البريد: contact@bigthings.tn",
   "what's wrong with this button": "ما الخطأ في هذا الزر",
+  "now, how can i set up the contact form in a way i receive the requests sent by it": "الآن ، كيف يمكنني إعداد نموذج الاتصال بطريقة أتلقى بها الطلبات المرسلة من خلاله",
   "Fermer le menu": "إغلاق القائمة",
 
   // Footer
@@ -96,6 +97,11 @@ const AR: Record<string, string> = {
   "Manager": "المدير",
   "Nom": "الاسم",
   "Votre message": "رسالتك",
+  "Message envoyé avec succès !": "تم إرسال الرسالة بنجاح!",
+  "Une erreur est survenue. Veuillez réessayer.": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+  "Merci !": "شكراً لك!",
+  "Votre message a été envoyé avec succès. Nous vous contacterons sous peu.": "تم إرسال رسالتك بنجاح. سنتصل بك قريباً.",
+  "Envoyer un autre message": "إرسال رسالة أخرى",
   "Envoyer": "إرسال",
 
   // Événementiel

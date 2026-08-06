@@ -1,8 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2, CheckCircle2 } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { CONTACT, abs } from "@/data/site";
 import { useT } from "@/lib/i18n";
+import { useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { submitContactForm } from "@/lib/contact.functions";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -20,6 +24,33 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   const t = useT();
+  const submit = useServerFn(submitContactForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      await submit({
+        data: {
+          name: formData.get("name") as string,
+          email: formData.get("email") as string,
+          phone: formData.get("phone") as string,
+          message: formData.get("message") as string,
+        }
+      });
+      setIsSuccess(true);
+      toast.success(t("Message envoyé avec succès !"));
+    } catch (error) {
+      toast.error(t("Une erreur est survenue. Veuillez réessayer."));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <PageShell>
       <section className="bg-[color:var(--brand-charcoal)] text-white py-10 md:py-20">
@@ -60,25 +91,47 @@ function Contact() {
               </div>
             </div>
           </div>
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-            <label className="block">
-              <span className="sr-only">{t("Nom")}</span>
-              <input required placeholder={t("Nom")} aria-label={t("Nom")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
-            </label>
-            <label className="block">
-              <span className="sr-only">{t("Email")}</span>
-              <input required type="email" placeholder={t("Email")} aria-label={t("Email")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
-            </label>
-            <label className="block">
-              <span className="sr-only">{t("Téléphone")}</span>
-              <input placeholder={t("Téléphone")} aria-label={t("Téléphone")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
-            </label>
-            <label className="block">
-              <span className="sr-only">{t("Votre message")}</span>
-              <textarea required rows={5} placeholder={t("Votre message")} aria-label={t("Votre message")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
-            </label>
-            <button type="submit" className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-charcoal)] text-white px-6 py-4 font-semibold uppercase tracking-wide text-sm transition-colors">{t("Envoyer")}</button>
-          </form>
+          
+          {isSuccess ? (
+            <div className="bg-green-50 border border-green-200 p-8 text-center space-y-4">
+              <CheckCircle2 className="mx-auto text-green-500 w-16 h-16" />
+              <h3 className="text-xl font-bold text-green-800">{t("Merci !")}</h3>
+              <p className="text-green-700">{t("Votre message a été envoyé avec succès. Nous vous contacterons sous peu.")}</p>
+              <button 
+                onClick={() => setIsSuccess(false)}
+                className="text-[color:var(--brand-orange)] font-semibold uppercase text-sm hover:underline"
+              >
+                {t("Envoyer un autre message")}
+              </button>
+            </div>
+          ) : (
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <label className="block">
+                <span className="sr-only">{t("Nom")}</span>
+                <input name="name" required placeholder={t("Nom")} aria-label={t("Nom")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
+              </label>
+              <label className="block">
+                <span className="sr-only">{t("Email")}</span>
+                <input name="email" required type="email" placeholder={t("Email")} aria-label={t("Email")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
+              </label>
+              <label className="block">
+                <span className="sr-only">{t("Téléphone")}</span>
+                <input name="phone" placeholder={t("Téléphone")} aria-label={t("Téléphone")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
+              </label>
+              <label className="block">
+                <span className="sr-only">{t("Votre message")}</span>
+                <textarea name="message" required rows={5} placeholder={t("Votre message")} aria-label={t("Votre message")} className="w-full border border-neutral-300 px-4 py-3 focus:border-[color:var(--brand-orange)] outline-none" />
+              </label>
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="w-full bg-[color:var(--brand-orange)] hover:bg-[color:var(--brand-charcoal)] disabled:bg-neutral-400 text-white px-6 py-4 font-semibold uppercase tracking-wide text-sm transition-colors flex items-center justify-center gap-2"
+              >
+                {isSubmitting && <Loader2 className="animate-spin w-4 h-4" />}
+                {t("Envoyer")}
+              </button>
+            </form>
+          )}
         </div>
       </section>
       <div className="text-center pb-10"><Link to="/" className="text-[color:var(--brand-orange)] font-semibold uppercase text-sm">{t("← Retour")}</Link></div>
