@@ -96,6 +96,11 @@ const AR: Record<string, string> = {
   "Manager": "المدير",
   "Nom": "الاسم",
   "Votre message": "رسالتك",
+  "Message envoyé avec succès !": "تم إرسال الرسالة بنجاح!",
+  "Une erreur est survenue. Veuillez réessayer.": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+  "Merci !": "شكراً لك!",
+  "Votre message a été envoyé avec succès. Nous vous contacterons sous peu.": "تم إرسال رسالتك بنجاح. سنتصل بك قريباً.",
+  "Envoyer un autre message": "إرسال رسالة أخرى",
   "Envoyer": "إرسال",
 
   // Événementiel
