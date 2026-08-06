@@ -28,6 +28,7 @@ const AR: Record<string, string> = {
   "what's wrong with this button": "ما الخطأ في هذا الزر",
   "now, how can i set up the contact form in a way i receive the requests sent by it": "الآن ، كيف يمكنني إعداد نموذج الاتصال بطريقة أتلقى بها الطلبات المرسلة من خلاله",
   "so now how can i access the requests from the clients who filled the contact form?": "إذًا كيف يمكنني الوصول إلى الطلبات من العملاء الذين ملأوا نموذج الاتصال؟",
+  "can you make the requests on the contact form get sent directly to the contact@bigthings.tn mail? or fo i need to use a third party to receive those requests??": "هل يمكنك جعل الطلبات على نموذج الاتصال يتم إرسالها مباشرة إلى بريد contact@bigthings.tn؟ أم أحتاج إلى استخدام طرف ثالث لتلقي هذه الطلبات؟",
   "Fermer le menu": "إغلاق القائمة",
 
   // Footer
