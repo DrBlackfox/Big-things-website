@@ -3,10 +3,10 @@ import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  phone: z.string().optional(),
-  message: z.string().min(10),
+  name: z.string().min(1, "Le nom est requis"),
+  email: z.string().email("Email invalide"),
+  phone: z.string().optional().nullable(),
+  message: z.string().min(1, "Le message est requis"),
 });
 
 export const submitContactForm = createServerFn({ method: "POST" })
