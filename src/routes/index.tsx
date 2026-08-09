@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { HeroSlider, type HeroSlide } from "@/components/hero-slider";
 import { ClientsRows } from "@/components/clients-rows";
 import { SITE, abs } from "@/data/site";
+import { SEOHead } from "@/components/seo-head";
 import stands from "@/assets/stands.webp.asset.json";
 import evenementiel from "@/assets/evenementiel.webp.asset.json";
 import publicite from "@/assets/publicite-home.webp.asset.json";
@@ -75,6 +76,11 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <PageShell>
+      <SEOHead 
+        title={SITE.name} 
+        description={SITE.description} 
+        canonical={abs("/")}
+      />
       <HeroSlider slides={slides} />
       <ClientsRows />
     </PageShell>
