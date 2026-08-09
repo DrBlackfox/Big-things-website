@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { abs } from "@/data/site";
 import { signaletiqueProducts } from "@/data/signaletique-products";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 
 export const Route = createFileRoute("/communication/signaletique/")({
   head: () => ({
@@ -22,6 +23,11 @@ function SignaletiqueIndex() {
   const t = useT();
   return (
     <PageShell background="dark">
+      <SEOHead 
+        title={t("Signalétique — Big Things Decoration")} 
+        description={t("Enseignes lumineuses, néons LED et lettres lumineuses sur mesure pour vitrines, façades et espaces commerciaux.")} 
+        canonical={abs("/communication/signaletique")}
+      />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-6">
         <Link
           to="/communication"
