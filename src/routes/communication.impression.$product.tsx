@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { abs } from "@/data/site";
 import { publiciteProducts } from "@/data/publicite-products";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 
 export const Route = createFileRoute("/communication/impression/$product")({
   loader: ({ params }) => {
@@ -57,6 +58,13 @@ function PubliciteProductPage() {
 
   return (
     <PageShell background="dark">
+      <SEOHead 
+        title={t(`${product.title} — Big Things Decoration`)} 
+        description={t(product.subtitle)} 
+        canonical={abs(`/communication/impression/${product.slug}`)}
+        ogImage={product.image}
+        ogType="product"
+      />
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
             to="/communication/impression"
