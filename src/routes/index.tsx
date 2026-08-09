@@ -45,30 +45,6 @@ export const Route = createFileRoute("/")({
       { rel: "preload", as: "image", href: publicite.url, fetchPriority: "high" },
       { rel: "canonical", href: abs("/") },
     ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: SITE.name,
-          url: SITE.baseUrl,
-          description: SITE.description,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "10 Rue Ammar Ben Yesser",
-            addressLocality: "Radès",
-            addressCountry: "TN",
-          },
-          contactPoint: {
-            "@type": "ContactPoint",
-            telephone: "+21620771990",
-            email: "bigthingsdecoration@gmail.com",
-            contactType: "sales",
-          },
-        }),
-      },
-    ],
   }),
   component: Index,
 });
