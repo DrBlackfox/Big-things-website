@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { abs } from "@/data/site";
 import { publiciteCategories } from "@/data/publicite-categories";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 
 export const Route = createFileRoute("/communication/")({
   head: () => ({
@@ -22,6 +23,11 @@ function PubliciteIndex() {
   const t = useT();
   return (
     <PageShell background="dark">
+      <SEOHead 
+        title={t("Publicité & Signalétique — Big Things Decoration")} 
+        description={t("Signalétique lumineuse, publicité grand format et revêtement Alucobond : trois pôles d'expertise pour votre visibilité.")} 
+        canonical={abs("/communication")}
+      />
       <div className="mx-auto max-w-[95%] px-2 sm:px-4 pt-10 pb-6">
         <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-[color:var(--brand-orange)]">
           {t("PUBLICITÉ & SIGNALÉTIQUE")}

@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Loader2, CheckCircle2 } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { CONTACT, abs } from "@/data/site";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { submitContactForm } from "@/lib/contact.functions";
@@ -76,6 +77,11 @@ function Contact() {
 
   return (
     <PageShell>
+      <SEOHead 
+        title={t("Contact — Big Things Decoration")} 
+        description={t("Contactez Big Things Decoration à Radès pour vos stands, enseignes lumineuses et projets événementiels. Devis gratuit.")} 
+        canonical={abs("/contact")}
+      />
       <section className="bg-[color:var(--brand-charcoal)] text-white py-10 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <span className="text-[color:var(--brand-orange)] text-sm font-semibold uppercase tracking-[0.25em]">{t("Contact")}</span>
