@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { abs } from "@/data/site";
 import { standProducts } from "@/data/stands-products";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 
 export const Route = createFileRoute("/stands/$product")({
   loader: ({ params }) => {
@@ -54,6 +55,13 @@ function ProductPage() {
 
   return (
     <PageShell background="dark">
+      <SEOHead 
+        title={t(`${product.title} — Big Things Decoration`)} 
+        description={t(product.subtitle)} 
+        canonical={abs(`/stands/${product.slug}`)}
+        ogImage={product.image}
+        ogType="product"
+      />
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
             to="/stands"
