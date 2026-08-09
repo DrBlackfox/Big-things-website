@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { abs } from "@/data/site";
 import { standProducts } from "@/data/stands-products";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 
 export const Route = createFileRoute("/stands/")({
   head: () => ({
@@ -22,6 +23,11 @@ function StandsIndex() {
   const t = useT();
   return (
     <PageShell background="dark">
+      <SEOHead 
+        title={t("Stands d'exposition — Big Things Decoration")} 
+        description={t("Nos gammes de stands d'exposition sur mesure : multimédia, lightbox, menuiserie, toile tendue, parapluie, tubulaire.")} 
+        canonical={abs("/stands")}
+      />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-6">
         <h1 className="text-3xl md:text-5xl font-bold uppercase tracking-wide text-[color:var(--brand-orange)]">
           {t("STANDS D'EXPOSITION")}

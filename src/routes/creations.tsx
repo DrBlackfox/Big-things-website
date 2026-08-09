@@ -4,6 +4,7 @@ import { MuxVideoCard } from "@/components/mux-video-card";
 import { creationPhotos, creationVideos } from "@/data/creations";
 import { abs } from "@/data/site";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 
 export const Route = createFileRoute("/creations")({
   head: () => ({
@@ -27,6 +28,11 @@ function CreationsPage() {
 
   return (
     <PageShell background="dark">
+      <SEOHead 
+        title={t("Nos dernières créations — Big Things Decoration")} 
+        description={t("Photos et vidéos de nos dernières réalisations : stands, enseignes lumineuses et projets événementiels.")} 
+        canonical={abs("/creations")}
+      />
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-10 text-center">
         <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wider text-[color:var(--brand-orange)]">
           {t("Nos dernières créations")}

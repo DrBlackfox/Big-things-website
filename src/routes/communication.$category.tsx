@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { abs } from "@/data/site";
 import { publiciteCategories } from "@/data/publicite-categories";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 
 export const Route = createFileRoute("/communication/$category")({
   loader: ({ params }) => {
@@ -53,6 +54,12 @@ function CategoryPage() {
 
   return (
     <PageShell background="dark">
+      <SEOHead 
+        title={t(`${category.title} — Big Things Decoration`)} 
+        description={t(category.subtitle)} 
+        canonical={abs(`/communication/${category.slug}`)}
+        ogImage={category.image}
+      />
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
           <Link
             to="/communication"

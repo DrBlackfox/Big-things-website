@@ -3,6 +3,7 @@ import { PageShell } from "@/components/page-shell";
 import { MuxVideoCard } from "@/components/mux-video-card";
 import { abs } from "@/data/site";
 import { useT } from "@/lib/i18n";
+import { SEOHead } from "@/components/seo-head";
 import evenementielImg from "@/assets/evenementiel.webp.asset.json";
 import evt1 from "@/assets/evenementiel-1.jpg.asset.json";
 import evt2 from "@/assets/evenementiel-2.jpg.asset.json";
@@ -51,6 +52,12 @@ function EvenementielPage() {
 
   return (
     <PageShell background="dark">
+      <SEOHead 
+        title={t("Événementiel — Big Things Decoration")} 
+        description={t("Communication événementielle hybride : conception, production et logistique pour vos salons, conférences et lancements.")} 
+        canonical={abs("/evenementiel")}
+        ogImage={evenementielImg.url}
+      />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
         <Link
           to="/"

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
 import { useT } from "@/lib/i18n";
 import { CONTACT, abs } from "@/data/site";
+import { SEOHead } from "@/components/seo-head";
 import { Shield, Lock, Eye, FileText, UserCheck, Mail } from "lucide-react";
 
 export const Route = createFileRoute("/privacy")({
@@ -51,6 +52,11 @@ function Privacy() {
 
   return (
     <PageShell>
+      <SEOHead 
+        title={t("Politique de confidentialité — Big Things Decoration")} 
+        description={t("Politique de confidentialité de Big Things Decoration. Protection de vos données personnelles.")} 
+        canonical={abs("/privacy")}
+      />
       <section className="bg-[color:var(--brand-charcoal)] text-white py-10 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h1 className="text-4xl md:text-6xl font-bold">{t("Politique de confidentialité")}</h1>
