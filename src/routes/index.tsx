@@ -74,12 +74,32 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Big Things Decoration",
+    "description": "Custom exhibition stands, event management, and signage.",
+    "telephone": "+216 20 771 990",
+    "email": "contact@bigthings.tn",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10 Rue Ammar Ben Yesser",
+      "postalCode": "2040",
+      "addressLocality": "Radès",
+      "addressRegion": "Ben Arous",
+      "addressCountry": "TN"
+    },
+    "url": SITE.baseUrl
+  };
+
   return (
     <PageShell>
       <SEOHead 
-        title={SITE.name} 
-        description={SITE.description} 
+        title="Big Things Decoration | Stands d'Exposition, تصميم المعارض, Exhibition Booths" 
+        description="Agence experte en aménagement d'espaces, création de stands d'exposition, et enseignes lumineuses 3D en Tunisie. تصميم وتجهيز أجنحة المعارض والفعاليات. Premium custom trade show booths and corporate event production serving Tunisia and Europe."
+        keywords="création stands d'exposition Tunisie, aménagement d'espaces, agencement sur mesure, fabrication de stands, signalétique d'entreprise, impression numérique, enseignes lumineuses 3D, organisation événements corporate, décoration événementielle, تصميم أجنحة المعارض تونس, تنفيذ ديكورات المعارض, شركات تنظيم الفعاليات, لافتات مضيئة, طباعة وتصميم, تجهيز مساحات العرض, custom exhibition stand builders Tunisia, corporate event management, 3D luminous signage, trade show booth design, event production, LED signs Europe"
         canonical={abs("/")}
+        schema={homeSchema}
       />
       <HeroSlider slides={slides} />
       <ClientsRows />
