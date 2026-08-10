@@ -82,7 +82,7 @@ function Index() {
       
       <HeroSlider slides={slides} />
       
-      <section className="bg-white py-12 px-6 text-center border-t border-neutral-100">
+      <section className="sr-only">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--brand-charcoal)] mb-4">
             Big Things Tunisie
