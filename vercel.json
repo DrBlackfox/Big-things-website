@@ -1,8 +1,20 @@
 {
+  "redirects": [
+    {
+      "source": "/fr",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
-      "source": "/__l5e/:path*",
-      "destination": "https://bigthings.lovable.app/__l5e/:path*"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
