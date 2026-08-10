@@ -13,8 +13,8 @@ export const CONTACT = {
   address: "10 Rue Ammar Ben Yesser, Radès, Tunisie",
   phone: "+216 20 771 990",
   phoneHref: "tel:+21620771990",
-  email: "contact@bigthings.tn",
-  emailHref: "mailto:contact@bigthings.tn",
+  email: "bigthingsdecoration@gmail.com",
+  emailHref: "mailto:bigthingsdecoration@gmail.com",
   manager: "Walid Darhoumi",
 } as const;
 

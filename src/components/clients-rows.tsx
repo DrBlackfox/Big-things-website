@@ -59,7 +59,7 @@ function Row({ logos, cols }: { logos: { src: string; alt: string }[]; cols: str
         <div key={i} className="flex items-center justify-center h-16 sm:h-20">
           <img
             src={l.src}
-            alt={l.alt}
+            alt={`${l.alt} - Big Things décoration Tunisie`}
             loading="eager"
             decoding="sync"
             fetchPriority="high"

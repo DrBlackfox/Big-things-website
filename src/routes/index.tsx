@@ -4,6 +4,7 @@ import { HeroSlider, type HeroSlide } from "@/components/hero-slider";
 import { ClientsRows } from "@/components/clients-rows";
 import { SITE, abs } from "@/data/site";
 import { SEOHead } from "@/components/seo-head";
+import { useT } from "@/lib/i18n";
 import stands from "@/assets/stands.webp.asset.json";
 import evenementiel from "@/assets/evenementiel.webp.asset.json";
 import publicite from "@/assets/publicite-home.webp.asset.json";
@@ -50,34 +51,50 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const t = useT();
   const homeSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Big Things Decoration",
-    "description": "Custom exhibition stands, event management, and signage.",
+    "name": "Big Things",
+    "description": "Big Things, votre expert en décoration et événementiel en Tunisie. Basés à Ben Arous, nous créons des expériences uniques pour vos événements.",
     "telephone": "+216 20 771 990",
-    "email": "contact@bigthings.tn",
+    "email": "bigthingsdecoration@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "10 Rue Ammar Ben Yesser",
-      "postalCode": "2040",
-      "addressLocality": "Radès",
-      "addressRegion": "Ben Arous",
+      "addressLocality": "Ben Arous",
       "addressCountry": "TN"
     },
-    "url": SITE.baseUrl
+    "url": "https://bigthings.tn"
   };
 
   return (
     <PageShell>
       <SEOHead 
-        title="Big Things Decoration | Stands d'Exposition, تصميم المعارض, Exhibition Booths" 
-        description="Agence experte en aménagement d'espaces, création de stands d'exposition, et enseignes lumineuses 3D en Tunisie. تصميم وتجهيز أجنحة المعارض والفعاليات. Premium custom trade show booths and corporate event production serving Tunisia and Europe."
-        keywords="création stands d'exposition Tunisie, aménagement d'espaces, agencement sur mesure, fabrication de stands, signalétique d'entreprise, impression numérique, enseignes lumineuses 3D, organisation événements corporate, décoration événementielle, تصميم أجنحة المعارض تونس, تنفيذ ديكورات المعارض, شركات تنظيم الفعاليات, لافتات مضيئة, طباعة وتصميم, تجهيز مساحات العرض, custom exhibition stand builders Tunisia, corporate event management, 3D luminous signage, trade show booth design, event production, LED signs Europe"
+        title="Big Things | Décoration & Événementiel en Tunisie" 
+        description="Big Things, votre expert en décoration et événementiel en Tunisie. Basés à Ben Arous, nous créons des expériences uniques pour vos événements."
+        keywords="Big Things Tunisie, décoration Tunisie, Big Things décoration, création stands d'exposition Tunisie, aménagement d'espaces, agencement sur mesure, fabrication de stands, signalétique d'entreprise, impression numérique, enseignes lumineuses 3D, organisation événements corporate, décoration événementielle"
         canonical={abs("/")}
         schema={homeSchema}
       />
+      
+      {/* Invisible H1 for SEO */}
+      <h1 className="sr-only">Big Things décoration Tunisie</h1>
+      
       <HeroSlider slides={slides} />
+      
+      <section className="bg-white py-12 px-6 text-center border-t border-neutral-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-[color:var(--brand-charcoal)] mb-4">
+            Big Things Tunisie
+          </h2>
+          <p className="text-lg text-neutral-600 leading-relaxed">
+            Spécialiste de la <span className="font-semibold">décoration Tunisie</span> et de l'événementiel sur mesure. 
+            Chez <span className="font-semibold text-[color:var(--brand-orange)]">Big Things décoration</span>, nous transformons vos idées en réalités visuelles percutantes, 
+            de la conception de stands d'exposition à la signalétique lumineuse.
+          </p>
+        </div>
+      </section>
+
       <ClientsRows />
     </PageShell>
   );
