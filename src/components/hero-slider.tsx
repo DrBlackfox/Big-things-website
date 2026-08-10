@@ -235,7 +235,7 @@ export function HeroSlider({
           <div key={i} className="relative flex-shrink-0 w-full h-full">
             <img
               src={s.image}
-              alt={s.title}
+              alt={`${s.title} - Big Things décoration Tunisie`}
               loading={i <= 1 ? "eager" : "lazy"}
               fetchPriority={i === 1 ? "high" : "auto"}
               decoding={i === 1 ? "sync" : "async"}
