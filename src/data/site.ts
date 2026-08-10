@@ -4,7 +4,7 @@
 
 export const SITE = {
   name: "Big Things Decoration",
-  baseUrl: "https://bigthings.lovable.app",
+  baseUrl: "https://www.bigthings.tn",
   description:
     "Big Things Decoration conçoit et réalise des stands d'exposition sur mesure, la communication événementielle hybride, l'enseignerie et les caissons lumineux.",
 } as const;

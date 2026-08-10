@@ -64,7 +64,7 @@ function Index() {
       "addressLocality": "Ben Arous",
       "addressCountry": "TN"
     },
-    "url": "https://bigthings.tn"
+    "url": "https://www.bigthings.tn"
   };
 
   return (
