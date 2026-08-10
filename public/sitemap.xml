@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://bigthings.tn/</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.bigthings.tn/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bigthings.tn/contact</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.bigthings.tn/communication</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bigthings.tn/communication</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.bigthings.tn/stands</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bigthings.tn/stands</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bigthings.tn/creations</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bigthings.tn/creations</loc>
-    <lastmod>2026-08-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bigthings.tn/evenementiel</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bigthings.tn/evenementiel</loc>
-    <lastmod>2026-08-09</lastmod>
+    <loc>https://www.bigthings.tn/contact</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 </urlset>
