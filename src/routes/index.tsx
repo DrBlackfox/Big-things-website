@@ -4,6 +4,7 @@ import { HeroSlider, type HeroSlide } from "@/components/hero-slider";
 import { ClientsRows } from "@/components/clients-rows";
 import { SITE, abs } from "@/data/site";
 import { SEOHead } from "@/components/seo-head";
+import { useT } from "@/lib/i18n";
 import stands from "@/assets/stands.webp.asset.json";
 import evenementiel from "@/assets/evenementiel.webp.asset.json";
 import publicite from "@/assets/publicite-home.webp.asset.json";
