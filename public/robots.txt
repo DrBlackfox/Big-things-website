@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bigthings.tn/sitemap.xml
+Sitemap: https://www.bigthings.tn/sitemap.xml
