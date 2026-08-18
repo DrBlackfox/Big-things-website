@@ -1,4 +1,5 @@
 {
+  "buildCommand": "bash download_images.sh && bash download_client_logos.sh && bun run build",
   "redirects": [
     {
       "source": "/fr",
@@ -17,7 +18,4 @@
       "destination": "/index.html"
     }
   ]
-}
-{
-  "buildCommand": "bash download_images.sh && bun run build"
 }
