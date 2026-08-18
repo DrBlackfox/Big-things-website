@@ -1,49 +1,27 @@
-import sherbrooke from "@/assets/client-sherbrooke.png.asset.json";
-import attijari from "@/assets/client-attijari.png.asset.json";
-import att from "@/assets/client-att.png.asset.json";
-import bestevent from "@/assets/client-bestevent.png.asset.json";
-import bomi from "@/assets/client-bomi.png.asset.json";
-import armee from "@/assets/client-armee.png.asset.json";
-import genesis from "@/assets/client-genesis.png.asset.json";
-import ghs from "@/assets/client-ghs.png.asset.json";
-import hyundai from "@/assets/client-hyundai.png.asset.json";
-import iseki from "@/assets/client-iseki.png.asset.json";
-import caverne from "@/assets/client-caverne.png.asset.json";
-import bosphore from "@/assets/client-bosphore.png.asset.json";
-import carrefour from "@/assets/client-carrefour.png.asset.json";
-import ladybug from "@/assets/client-ladybug.png.asset.json";
-import meublealoui from "@/assets/client-meublealoui.png.asset.json";
-import perla from "@/assets/client-perla.png.asset.json";
-import tulip from "@/assets/client-tulip.png.asset.json";
-import mabrouka from "@/assets/client-mabrouka.png.asset.json";
-import voltenergy from "@/assets/client-voltenergy.png.asset.json";
-import mediterranee from "@/assets/client-mediterranee.png.asset.json";
-import xiaomi from "@/assets/client-xiaomi.png.asset.json";
-
 import { useT } from "@/lib/i18n";
 
 const logos = [
-  { src: sherbrooke.url, alt: "Académie Sherbrooke" },
-  { src: attijari.url, alt: "Attijari Leasing" },
-  { src: att.url, alt: "Agence Technique des Transports Terrestres" },
-  { src: bestevent.url, alt: "Best Event" },
-  { src: bomi.url, alt: "Bomi" },
-  { src: armee.url, alt: "Armée Tunisienne" },
-  { src: genesis.url, alt: "Genesis" },
-  { src: ghs.url, alt: "GHS" },
-  { src: hyundai.url, alt: "Hyundai" },
-  { src: iseki.url, alt: "Iseki" },
-  { src: caverne.url, alt: "Espace La Caverne" },
-  { src: bosphore.url, alt: "Le Bosphore" },
-  { src: carrefour.url, alt: "Le Carrefour Agricole" },
-  { src: ladybug.url, alt: "Ladybug" },
-  { src: meublealoui.url, alt: "Meuble Aloui" },
-  { src: perla.url, alt: "Perla Group" },
-  { src: tulip.url, alt: "Tulip Rent A Car" },
-  { src: mabrouka.url, alt: "Mabrouka" },
-  { src: voltenergy.url, alt: "Voltenergy Solar Systems" },
-  { src: mediterranee.url, alt: "La Méditerranée Immobilière" },
-  { src: xiaomi.url, alt: "Xiaomi" },
+  { src: "/client-logos/sherbrooke.png", alt: "Académie Sherbrooke" },
+  { src: "/client-logos/attijari.png", alt: "Attijari Leasing" },
+  { src: "/client-logos/att.png", alt: "Agence Technique des Transports Terrestres" },
+  { src: "/client-logos/bestevent.png", alt: "Best Event" },
+  { src: "/client-logos/bomi.png", alt: "Bomi" },
+  { src: "/client-logos/client-armee.png", alt: "Armée Tunisienne" },
+  { src: "/client-logos/genesis.png", alt: "Genesis" },
+  { src: "/client-logos/ghs.png", alt: "GHS" },
+  { src: "/client-logos/hyundai.png", alt: "Hyundai" },
+  { src: "/client-logos/iseki.png", alt: "Iseki" },
+  { src: "/client-logos/client-caverne.png", alt: "Espace La Caverne" },
+  { src: "/client-logos/client-bosphore.png", alt: "Le Bosphore" },
+  { src: "/client-logos/client-carrefour.png", alt: "Le Carrefour Agricole" },
+  { src: "/client-logos/client-ladybug.png", alt: "Ladybug" },
+  { src: "/client-logos/client-meublealoui.png", alt: "Meuble Aloui" },
+  { src: "/client-logos/client-perla.png", alt: "Perla Group" },
+  { src: "/client-logos/client-tulip.png", alt: "Tulip Rent A Car" },
+  { src: "/client-logos/client-mabrouka.png", alt: "Mabrouka" },
+  { src: "/client-logos/client-voltenergy.png", alt: "Voltenergy Solar Systems" },
+  { src: "/client-logos/client-mediterranee.png", alt: "La Méditerranée Immobilière" },
+  { src: "/client-logos/client-xiaomi.png", alt: "Xiaomi" },
 ];
 
 
