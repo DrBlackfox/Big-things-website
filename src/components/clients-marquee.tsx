@@ -22,6 +22,7 @@ const logos = [
   { src: "/client-logos/client-voltenergy.png", alt: "Voltenergy Solar Systems" },
   { src: "/client-logos/client-mediterranee.png", alt: "La Méditerranée Immobilière" },
   { src: "/client-logos/client-xiaomi.png", alt: "Xiaomi" },
+  { src: "/client-logos/client-xpeng.png", alt: "XPENG" },
 ];
 
 
