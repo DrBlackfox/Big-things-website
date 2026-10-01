@@ -28,6 +28,7 @@ const row3 = [
   { src: "/client-logos/client-voltenergy.png", alt: "Voltenergy Solar Systems" },
   { src: "/client-logos/client-mediterranee.png", alt: "La Méditerranée Immobilière" },
   { src: "/client-logos/client-xiaomi.png", alt: "Xiaomi" },
+  { src: "/client-logos/client-xpeng.png", alt: "XPENG" },
 ];
 
 function Row({ logos, cols }: { logos: { src: string; alt: string }[]; cols: string }) {
@@ -63,7 +64,7 @@ export function ClientsRows() {
         </p>
         <Row logos={row1} cols="grid-cols-7" />
         <Row logos={row2} cols="grid-cols-7" />
-        <Row logos={row3} cols="grid-cols-7" />
+        <Row logos={row3} cols="grid-cols-8" />
       </div>
     </section>
   );
