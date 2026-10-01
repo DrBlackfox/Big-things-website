@@ -9,53 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as CommunicationRouteImport } from './routes/communication'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CreationsRouteImport } from './routes/creations'
-import { Route as EvenementielRouteImport } from './routes/evenementiel'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StandsRouteImport } from './routes/stands'
-import { Route as CommunicationIndexRouteImport } from './routes/communication.index'
-import { Route as CommunicationCategoryRouteImport } from './routes/communication.$category'
-import { Route as CommunicationImpressionRouteImport } from './routes/communication.impression'
-import { Route as CommunicationSignaletiqueRouteImport } from './routes/communication.signaletique'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as EvenementielRouteImport } from './routes/evenementiel'
+import { Route as CreationsRouteImport } from './routes/creations'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CommunicationRouteImport } from './routes/communication'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as StandsIndexRouteImport } from './routes/stands.index'
+import { Route as CommunicationIndexRouteImport } from './routes/communication.index'
 import { Route as StandsProductRouteImport } from './routes/stands.$product'
-import { Route as CommunicationImpressionIndexRouteImport } from './routes/communication.impression.index'
-import { Route as CommunicationImpressionProductRouteImport } from './routes/communication.impression.$product'
+import { Route as CommunicationSignaletiqueRouteImport } from './routes/communication.signaletique'
+import { Route as CommunicationImpressionRouteImport } from './routes/communication.impression'
+import { Route as CommunicationCategoryRouteImport } from './routes/communication.$category'
 import { Route as CommunicationSignaletiqueIndexRouteImport } from './routes/communication.signaletique.index'
+import { Route as CommunicationImpressionIndexRouteImport } from './routes/communication.impression.index'
 import { Route as CommunicationSignaletiqueProductRouteImport } from './routes/communication.signaletique.$product'
+import { Route as CommunicationImpressionProductRouteImport } from './routes/communication.impression.$product'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CommunicationRoute = CommunicationRouteImport.update({
-  id: '/communication',
-  path: '/communication',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CreationsRoute = CreationsRouteImport.update({
-  id: '/creations',
-  path: '/creations',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EvenementielRoute = EvenementielRouteImport.update({
-  id: '/evenementiel',
-  path: '/evenementiel',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
+const StandsRoute = StandsRouteImport.update({
+  id: '/stands',
+  path: '/stands',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -63,25 +38,50 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StandsRoute = StandsRouteImport.update({
-  id: '/stands',
-  path: '/stands',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
+} as any)
+const EvenementielRoute = EvenementielRouteImport.update({
+  id: '/evenementiel',
+  path: '/evenementiel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreationsRoute = CreationsRouteImport.update({
+  id: '/creations',
+  path: '/creations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommunicationRoute = CommunicationRouteImport.update({
+  id: '/communication',
+  path: '/communication',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StandsIndexRoute = StandsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => StandsRoute,
 } as any)
 const CommunicationIndexRoute = CommunicationIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => CommunicationRoute,
 } as any)
-const CommunicationCategoryRoute = CommunicationCategoryRouteImport.update({
-  id: '/$category',
-  path: '/$category',
-  getParentRoute: () => CommunicationRoute,
-} as any)
-const CommunicationImpressionRoute = CommunicationImpressionRouteImport.update({
-  id: '/impression',
-  path: '/impression',
-  getParentRoute: () => CommunicationRoute,
+const StandsProductRoute = StandsProductRouteImport.update({
+  id: '/$product',
+  path: '/$product',
+  getParentRoute: () => StandsRoute,
 } as any)
 const CommunicationSignaletiqueRoute =
   CommunicationSignaletiqueRouteImport.update({
@@ -89,39 +89,39 @@ const CommunicationSignaletiqueRoute =
     path: '/signaletique',
     getParentRoute: () => CommunicationRoute,
   } as any)
-const StandsIndexRoute = StandsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => StandsRoute,
+const CommunicationImpressionRoute = CommunicationImpressionRouteImport.update({
+  id: '/impression',
+  path: '/impression',
+  getParentRoute: () => CommunicationRoute,
 } as any)
-const StandsProductRoute = StandsProductRouteImport.update({
-  id: '/$product',
-  path: '/$product',
-  getParentRoute: () => StandsRoute,
+const CommunicationCategoryRoute = CommunicationCategoryRouteImport.update({
+  id: '/$category',
+  path: '/$category',
+  getParentRoute: () => CommunicationRoute,
 } as any)
-const CommunicationImpressionIndexRoute =
-  CommunicationImpressionIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => CommunicationImpressionRoute,
-  } as any)
-const CommunicationImpressionProductRoute =
-  CommunicationImpressionProductRouteImport.update({
-    id: '/$product',
-    path: '/$product',
-    getParentRoute: () => CommunicationImpressionRoute,
-  } as any)
 const CommunicationSignaletiqueIndexRoute =
   CommunicationSignaletiqueIndexRouteImport.update({
     id: '/',
     path: '/',
     getParentRoute: () => CommunicationSignaletiqueRoute,
   } as any)
+const CommunicationImpressionIndexRoute =
+  CommunicationImpressionIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => CommunicationImpressionRoute,
+  } as any)
 const CommunicationSignaletiqueProductRoute =
   CommunicationSignaletiqueProductRouteImport.update({
     id: '/$product',
     path: '/$product',
     getParentRoute: () => CommunicationSignaletiqueRoute,
+  } as any)
+const CommunicationImpressionProductRoute =
+  CommunicationImpressionProductRouteImport.update({
+    id: '/$product',
+    path: '/$product',
+    getParentRoute: () => CommunicationImpressionRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -253,46 +253,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/communication': {
-      id: '/communication'
-      path: '/communication'
-      fullPath: '/communication'
-      preLoaderRoute: typeof CommunicationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/creations': {
-      id: '/creations'
-      path: '/creations'
-      fullPath: '/creations'
-      preLoaderRoute: typeof CreationsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/evenementiel': {
-      id: '/evenementiel'
-      path: '/evenementiel'
-      fullPath: '/evenementiel'
-      preLoaderRoute: typeof EvenementielRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
+    '/stands': {
+      id: '/stands'
+      path: '/stands'
+      fullPath: '/stands'
+      preLoaderRoute: typeof StandsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -302,12 +267,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/stands': {
-      id: '/stands'
-      path: '/stands'
-      fullPath: '/stands'
-      preLoaderRoute: typeof StandsRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/evenementiel': {
+      id: '/evenementiel'
+      path: '/evenementiel'
+      fullPath: '/evenementiel'
+      preLoaderRoute: typeof EvenementielRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creations': {
+      id: '/creations'
+      path: '/creations'
+      fullPath: '/creations'
+      preLoaderRoute: typeof CreationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/communication': {
+      id: '/communication'
+      path: '/communication'
+      fullPath: '/communication'
+      preLoaderRoute: typeof CommunicationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stands/': {
+      id: '/stands/'
+      path: '/'
+      fullPath: '/stands/'
+      preLoaderRoute: typeof StandsIndexRouteImport
+      parentRoute: typeof StandsRoute
     }
     '/communication/': {
       id: '/communication/'
@@ -316,11 +323,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunicationIndexRouteImport
       parentRoute: typeof CommunicationRoute
     }
-    '/communication/$category': {
-      id: '/communication/$category'
-      path: '/$category'
-      fullPath: '/communication/$category'
-      preLoaderRoute: typeof CommunicationCategoryRouteImport
+    '/stands/$product': {
+      id: '/stands/$product'
+      path: '/$product'
+      fullPath: '/stands/$product'
+      preLoaderRoute: typeof StandsProductRouteImport
+      parentRoute: typeof StandsRoute
+    }
+    '/communication/signaletique': {
+      id: '/communication/signaletique'
+      path: '/signaletique'
+      fullPath: '/communication/signaletique'
+      preLoaderRoute: typeof CommunicationSignaletiqueRouteImport
       parentRoute: typeof CommunicationRoute
     }
     '/communication/impression': {
@@ -330,40 +344,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunicationImpressionRouteImport
       parentRoute: typeof CommunicationRoute
     }
-    '/communication/signaletique': {
-      id: '/communication/signaletique'
-      path: '/signaletique'
-      fullPath: '/communication/signaletique'
-      preLoaderRoute: typeof CommunicationSignaletiqueRouteImport
+    '/communication/$category': {
+      id: '/communication/$category'
+      path: '/$category'
+      fullPath: '/communication/$category'
+      preLoaderRoute: typeof CommunicationCategoryRouteImport
       parentRoute: typeof CommunicationRoute
-    }
-    '/stands/': {
-      id: '/stands/'
-      path: '/'
-      fullPath: '/stands/'
-      preLoaderRoute: typeof StandsIndexRouteImport
-      parentRoute: typeof StandsRoute
-    }
-    '/stands/$product': {
-      id: '/stands/$product'
-      path: '/$product'
-      fullPath: '/stands/$product'
-      preLoaderRoute: typeof StandsProductRouteImport
-      parentRoute: typeof StandsRoute
-    }
-    '/communication/impression/': {
-      id: '/communication/impression/'
-      path: '/'
-      fullPath: '/communication/impression/'
-      preLoaderRoute: typeof CommunicationImpressionIndexRouteImport
-      parentRoute: typeof CommunicationImpressionRoute
-    }
-    '/communication/impression/$product': {
-      id: '/communication/impression/$product'
-      path: '/$product'
-      fullPath: '/communication/impression/$product'
-      preLoaderRoute: typeof CommunicationImpressionProductRouteImport
-      parentRoute: typeof CommunicationImpressionRoute
     }
     '/communication/signaletique/': {
       id: '/communication/signaletique/'
@@ -372,12 +358,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunicationSignaletiqueIndexRouteImport
       parentRoute: typeof CommunicationSignaletiqueRoute
     }
+    '/communication/impression/': {
+      id: '/communication/impression/'
+      path: '/'
+      fullPath: '/communication/impression/'
+      preLoaderRoute: typeof CommunicationImpressionIndexRouteImport
+      parentRoute: typeof CommunicationImpressionRoute
+    }
     '/communication/signaletique/$product': {
       id: '/communication/signaletique/$product'
       path: '/$product'
       fullPath: '/communication/signaletique/$product'
       preLoaderRoute: typeof CommunicationSignaletiqueProductRouteImport
       parentRoute: typeof CommunicationSignaletiqueRoute
+    }
+    '/communication/impression/$product': {
+      id: '/communication/impression/$product'
+      path: '/$product'
+      fullPath: '/communication/impression/$product'
+      preLoaderRoute: typeof CommunicationImpressionProductRouteImport
+      parentRoute: typeof CommunicationImpressionRoute
     }
   }
 }
