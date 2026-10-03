@@ -58,7 +58,7 @@ function Index() {
     "name": "Big Things",
     "description": "Big Things, votre expert en décoration et événementiel en Tunisie. Basés à Ben Arous, nous créons des expériences uniques pour vos événements.",
     "telephone": "+216 20 771 990",
-    "email": "bigthingsdecoration@gmail.com",
+    "email": "contact@bigthings.tn",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Ben Arous",
