@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Configure optional phone photo framing per hero slide so one slide can change without affecting other slides or desktop framing.
+- Keep individual logo sizing alongside each entry in the client section, with wrapping below wide desktop widths, so optical adjustments preserve logo proportions and ranked order.
