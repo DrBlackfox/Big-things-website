@@ -7,7 +7,7 @@ import { SEOHead } from "@/components/seo-head";
 import { useT } from "@/lib/i18n";
 import stands from "@/assets/stands.webp.asset.json";
 import evenementiel from "@/assets/evenementiel.webp.asset.json";
-import publicite from "@/assets/publicite-home.webp.asset.json";
+import publicite from "@/assets/communication-home-genesis.webp.asset.json";
 import creations from "@/assets/creations.webp.asset.json";
 
 const slides: HeroSlide[] = [
@@ -40,6 +40,12 @@ const slides: HeroSlide[] = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { title: "Big Things | Décoration & Événementiel en Tunisie" },
+      { name: "description", content: "Big Things, votre expert en décoration et événementiel en Tunisie. Basés à Ben Arous, nous créons des expériences uniques pour vos événements." },
+      { property: "og:title", content: "Big Things | Décoration & Événementiel en Tunisie" },
+      { property: "og:description", content: "Big Things, votre expert en décoration et événementiel en Tunisie. Basés à Ben Arous, nous créons des expériences uniques pour vos événements." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: abs("/") },
     ],
     links: [
