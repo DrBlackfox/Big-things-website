@@ -7,7 +7,7 @@ import { SEOHead } from "@/components/seo-head";
 import { useT } from "@/lib/i18n";
 import stands from "@/assets/stands.webp.asset.json";
 import evenementiel from "@/assets/evenementiel.webp.asset.json";
-import publicite from "@/assets/communication-home-genesis.webp.asset.json";
+import publicite from "@/assets/communication-home-genesis-bright.webp.asset.json";
 import creations from "@/assets/creations.webp.asset.json";
 
 const slides: HeroSlide[] = [
