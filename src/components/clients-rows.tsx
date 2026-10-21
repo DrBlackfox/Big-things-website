@@ -33,7 +33,7 @@ const row3 = [
 
 function Row({ logos }: { logos: { src: string; alt: string; size: string }[] }) {
   return (
-    <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 lg:flex-nowrap lg:gap-x-5">
+    <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 xl:flex-nowrap xl:gap-x-5">
       {logos.map((l) => (
         <div key={l.src} className="flex shrink-0 items-center justify-center h-28">
           <img
