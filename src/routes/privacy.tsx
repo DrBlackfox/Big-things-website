@@ -8,6 +8,9 @@ import { Shield, Lock, Eye, FileText, UserCheck, Mail } from "lucide-react";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+
       { title: "Politique de confidentialité — Big Things Decoration" },
       { name: "description", content: "Politique de confidentialité de Big Things Decoration. Protection de vos données personnelles." },
       { property: "og:title", content: "Politique de confidentialité — Big Things Decoration" },

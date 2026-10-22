@@ -31,14 +31,18 @@ const galleryPhotos: GalleryPhoto[] = [
 export const Route = createFileRoute("/evenementiel")({
   head: () => ({
     meta: [
+      { name: "twitter:card", content: "summary_large_image" },
+
       { title: "Événementiel — Big Things Decoration" },
       { name: "description", content: "Communication événementielle hybride : conception, production et logistique pour vos salons, conférences et lancements." },
       { property: "og:title", content: "Événementiel — Big Things Decoration" },
       { property: "og:description", content: "Communication événementielle hybride : conception, production et logistique pour vos salons, conférences et lancements." },
       { property: "og:url", content: abs("/evenementiel") },
       { property: "og:type", content: "product" },
-      { property: "og:image", content: evenementielImg.url },
-      { name: "twitter:image", content: evenementielImg.url },
+      ...(evenementielImg.url.startsWith("https://") ? [
+        { property: "og:image", content: evenementielImg.url },
+        { name: "twitter:image", content: evenementielImg.url },
+      ] : []),
     ],
     links: [{ rel: "canonical", href: abs("/evenementiel") }],
   }),

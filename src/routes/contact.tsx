@@ -12,6 +12,9 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+
       { title: "Contact — Big Things Decoration" },
       { name: "description", content: "Contactez Big Things Decoration à Radès pour vos stands, enseignes lumineuses et projets événementiels. Devis gratuit." },
       { property: "og:title", content: "Contact — Big Things Decoration" },
