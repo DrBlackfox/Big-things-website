@@ -9,6 +9,6 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Configure optional phone photo framing per hero slide so one slide can change without affecting other slides or desktop framing.
+- Configure optional phone and desktop photo framing independently per hero slide so one slide or device can change without affecting other slides or devices.
 - Keep individual logo sizing alongside each entry in a six-column client grid; allow horizontal scrolling on narrow screens so the ranked sequence stays within four rows without crushing logo lettering.
 - Serve the home communication photo from public/images with a root-relative path so its availability does not depend on the media CDN.

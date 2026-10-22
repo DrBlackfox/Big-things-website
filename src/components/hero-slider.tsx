@@ -8,6 +8,7 @@ export type HeroSlide = {
   subtitle: string;
   image: string;
   mobileImagePosition?: "left" | "center";
+  desktopImagePosition?: "top" | "center";
   to: LinkProps["to"];
 };
 
@@ -240,7 +241,7 @@ export function HeroSlider({
               loading={i <= 1 ? "eager" : "lazy"}
               fetchPriority={i === 1 ? "high" : "auto"}
               decoding={i === 1 ? "sync" : "async"}
-              className={`absolute inset-0 w-full h-full object-cover ${s.mobileImagePosition === "left" ? "object-left sm:object-center" : "object-center"}`}
+              className={`absolute inset-0 w-full h-full object-cover ${s.mobileImagePosition === "left" ? "object-left" : "object-center"} ${s.desktopImagePosition === "top" ? "sm:object-top" : "sm:object-center"}`}
             />
             <div className="absolute inset-0 bg-[color:var(--brand-charcoal)]/60" />
             <div dir={dir} className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
