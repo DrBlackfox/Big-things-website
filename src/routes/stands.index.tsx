@@ -8,6 +8,9 @@ import { SEOHead } from "@/components/seo-head";
 export const Route = createFileRoute("/stands/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+
       { title: "Stands d'exposition — Big Things Decoration" },
       { name: "description", content: "Nos gammes de stands d'exposition sur mesure : multimédia, lightbox, menuiserie, toile tendue, parapluie, tubulaire." },
       { property: "og:title", content: "Stands d'exposition — Big Things Decoration" },

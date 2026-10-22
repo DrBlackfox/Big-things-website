@@ -19,13 +19,18 @@ export const Route = createFileRoute("/communication/$category")({
     const url = abs(`/communication/${params.category}`);
     return {
       meta: [
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
+
         { title },
         { name: "description", content: loaderData.category.subtitle },
         { property: "og:title", content: title },
         { property: "og:description", content: loaderData.category.subtitle },
         { property: "og:url", content: url },
-        { property: "og:image", content: loaderData.category.image },
-        { name: "twitter:image", content: loaderData.category.image },
+        ...(loaderData.category.image.startsWith("https://") ? [
+          { property: "og:image", content: loaderData.category.image },
+          { name: "twitter:image", content: loaderData.category.image },
+        ] : []),
       ],
       links: [{ rel: "canonical", href: url }],
     };

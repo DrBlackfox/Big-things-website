@@ -9,6 +9,9 @@ import { SEOHead } from "@/components/seo-head";
 export const Route = createFileRoute("/creations")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+
       { title: "Nos dernières créations — Big Things Decoration" },
       { name: "description", content: "Photos et vidéos de nos dernières réalisations : stands, enseignes lumineuses et projets événementiels." },
       { property: "og:title", content: "Nos dernières créations — Big Things Decoration" },

@@ -8,6 +8,9 @@ import { SEOHead } from "@/components/seo-head";
 export const Route = createFileRoute("/communication/impression/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+
       { title: "Publicité — Big Things Decoration" },
       { name: "description", content: "Habillage de façades, bannières et supports publicitaires grand format pour rendre votre marque visible." },
       { property: "og:title", content: "Publicité — Big Things Decoration" },

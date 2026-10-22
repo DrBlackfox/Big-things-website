@@ -8,6 +8,9 @@ import { SEOHead } from "@/components/seo-head";
 export const Route = createFileRoute("/communication/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+
       { title: "Publicité & Signalétique — Big Things Decoration" },
       { name: "description", content: "Signalétique lumineuse, publicité grand format et revêtement Alucobond : trois pôles d'expertise pour votre visibilité." },
       { property: "og:title", content: "Publicité & Signalétique — Big Things Decoration" },

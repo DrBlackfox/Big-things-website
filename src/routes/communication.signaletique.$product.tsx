@@ -19,14 +19,18 @@ export const Route = createFileRoute("/communication/signaletique/$product")({
     const url = abs(`/communication/signaletique/${params.product}`);
     return {
       meta: [
+        { name: "twitter:card", content: "summary_large_image" },
+
         { title },
         { name: "description", content: loaderData.product.subtitle },
         { property: "og:title", content: title },
         { property: "og:description", content: loaderData.product.subtitle },
         { property: "og:url", content: url },
         { property: "og:type", content: "product" },
-        { property: "og:image", content: loaderData.product.image },
-        { name: "twitter:image", content: loaderData.product.image },
+        ...(loaderData.product.image.startsWith("https://") ? [
+          { property: "og:image", content: loaderData.product.image },
+          { name: "twitter:image", content: loaderData.product.image },
+        ] : []),
       ],
       links: [{ rel: "canonical", href: url }],
     };

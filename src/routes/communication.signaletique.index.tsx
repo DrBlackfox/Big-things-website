@@ -8,6 +8,9 @@ import { SEOHead } from "@/components/seo-head";
 export const Route = createFileRoute("/communication/signaletique/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+
       { title: "Signalétique — Big Things Decoration" },
       { name: "description", content: "Enseignes lumineuses, néons LED et lettres lumineuses sur mesure pour vitrines, façades et espaces commerciaux." },
       { property: "og:title", content: "Signalétique — Big Things Decoration" },
