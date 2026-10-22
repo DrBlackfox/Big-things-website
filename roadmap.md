@@ -1,2 +1,2 @@
-- [ ] Save the latest home photo in public/images and verify it loads.
-- [ ] Reduce client logos to four compact rows and verify their order and visibility.
+- [x] Save the latest home photo in public/images and verify it loads.
+- [x] Reduce client logos to four compact rows and verify their order and visibility.
