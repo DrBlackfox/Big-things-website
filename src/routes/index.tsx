@@ -17,6 +17,7 @@ const slides: HeroSlide[] = [
     subtitle: "Enseignes, caissons lumineux & affichage éclairé.",
     image: publicite.url,
     mobileImagePosition: "left",
+    desktopImagePosition: "top",
     to: "/communication",
   },
   {
