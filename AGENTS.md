@@ -12,3 +12,4 @@
 - Configure optional phone and desktop photo framing independently per hero slide so one slide or device can change without affecting other slides or devices.
 - Keep individual logo sizing alongside each entry in a six-column client grid; allow horizontal scrolling on narrow screens so the ranked sequence stays within four rows without crushing logo lettering.
 - Serve the home communication photo from public/images with a root-relative path so its availability does not depend on the media CDN.
+- Keep shared contact details and social profile URLs in src/data/site.ts so all site locations use a single source of truth.
