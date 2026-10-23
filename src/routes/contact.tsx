@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Mail, Phone, MapPin, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Loader2, CheckCircle2, Instagram, Facebook, Linkedin } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
-import { CONTACT, abs } from "@/data/site";
+import { CONTACT, SOCIAL_LINKS, abs } from "@/data/site";
+import { Button } from "@/components/ui/button";
 import { useT } from "@/lib/i18n";
 import { SEOHead } from "@/components/seo-head";
 import { useState } from "react";
@@ -25,6 +26,8 @@ export const Route = createFileRoute("/contact")({
   }),
   component: Contact,
 });
+
+const socialIcons = { Instagram, Facebook, LinkedIn: Linkedin };
 
 function Contact() {
   const t = useT();
@@ -121,6 +124,18 @@ function Contact() {
                 <h2 className="font-semibold text-[color:var(--brand-orange)]">{t("Manager")}</h2>
                 <p className="text-neutral-600">{CONTACT.manager}</p>
               </div>
+            </div>
+            <div className="flex items-center gap-2">
+              {SOCIAL_LINKS.map(({ name, href }) => {
+                const Icon = socialIcons[name];
+                return (
+                  <Button key={name} asChild variant="ghost" size="icon" className="text-brand-orange hover:bg-muted hover:text-foreground">
+                    <a href={href} target="_blank" rel="noopener noreferrer" aria-label={name} title={name}>
+                      <Icon aria-hidden="true" />
+                    </a>
+                  </Button>
+                );
+              })}
             </div>
           </div>
           
