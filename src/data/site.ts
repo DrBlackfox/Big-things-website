@@ -18,5 +18,11 @@ export const CONTACT = {
   manager: "Walid Darhoumi",
 } as const;
 
+export const SOCIAL_LINKS = [
+  { name: "Instagram", href: "https://www.instagram.com/bigthingsdecoration" },
+  { name: "Facebook", href: "https://www.facebook.com/BigThingsDecorations" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/big-things-decoration" },
+] as const;
+
 /** Absolute URL for canonical / og:url. */
 export const abs = (path: string) => `${SITE.baseUrl}${path}`;

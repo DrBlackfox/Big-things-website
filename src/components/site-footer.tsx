@@ -1,8 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.avif.asset.json";
-import { CONTACT } from "@/data/site";
+import { CONTACT, SOCIAL_LINKS } from "@/data/site";
+import { Button } from "@/components/ui/button";
 import { useT } from "@/lib/i18n";
+
+const socialIcons = { Instagram, Facebook, LinkedIn: Linkedin };
 
 export function SiteFooter() {
   const t = useT();
@@ -16,6 +19,18 @@ export function SiteFooter() {
             <span className="block">{t("PUBLICITÉ & SIGNALÉTIQUE")}</span>
             <span className="block">{t("STANDS D'EXPOSITION")}</span>
           </p>
+          <div className="mt-5 flex items-center gap-2">
+            {SOCIAL_LINKS.map(({ name, href }) => {
+              const Icon = socialIcons[name];
+              return (
+                <Button key={name} asChild variant="ghost" size="icon" className="text-primary-foreground hover:bg-background/10 hover:text-brand-orange">
+                  <a href={href} target="_blank" rel="noopener noreferrer" aria-label={name} title={name}>
+                    <Icon aria-hidden="true" />
+                  </a>
+                </Button>
+              );
+            })}
+          </div>
         </div>
         <div>
           <h4 className="text-white font-semibold uppercase tracking-wider text-sm mb-4">{t("Nos services")}</h4>
