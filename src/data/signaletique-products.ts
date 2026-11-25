@@ -23,6 +23,7 @@ import ampoules3 from "@/assets/sig-ampoules-3.webp.asset.json";
 import ampoules4 from "@/assets/sig-ampoules-4.webp.asset.json";
 
 const enseignesNew = "/images/enseignes/enseignes-1.jpg";
+const enseignesNew2 = "/images/enseignes/enseignes-2.jpg";
 
 export type SignaletiqueProduct = {
   slug: string;
@@ -42,6 +43,7 @@ export const signaletiqueProducts: SignaletiqueProduct[] = [
     description:
       "Enseignes lumineuses fabriquées sur mesure pour vitrines, façades et espaces commerciaux : caissons rétroéclairés LED, faces en plexiglas imprimé, structures aluminium résistantes aux intempéries. Étude, fabrication, intégration électrique et pose professionnelle assurées par notre atelier.",
     gallery: [
+      enseignesNew2,
       enseignesNew,
       e1.url,
       e2.url,
