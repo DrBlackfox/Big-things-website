@@ -15,6 +15,14 @@ import alucobond11 from "@/assets/alucobond-11.webp.asset.json";
 import alucobond12 from "@/assets/alucobond-12.webp.asset.json";
 import alucobond13 from "@/assets/alucobond-13.webp.asset.json";
 
+const alucobondMain = "/images/alucobond/alucobond-14.jpg";
+const newAlucobondGallery = [
+  alucobondMain,
+  "/images/alucobond/alucobond-15.jpg",
+  "/images/alucobond/alucobond-16.jpg",
+  "/images/alucobond/alucobond-17.jpg",
+  "/images/alucobond/alucobond-18.jpg",
+];
 
 export type PubliciteCategory = {
   slug: string;
@@ -31,11 +39,11 @@ export const publiciteCategories: PubliciteCategory[] = [
     slug: "alucobond",
     title: "Revêtement en Alucobond",
     subtitle: "Panneaux composites aluminium pour façades et habillages.",
-    image: alucobond.url,
+    image: alucobondMain,
     description:
       "Habillage de façades et surfaces en panneaux composites Alucobond : deux tôles d'aluminium liées à une âme en polyéthylène. Résistant aux intempéries, léger, plan et rigide. Finitions brossées, brillantes, mates ou effet miroir. Idéal pour enseignes, façades commerciales et rénovations architecturales.",
     products: [],
-    gallery: [alucobond.url, alucobond1.url, alucobond2.url, alucobond3.url, alucobond4.url, alucobond5.url, alucobond6.url, alucobond7.url, alucobond8.url, alucobond9.url, alucobond10.url, alucobond11.url, alucobond12.url, alucobond13.url],
+    gallery: [...newAlucobondGallery, alucobond.url, alucobond1.url, alucobond2.url, alucobond3.url, alucobond4.url, alucobond5.url, alucobond6.url, alucobond7.url, alucobond8.url, alucobond9.url, alucobond10.url, alucobond11.url, alucobond12.url, alucobond13.url],
   },
   {
     slug: "signaletique",
