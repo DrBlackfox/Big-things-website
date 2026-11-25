@@ -1,4 +1,3 @@
-import enseignesThumb from "@/assets/sig-enseignes-thumb.jpg.asset.json";
 import e1 from "@/assets/sig-e1.webp.asset.json";
 import e2 from "@/assets/sig-e2.webp.asset.json";
 import e3 from "@/assets/sig-e3.webp.asset.json";
@@ -23,6 +22,8 @@ import ampoules2 from "@/assets/sig-ampoules-2.webp.asset.json";
 import ampoules3 from "@/assets/sig-ampoules-3.webp.asset.json";
 import ampoules4 from "@/assets/sig-ampoules-4.webp.asset.json";
 
+const enseignesNew = "/images/enseignes/enseignes-1.jpg";
+
 export type SignaletiqueProduct = {
   slug: string;
   title: string;
@@ -37,10 +38,11 @@ export const signaletiqueProducts: SignaletiqueProduct[] = [
     slug: "enseignes-lumineuses",
     title: "Enseignes Lumineuses",
     subtitle: "Caissons et enseignes rétroéclairées sur mesure.",
-    image: enseignesThumb.url,
+    image: enseignesNew,
     description:
       "Enseignes lumineuses fabriquées sur mesure pour vitrines, façades et espaces commerciaux : caissons rétroéclairés LED, faces en plexiglas imprimé, structures aluminium résistantes aux intempéries. Étude, fabrication, intégration électrique et pose professionnelle assurées par notre atelier.",
     gallery: [
+      enseignesNew,
       e1.url,
       e2.url,
       e3.url,
